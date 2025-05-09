@@ -1,4 +1,4 @@
-
+@use 'src/styles/colors' as colors;
 
 .faq-item {
   display: flex;
@@ -29,6 +29,7 @@
   line-height: 1;
   transform: rotate(0deg);
   transition: transform 0.2s ease;
+  color: colors.$primary-brand-color;
 }
 
 .toggle-button.expanded {
