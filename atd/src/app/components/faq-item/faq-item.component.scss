@@ -3,47 +3,44 @@
 .faq-item {
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
+  cursor: pointer;
+  border-bottom: 1px solid colors.$brand-color-primary;
 }
 
 .faq-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  cursor: pointer;
-  user-select: none;
+  padding-bottom: 12px;
 }
 
 .faq-title {
   font-weight: bold;
 }
 
-.toggle-button {
-  width: 24px;
-  height: 24px;
-  display: flex;
+.toggle-icon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 1;
+  font-size: 48px;
   transform: rotate(0deg);
-  transition: transform 0.2s ease;
+  transition: transform 0.5s ease;
   color: colors.$brand-color-primary;
 }
 
-.toggle-button.expanded {
+.toggle-icon.expanded {
   transform: rotate(180deg);
 }
 
 .faq-body {
+  padding-right: 100px;
+  font-size: 16px;
+  line-height: 1.3;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  padding: 0 16px;
 }
 
 .faq-body.expanded {
-  max-height: 500px; /* sufficient to show content */
-  padding: 12px 16px;
+  max-height: 500px;
 }
