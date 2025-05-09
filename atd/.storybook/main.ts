@@ -13,6 +13,8 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/angular",
     "options": {}
-  }
+  },
+  //static directory to serve assets
+  staticDirs: ['../public']
 };
 export default config;
