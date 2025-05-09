@@ -1,1 +1,11 @@
-<p>faq-item works!</p>
+<div class="faq-item">
+  <div class="faq-header" (click)="toggle()">
+    <span class="faq-title">{{ question() }}</span>
+    <button class="toggle-button" [class.expanded]="isExpanded" aria-label="Toggle answer">
+      ▾
+    </button>
+  </div>
+  <div class="faq-body" [class.expanded]="isExpanded">
+    <p>{{ answer() }}</p>
+  </div>
+</div>

@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-faq-item',
-  imports: [],
   templateUrl: './faq-item.component.html',
-  styleUrl: './faq-item.component.scss'
+  styleUrls: ['./faq-item.component.scss']
 })
 export class FaqItemComponent {
+  question = input.required<string>();
+  answer = input.required<string>();
+  isExpanded = false;
 
+  toggle(): void {
+    this.isExpanded = !this.isExpanded;
+  }
 }
