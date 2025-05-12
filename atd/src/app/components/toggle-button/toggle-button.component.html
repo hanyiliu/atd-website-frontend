@@ -1,0 +1,5 @@
+<section class="toggle-switch" [class.students]="selected === 'students'">
+  <button (click)="select('clients')" [class.selected]="selected === 'clients'">For Clients</button>
+  <button (click)="select('students')" [class.selected]="selected === 'students'">For Students</button>
+  <div class="highlight"></div>
+</section>
