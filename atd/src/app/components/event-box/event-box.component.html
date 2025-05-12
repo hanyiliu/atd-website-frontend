@@ -1,0 +1,23 @@
+<!-- 
+  EventBoxComponent Structure:
+  - flexbox containing top-row and bottom-row
+    - flexbox containing left and right box
+    - flexbox containing the description of the event
+-->
+<div class="event-box-container" [class.next-event]="isNext">
+  <div class="top-row">
+    <div class="date-box">
+      <div class="day">{{ day }}</div>
+      <div class="month">{{ month }}</div>
+    </div>
+    <div class="logo-box">
+      <img src="images/ATD-events-logo.svg" alt="Event Logo" class="logo" />
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="detail-box">
+      <p class="title-time">{{ title + " @" + time }}</p>
+      <p class="location">{{ location }}</p>
+    </div>
+  </div>
+</div>
