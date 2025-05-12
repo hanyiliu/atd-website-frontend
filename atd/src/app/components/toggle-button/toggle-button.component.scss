@@ -1,0 +1,44 @@
+@use '../../../colors' as colors;
+
+.toggle-switch {
+  position: relative;
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px;
+  height: 40px;
+  aspect-ratio: 8/1;
+}
+
+.toggle-switch button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.toggle-switch button.selected {
+  color: #fff;
+}
+
+.highlight {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 10px);
+  height: calc(100% - 10px);
+  background-color: colors.$brand-color-primary;
+  transition: left 0.3s;
+  border-radius: 10px;
+}
+
+.toggle-switch.students .highlight {
+  left: calc(50% + 5px);
+}
