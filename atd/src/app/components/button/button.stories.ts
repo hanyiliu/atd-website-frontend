@@ -4,7 +4,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ButtonComponent } from './button.component';
 import { moduleMetadata } from '@storybook/angular';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
   component: ButtonComponent,
@@ -18,41 +17,27 @@ const meta: Meta<ButtonComponent> = {
     backgroundColor: {
       control: 'color',
     },
+    borderColor: {
+      control: 'color',
+    },
+    textColor: {
+      control: 'color',
+    },
+    label: {
+      control: 'text',
+    },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: action('clicked') },
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>; 
+type Story = StoryObj<ButtonComponent>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const JoinUs: Story = {
   args: {
-    primary: true,
-    label: 'Primary Button',
-    backgroundColor: "#5f20a6",
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'Second Button',
-    backgroundColor: '#DDDDDD',
-
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    label: 'Join Us',
+    backgroundColor: '#FFE3FB',
+    borderColor: '#FF00D9',
+    textColor: '#FFFFFF',
   },
 };

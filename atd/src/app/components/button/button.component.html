@@ -1,10 +1,12 @@
-<button 
-    [ngClass]="{ 'primary': primary }" 
+<div class="button-wrapper">
+  <button
     [ngStyle]="{
-        '--bg-color': backgroundColor,
-        '--text-color': textColor,
-        '--border-color': borderColor
-    }" 
-    (click)="navigate()">
+      '--bg-color': backgroundColor,
+      '--text-color': textColor,
+      '--border-color': borderColor
+    }"
+    (click)="navigate()"
+  >
     {{ label }}
-</button>
+  </button>
+</div>

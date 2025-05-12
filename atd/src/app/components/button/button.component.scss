@@ -1,18 +1,9 @@
-button {
-    color: var(--text-color, white); /* Text color */
-    padding: 8px 16px;
-    border: 1px solid var(--border-color, transparent); /* Border color */
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    background-color: var(--bg-color, #000000); /* Background color */
-
-    &.primary {
-        background-color: var(--primary-bg-color, #FFFFFF); /* Primary button color */
-    }
-
-    &:hover {
-        opacity: 0.8;
-    }
+.button-wrapper button {
+  color: var(--text-color);
+  padding: 8px 16px;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+  background-color: var(--bg-color);
 }
