@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Event } from './event.model';
 
 @Component({
   selector: 'app-event-box',
@@ -7,10 +8,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./event-box.component.scss'],
 })
 export class EventBoxComponent {
-  @Input() day: string = '';
-  @Input() month: string = '';
-  @Input() title: string = '';
-  @Input() time: string = '';
-  @Input() location: string = '';
+  @Input() event: Event = {
+    day: '',
+    month: '',
+    title: '',
+    time: '',
+    location: '',
+  };
+  // @Input() day: string = '';
+  // @Input() month: string = '';
+  // @Input() title: string = '';
+  // @Input() time: string = '';
+  // @Input() location: string = '';
   @Input() isNext: boolean = false;
 }

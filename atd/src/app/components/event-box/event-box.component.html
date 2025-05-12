@@ -7,8 +7,8 @@
 <div class="event-box-container" [class.next-event]="isNext">
   <div class="top-row">
     <div class="date-box">
-      <div class="day">{{ day }}</div>
-      <div class="month">{{ month }}</div>
+      <div class="day">{{ event.day }}</div>
+      <div class="month">{{ event.month }}</div>
     </div>
     <div class="logo-box">
       <img src="images/ATD-events-logo.svg" alt="Event Logo" class="logo" />
@@ -16,8 +16,8 @@
   </div>
   <div class="bottom-row">
     <div class="detail-box">
-      <p class="title-time">{{ title + " @" + time }}</p>
-      <p class="location">{{ location }}</p>
+      <p class="title-time">{{ event.title + " @" + event.time }}</p>
+      <p class="location">{{ event.location }}</p>
     </div>
   </div>
 </div>

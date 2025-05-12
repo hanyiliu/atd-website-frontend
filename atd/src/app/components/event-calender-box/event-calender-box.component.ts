@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { EventBoxComponent } from '../event-box/event-box.component';
-import { Event } from './event.model';
+import { Event } from '../event-box/event.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
