@@ -1,0 +1,13 @@
+<div class="faq-item">
+  <div class="faq-header" (click)="toggle()">
+    <span class="faq-title">{{ question() }}</span>
+    <mat-icon
+    class="toggle-icon"
+    [class.expanded]="isExpanded"
+    aria-label="Toggle answer"
+  >expand_more</mat-icon>
+  </div>
+  <div class="faq-body" [class.expanded]="isExpanded">
+    <p>{{ answer() }}</p>
+  </div>
+</div>

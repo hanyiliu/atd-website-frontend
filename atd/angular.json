@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "outputPath": "dist/atd",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -123,6 +126,6 @@
     }
   },
   "cli": {
-    "analytics": "ab03669b-6983-4de7-8584-a6520f77be44"
+    "analytics": "893d600a-4403-48a0-aa67-c831d8a6edbb"
   }
 }
