@@ -12,11 +12,13 @@ type Story = StoryObj<EventBoxComponent>;
 
 export const Primary: Story = {
   args: {
-    day: '22',
-    month: 'April',
-    title: 'Info Night',
-    time: 'TBD',
-    location: '@TBD',
+    event: {
+      day: '22',
+      month: 'April',
+      title: 'Info Night',
+      time: 'TBD',
+      location: 'TBD',
+    },
     isNext: true,
   },
 };

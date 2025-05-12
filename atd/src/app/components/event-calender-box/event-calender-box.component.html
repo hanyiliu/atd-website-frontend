@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="event-calendar-wrapper">
+    <div class="header">Upcoming Events This Week</div>
+    <div class="event-calendar-inner">
+      <app-event-box
+        *ngFor="let event of events; let i = index"
+        [event]="event"
+        [isNext]="i === 0"
+      >
+      </app-event-box>
+    </div>
+  </div>
+</div>
