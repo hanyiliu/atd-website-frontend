@@ -4,14 +4,12 @@
   position: relative;
   display: inline-block;
   border-radius: 20px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
 .background-image {
   display: block;
-  width: 100%;
-  height: auto;
 }
 
 .values-container {
@@ -27,13 +25,12 @@
 
 .text-content {
     font-weight: bold;
-    font-size: 48px;
+    font-size: 64px;
     padding-left: 80px;
 }
 
 .line-one {
   color: colors.$brand-color-white;
-  margin-bottom: 0.2em;
 }
 
 .line-two {
@@ -48,13 +45,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-text-fill-color: transparent;
   }
 
   .rotating-words span {
     display: block;
-    height: 1em;
-    line-height: 1em;
   }
 }
 
@@ -66,8 +60,8 @@
 }
 
 .logo {
-    padding-right: 60px;
-    scale: 70%;
+    padding-right: 120px;
+    scale: 100%;
     filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
     -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
 }
