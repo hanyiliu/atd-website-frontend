@@ -1,0 +1,73 @@
+@use '../../../colors' as colors;
+
+.values-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.background-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.values-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-content {
+    font-weight: bold;
+    font-size: 48px;
+    padding-left: 80px;
+}
+
+.line-one {
+  color: colors.$brand-color-white;
+  margin-bottom: 0.2em;
+}
+
+.line-two {
+  color: colors.$brand-color-primary;
+  overflow: hidden;
+  height: 1em;
+
+  .rotating-words {
+    display: inline-block;
+    animation: slide-up 9s ease-in-out infinite;
+    background: linear-gradient(to top, colors.$brand-color-primary, colors.$brand-color-primary-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .rotating-words span {
+    display: block;
+    height: 1em;
+    line-height: 1em;
+  }
+}
+
+@keyframes slide-up {
+  0%, 25%    { transform: translateY(0); }
+  33.333%, 58.333%  { transform: translateY(-33.33%); }
+  66.667%, 91.667% { transform: translateY(-66.66%); }
+  100%   { transform: translateY(0); }
+}
+
+.logo {
+    padding-right: 60px;
+    scale: 70%;
+    filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
+    -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
+}
