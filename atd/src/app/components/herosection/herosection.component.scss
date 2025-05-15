@@ -25,7 +25,7 @@
     z-index: 2;
     text-align: left; /* Align text to the left */
     max-width: 80%;
-    padding: 250px 20px 50px 100px; /* Increase padding to move text (clockwise) */
+    padding: 50px 20px 50px 150px; /* Increase padding to move text (clockwise) */
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 32px;
 
@@ -54,6 +54,7 @@
     }
 
     button {
+      margin-top: 2rem; //space between button and title
       padding: 8px 16px;
       font-size: 1rem;
       background-color: black; /* Set black background */
