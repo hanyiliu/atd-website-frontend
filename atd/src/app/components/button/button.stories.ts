@@ -38,6 +38,6 @@ export const JoinUs: Story = {
     label: 'Join Us',
     backgroundColor: '#FFE3FB',
     borderColor: '#FF00D9',
-    textColor: '#FFFFFF',
+    textColor: '#FF00D9',
   },
 };
