@@ -13,4 +13,5 @@ export class DefinitionBoxComponent {
   @Input() noun: string = '';
   @Input() bracket2: string = '';
   @Input() definition: string = '';
+  @Input() definition2: string = '';
 }

@@ -16,7 +16,7 @@ export const Primary: Story = {
     bracket1: '[',
     noun: 'noun.',
     bracket2: ']',
-    definition:
-      '"A student-led creative agency at UC Davis, specializing in multi-disciplinary design."',
+    definition: '"A student-led creative agency at UC Davis, specializing in',
+    definition2: 'multi-disciplinary design."',
   },
 };
