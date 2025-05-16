@@ -11,12 +11,5 @@ export default meta;
 type Story = StoryObj<DefinitionBoxComponent>;
 
 export const Primary: Story = {
-  args: {
-    title: 'All Things Design',
-    bracket1: '[',
-    noun: 'noun.',
-    bracket2: ']',
-    definition: '"A student-led creative agency at UC Davis, specializing in',
-    definition2: 'multi-disciplinary design."',
-  },
+  args: {},
 };
