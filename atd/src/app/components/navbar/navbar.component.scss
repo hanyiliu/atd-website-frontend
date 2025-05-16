@@ -16,6 +16,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  margin-left: 75px;
   margin-right: 0;
 }
 .atd-text {
@@ -27,24 +28,14 @@
 .route-buttons {
   display: flex;
   flex-direction: row;
-  gap: 5px; /* Uniform gap between all buttons */
+  gap: 15px; /* Uniform gap between all buttons */
   align-items: center;
   margin-left: auto;
-  padding-right: 20px; /* Distance from the right edge */
+  padding-right: 75px; /* Distance from the right edge */
 }
-
-.route-buttons app-button {
-  margin: 0; /* Remove any individual margin */
-  padding: 8px 12px; /* Ensure consistent padding for each button */
+.button1 {
+  margin-right: 5px;
 }
-
-app-button {
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.navbar app-button {
-  border: none;
+.button2 {
+  margin-right: 20px;
 }

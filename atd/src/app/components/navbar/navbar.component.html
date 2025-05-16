@@ -7,21 +7,25 @@
   </div>
 
   <div class="route-buttons">
-    <app-button
-      label="About Us"
-      backgroundColor="#000000"
-      [textColor]="isAboutUsActive ? '#FF00D9' : 'white'"
-      [isActive]="isAboutUsActive"
-      (click)="toggleAboutUs()"
-    ></app-button>
+    <div class="button1">
+      <app-button
+        label="About Us"
+        backgroundColor="#000000"
+        [textColor]="isAboutUsActive ? '#FF00D9' : 'white'"
+        [isActive]="isAboutUsActive"
+        (click)="toggleAboutUs()"
+      ></app-button>
+    </div>
 
-    <app-button
-      label="Our Works"
-      backgroundColor="#000000"
-      [textColor]="isOurWorksActive ? '#FF00D9' : 'white'"
-      [isActive]="isOurWorksActive"
-      (click)="toggleOurWorks()"
-    ></app-button>
+    <div class="button2">
+      <app-button
+        label="Our Works"
+        backgroundColor="#000000"
+        [textColor]="isOurWorksActive ? '#FF00D9' : 'white'"
+        [isActive]="isOurWorksActive"
+        (click)="toggleOurWorks()"
+      ></app-button>
+    </div>
 
     <app-button
       label="Join Us"
