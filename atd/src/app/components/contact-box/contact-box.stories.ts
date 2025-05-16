@@ -17,10 +17,6 @@ type Story = StoryObj<ContactBoxComponent>;
 
 export const Primary: Story = {
   args: {
-    email: '',
-    title: 'Get In Touch',
-    description: 'Connect with us to learn more about our events',
-    description2: 'and news!',
     onSubmit: action('email submitted'),
   },
 };
