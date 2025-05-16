@@ -1,4 +1,4 @@
-@use '../../../colors' as colors;
+@use "../../../colors" as colors;
 
 .toggle-switch {
   position: relative;
@@ -7,7 +7,7 @@
   border-radius: 10px;
   overflow: hidden;
   padding: 0px;
-  height: 40px;
+  height: 65px;
   aspect-ratio: 8/1;
 }
 
@@ -18,7 +18,7 @@
   outline: none;
   z-index: 1;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 30px;
   color: #000;
   cursor: pointer;
   transition: color 0.3s;
