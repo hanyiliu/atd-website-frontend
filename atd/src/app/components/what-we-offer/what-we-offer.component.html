@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header-container">
+    <div class="title-box">
+      <div class="title">What We Offer</div>
+      <img src="/images/offer-star.svg" alt="star" />
+    </div>
+    <div class="toggle-wrapper">
+      <app-toggle-button
+        (selectionChanged)="updateSelection($event)"
+      ></app-toggle-button>
+    </div>
+  </div>
+  <div class="offer-box">
+    <div *ngIf="selected === 'clients'" class="offer-grid">
+      <div *ngFor="let card of clientOffers">
+        <app-offer-card [title]="card.title" [description]="card.description" />
+      </div>
+    </div>
+
+    <div *ngIf="selected === 'students'" class="offer-grid">
+      <div *ngFor="let card of studentOffers">
+        <app-offer-card [title]="card.title" [description]="card.description" />
+      </div>
+    </div>
+  </div>
+</div>
