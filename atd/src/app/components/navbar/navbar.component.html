@@ -1,1 +1,39 @@
-<p>navbar works!</p>
+<div class="navbar">
+  <div class="home">
+    <button class="logo-button" (click)="navigateTo('/home')">
+      <img src="images/whiteLogo.svg" alt="Logo" width="61" height="40" />
+    </button>
+    <span class="atd-text">ATD</span>
+  </div>
+
+  <div class="route-buttons">
+    <div class="button1">
+      <app-button
+        label="About Us"
+        backgroundColor="#000000"
+        [textColor]="isAboutUsActive ? '#FF00D9' : 'white'"
+        [isActive]="isAboutUsActive"
+        (click)="toggleAboutUs()"
+      ></app-button>
+    </div>
+
+    <div class="button2">
+      <app-button
+        label="Our Works"
+        backgroundColor="#000000"
+        [textColor]="isOurWorksActive ? '#FF00D9' : 'white'"
+        [isActive]="isOurWorksActive"
+        (click)="toggleOurWorks()"
+      ></app-button>
+    </div>
+
+    <app-button
+      label="Join Us"
+      [backgroundColor]="isJoinUsActive ? '#FF00D9' : '#FFE3FB'"
+      [textColor]="isJoinUsActive ? 'white' : '#FF00D9'"
+      [isActive]="isJoinUsActive"
+      borderColor="#FF00D9"
+      (click)="toggleJoinUs()"
+    ></app-button>
+  </div>
+</div>
