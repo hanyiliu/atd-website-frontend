@@ -16,10 +16,17 @@ export class ButtonComponent {
   @Input() textColor: string = '';
   @Input() route: string = ''; //routes page to about section of website
   @Input() onClick: () => void = () => {}; //dont fully understand this line
+  @Input() isActive: boolean = false;
 
-  constructor(private router: Router) {} //Why do we need this?
+  toggleActive() {
+    if (this.isActive !== undefined) {
+      this.isActive = !this.isActive;
+    }
+  }
+}
+/* constructor(private router: Router) {} //Why do we need this?
 
   navigate() {
     this.router.navigate([this.route]);
   }
-}
+} */

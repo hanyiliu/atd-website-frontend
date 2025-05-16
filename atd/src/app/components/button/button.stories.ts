@@ -39,5 +39,6 @@ export const JoinUs: Story = {
     backgroundColor: '#FFE3FB',
     borderColor: '#FF00D9',
     textColor: '#FF00D9',
+    onClick: action('Button clicked'),
   },
 };
