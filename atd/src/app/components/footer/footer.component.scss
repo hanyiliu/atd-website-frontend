@@ -1,5 +1,6 @@
+@use "src/colors" as *;
 .footer {
-  background-color: black;
+  background-color: $brand-color-black;
   width: 1514px;
   padding: 1rem 6rem;
 }
@@ -28,6 +29,7 @@
 .link {
   font-size: 16px;
   color: white;
+  cursor: pointer;
 }
 .contact-section {
   flex: 1;
@@ -44,7 +46,7 @@
   width: 10rem;
   height: auto;
   padding: 1rem 5rem;
-  background-color: #d9d9d9;
+  background-color: $contact-button-grey;
   border-radius: 12px;
   font-weight: bold;
   text-align: center;
