@@ -1,0 +1,82 @@
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 1303px;
+  height: 549px;
+  margin: auto;
+  background-color: #000000;
+}
+
+.title-box {
+  display: flex;
+  color: #ffffff;
+  font-size: 30px;
+  gap: 20px;
+  padding: 20px 0 0 0;
+}
+.left-dot {
+  padding: 2x 0 0 0;
+}
+.right-dot {
+  padding: 2px 0 0 0;
+}
+
+.description-box {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 15px 0 30px 0;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //gap: 5px;
+}
+
+input[type="email"] {
+  width: 440px;
+  height: 43px;
+  padding: 0 0 0 12px;
+  margin: 0;
+  border: 1px solid #ffffff;
+  //border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  width: 39px;
+  height: 45px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  background-color: #000000;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust gap as needed */
+}
+
+.logo-box,
+.title-box,
+.description-box,
+.left-dot,
+.right-dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
