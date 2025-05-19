@@ -11,13 +11,15 @@
     </div>
   </div>
   <div class="offer-box">
-    <div *ngIf="selected === 'clients'" class="offer-grid">
+    <div class="offer-grid client-grid" [class.active]="selected === 'clients'">
       <div *ngFor="let card of clientOffers">
         <app-offer-card [title]="card.title" [description]="card.description" />
       </div>
     </div>
-
-    <div *ngIf="selected === 'students'" class="offer-grid">
+    <div
+      class="offer-grid student-grid"
+      [class.active]="selected === 'students'"
+    >
       <div *ngFor="let card of studentOffers">
         <app-offer-card [title]="card.title" [description]="card.description" />
       </div>

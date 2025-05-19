@@ -27,12 +27,11 @@
 .offer-box {
   background-image: url("/images/what-we-do-background.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   width: 100%;
   aspect-ratio: 1303/652;
-  opacity: 1;
-  transition: opacity 0.4s ease-in-out;
+  position: relative;
 }
 
 .offer-grid {
@@ -41,4 +40,14 @@
   justify-content: space-between;
   row-gap: 8rem;
   padding: 7rem 12rem;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.offer-grid.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }
