@@ -1,29 +1,56 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from '@storybook/test';
+import { moduleMetadata } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
 
 import { NavbarComponent } from './navbar.component';
+import { ButtonComponent } from '../button/button.component';
+import { CommonModule } from '@angular/common';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<NavbarComponent> = {
   title: 'Components/Navbar',
   component: NavbarComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, ButtonComponent],
+    }),
+  ],
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj<NavbarComponent>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Navbar',
+    isAboutUsActive: false,
+    isOurWorksActive: false,
+  },
+  argTypes: {
+    isAboutUsActive: { control: 'boolean' },
+    isOurWorksActive: { control: 'boolean' },
+  },
+};
+
+export const AboutUsActive: Story = {
+  args: {
+    isAboutUsActive: true,
+    isOurWorksActive: false,
+    isJoinUsActive: false,
+  },
+};
+
+export const OurWorksActive: Story = {
+  args: {
+    isAboutUsActive: false,
+    isOurWorksActive: true,
+    isJoinUsActive: false,
+  },
+};
+
+export const JoinUsActive: Story = {
+  args: {
+    isAboutUsActive: false,
+    isOurWorksActive: false,
+    isJoinUsActive: true,
   },
 };

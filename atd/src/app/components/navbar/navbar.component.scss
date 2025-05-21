@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //gap: 20px; /* Adjusted for better spacing */
+  width: 1512px; //change to 1513px for later
+  height: 131px;
+  background-color: #000000;
+}
+.home {
+  display: flex;
+  align-items: center;
+}
+
+.logo-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 75px;
+  margin-right: 0;
+}
+.atd-text {
+  margin-left: -8px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: normal;
+}
+.route-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* Uniform gap between all buttons */
+  align-items: center;
+  margin-left: auto;
+  padding-right: 75px; /* Distance from the right edge */
+}
+.button1 {
+  margin-right: 5px;
+}
+.button2 {
+  margin-right: 20px;
+}

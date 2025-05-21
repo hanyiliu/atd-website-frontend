@@ -1,0 +1,14 @@
+@use '../../../colors' as colors;
+
+
+.faq-title {
+  color: colors.$brand-color-primary;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+app-faq-item {
+  display: block;
+  margin-bottom: 20px;
+}
