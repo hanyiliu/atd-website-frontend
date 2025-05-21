@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="header">
+    <div class="image"><img [src]="image" alt="Image" /></div>
+    <div class="title">{{ title }}</div>
+  </div>
+  <div *ngFor="let detail of details" class="details-wrapper">
+    <div class="detail">{{ detail }}</div>
+  </div>
+</div>
