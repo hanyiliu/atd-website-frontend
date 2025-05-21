@@ -35,9 +35,9 @@
 }
 
 .offer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: start;
   row-gap: 8rem;
   padding: 7rem 12rem;
   position: absolute;
