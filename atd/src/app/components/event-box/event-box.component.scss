@@ -1,8 +1,9 @@
+@use "src/styles/colors" as *;
 .event-box-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: $brand-color-white;
   padding: 5% 5%;
   border: 2px solid transparent;
   border-radius: 10px;
@@ -17,7 +18,7 @@
 }
 
 .event-box-container.next-event {
-  border-color: #ff00d9;
+  border-color: $brand-color-primary;
 }
 .top-row {
   display: flex;
@@ -27,7 +28,7 @@
 .date-box {
   display: flex;
   flex-direction: column;
-  color: #ff00d9;
+  color: $brand-color-primary;
   font-weight: bold;
   .day {
     font-size: 40px;

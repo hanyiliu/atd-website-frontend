@@ -1,5 +1,6 @@
+@use "src/styles/colors" as *;
 .container {
-  background-color: #f4f4f4;
+  background-color: $event-card-white;
   width: 1510px;
   height: auto;
 }

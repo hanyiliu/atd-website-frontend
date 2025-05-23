@@ -1,31 +1,30 @@
+@use "src/styles/colors" as *;
 .hero-section {
-  /* Adjusted height and width for better scaling */
   height: 605px;
   width: 1516px;
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: flex-start;
   align-items: center;
-  color: white; // text color
-  background-color: black; /* Set solid black background */
+  color: $brand-color-white;
+  background-color: $brand-color-black;
   position: relative;
-  padding-left: 50px; /* Add left padding to give space */
+  padding-left: 50px;
 
-  /* Positioning and resizing the SVG file */
   .hero-image {
     position: absolute;
-    bottom: -25px; /* Align with the bottom of the hero section */
-    left: 0; /* Align with the left side of the hero section */
-    width: 100%; /* Make the image take the full width of the background */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1; /* Image above background but behind text */
+    bottom: -25px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
   }
 
   .hero-content {
-    position: relative; // this code refers to the text and button
+    position: relative;
     z-index: 2;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     max-width: 80%;
-    padding: 50px 20px 50px 150px; /* Increase padding to move text (clockwise) */
+    padding: 50px 20px 50px 150px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 32px;
 
@@ -40,32 +39,31 @@
     }
 
     p {
-      // Pre-title text styling
-      font-size: 1.5rem; /* Make the pre-title larger */
+      font-size: 1.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.4;
     }
 
     .pre-title {
-      margin-bottom: 0rem; /* Remove spacing between pretitle and title */
-      margin-top: 4rem; /* Push the pretitle farther down */
+      margin-bottom: 0rem;
+      margin-top: 4rem;
       font-size: 1.8rem;
-      font-weight: normal; /* Remove bold font */
+      font-weight: normal;
     }
 
     button {
-      margin-top: 2rem; //space between button and title
+      margin-top: 2rem;
       padding: 8px 16px;
       font-size: 1rem;
-      background-color: black; /* Set black background */
-      color: white;
-      border: 1px solid white; /* Add white border */
+      background-color: black;
+      color: $brand-color-white;
+      border: 1px solid $brand-color-white;
       border-radius: 32px;
       cursor: pointer;
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #333; /* Darker black on hover */
+        background-color: $hover-black; /* Darker black on hover */
       }
     }
   }
@@ -78,7 +76,7 @@
         font-size: 1.8rem;
       }
       p {
-        font-size: 1.2rem; /* Adjust pre-title for mobile */
+        font-size: 1.2rem;
       }
       button {
         font-size: 0.9rem;
@@ -87,7 +85,7 @@
     }
 
     .hero-image {
-      max-width: 80%; /* Increase size for smaller screens */
+      max-width: 80%;
     }
   }
 }
