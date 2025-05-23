@@ -1,0 +1,17 @@
+.info-box {
+  background-image: url("/images/what-we-do-background.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  width: 1303px;
+  aspect-ratio: 1303/652;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}

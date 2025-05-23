@@ -3,7 +3,13 @@
     <div class="image"><img [src]="image" alt="Image" /></div>
     <div class="title">{{ title }}</div>
   </div>
-  <div *ngFor="let detail of details" class="details-wrapper">
+  <div
+    *ngFor="let detail of details"
+    [ngClass]="{
+      'details-wrapper': true,
+      'single-detail': details.length === 1
+    }"
+  >
     <div class="detail">{{ detail }}</div>
   </div>
 </div>

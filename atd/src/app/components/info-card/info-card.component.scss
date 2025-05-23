@@ -7,6 +7,7 @@
   padding: 2rem;
   width: fit-content;
   height: 415px;
+  aspect-ratio: 383/415;
   box-sizing: border-box;
 }
 .header {
@@ -26,7 +27,7 @@
   padding: 1rem;
 }
 .details-wrapper {
-  margin-left: 1.65rem;
+  margin-left: 1.6rem;
   margin-bottom: 24px;
 }
 
@@ -37,4 +38,9 @@
   padding-left: 1rem;
   display: flex;
   height: 64px;
+  box-sizing: border-box;
+}
+
+.single-detail .detail {
+  height: 104px;
 }
