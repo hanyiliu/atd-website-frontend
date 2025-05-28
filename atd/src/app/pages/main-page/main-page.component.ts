@@ -80,7 +80,7 @@ export class MainPageComponent {
     },
     {
       question: "What services and opportunities does ATD provide?",
-      answer: "For clients, ATD provides digital branding, web design, marketing, media production and social media services. ATD is deeply committed to helping local businesses by offering state-of-the-art design and branding solutions at no cost.\\n\\nFor students, ATD provides an inclusive community of passionate designers who are seeking professional development through student-client experience, community and networking in a safe, inclusive environment."
+      answer: "For clients, ATD provides digital branding, web design, marketing, media production and social media services. ATD is deeply committed to helping local businesses by offering state-of-the-art design and branding solutions at no cost.\n\nFor students, ATD provides an inclusive community of passionate designers who are seeking professional development through student-client experience, community and networking in a safe, inclusive environment."
     },
     {
       question: "How to apply to ATD?",
