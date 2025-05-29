@@ -10,8 +10,7 @@
     0 23px 14px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.09),
     0 3px 6px 0 rgba(0, 0, 0, 0.1);
 
-  //need to look into sizing to screen, maybe aspect ratio
-  width: 428.93px;
+  width: 550px; 
   aspect-ratio: 10 / 7;
   box-sizing: border-box;
 }
@@ -30,10 +29,10 @@
   color: #ff00d9;
   font-weight: bold;
   .day {
-    font-size: 40px;
+    font-size: 60px;
   }
   .month {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
@@ -50,7 +49,7 @@
     .location {
       height: 30px;
       font-family: "Source Sans Pro", sans-serif;
-      font-size: 20px;
+      font-size: 25px;
       margin: 0;
     }
   }

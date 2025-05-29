@@ -10,7 +10,7 @@
 .container {
   display: flex;
   padding: 3rem 0;
-  min-height: 191px;
+  min-height: 250px; // Increased from 191px
   margin-top: 1rem;
 }
 .title {
@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 .link {
-  font-size: 16px;
+  font-size: 24px;
   color: white;
   cursor: pointer;
 }
@@ -39,7 +39,7 @@
   justify-content: space-between;
 }
 .contact-des {
-  font-size: 16;
+  font-size: 24px;
   color: white;
 }
 .contact-button {
@@ -61,7 +61,7 @@
   margin: 1rem 0;
 }
 .copyright {
-  font-size: 12px;
+  font-size: 16px;
   color: rgb(255, 255, 255, 80%);
 }
 .social-icons {
@@ -77,6 +77,6 @@
 
 .credit {
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   opacity: 0.6;
 }

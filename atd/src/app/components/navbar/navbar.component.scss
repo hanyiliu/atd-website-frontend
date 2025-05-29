@@ -5,6 +5,9 @@
   width: 100%;
   height: 131px;
   background-color: #000000;
+  position: sticky; // Added for sticky behavior
+  top: 0; // Stick to the top
+  z-index: 1000; // Ensure it's above other content
 }
 .home {
   display: flex;
