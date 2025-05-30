@@ -2,14 +2,19 @@
 
 .values-wrapper {
   position: relative;
-  display: inline-block;
+  display: block; // Changed from inline-block to block
   border-radius: 20px;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  width: 100%; // Make it take full width of parent
+  aspect-ratio: 2.2; // Maintain aspect ratio based on the background image
 }
 
 .background-image {
   display: block;
+  width: 100%; // Make background image responsive
+  height: 100%; // Fill the container
+  object-fit: cover; // Maintain aspect ratio while covering the container
 }
 
 .values-container {
@@ -25,7 +30,7 @@
 
 .text-content {
     font-weight: bold;
-    font-size: 64px;
+    font-size: 86px;
     padding-left: 80px;
 }
 
