@@ -1,9 +1,11 @@
-@use '../../../colors' as colors;
-
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 
 .faq-title {
-  color: colors.$brand-color-primary;
-  font-size: 2rem;
+  color: $brand-color-primary;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
   margin-bottom: 40px;
   text-align: center;
 }

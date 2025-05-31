@@ -1,3 +1,5 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .navbar {
   display: flex;
   flex-direction: row;
@@ -5,7 +7,7 @@
   //gap: 20px; /* Adjusted for better spacing */
   width: 1512px; //change to 1513px for later
   height: 131px;
-  background-color: #000000;
+  background-color: $brand-color-black;
 }
 .home {
   display: flex;
@@ -21,9 +23,10 @@
 }
 .atd-text {
   margin-left: -8px;
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: normal;
+  color: $brand-color-white;
+  font-size: $font-size-header-xs;
+  font-weight: $font-weight-regular;
+  font-family: $font-primary;
 }
 .route-buttons {
   display: flex;

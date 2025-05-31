@@ -1,8 +1,11 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
+
 .event-box-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: $brand-color-white;
   padding: 5% 5%;
   border: 2px solid transparent;
   border-radius: 10px;
@@ -17,7 +20,7 @@
 }
 
 .event-box-container.next-event {
-  border-color: #ff00d9;
+  border-color: $brand-color-primary;
 }
 .top-row {
   display: flex;
@@ -27,13 +30,14 @@
 .date-box {
   display: flex;
   flex-direction: column;
-  color: #ff00d9;
-  font-weight: bold;
+  color: $brand-color-primary;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
   .day {
-    font-size: 40px;
+    font-size: $font-size-lg;
   }
   .month {
-    font-size: 30px;
+    font-size: $font-size-base;
   }
 }
 
@@ -49,8 +53,9 @@
     .title-time,
     .location {
       height: 30px;
-      font-family: "Source Sans Pro", sans-serif;
-      font-size: 20px;
+      font-family: $font-secondary;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-regular;
       margin: 0;
     }
   }

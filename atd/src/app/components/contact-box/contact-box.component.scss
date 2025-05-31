@@ -1,21 +1,24 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .contact-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 20px;
   width: 1303px;
   height: 549px;
   margin: auto;
-  background-color: #000000;
+  background-color: $brand-color-black;
 }
 
 .title-box {
   display: flex;
-  color: #ffffff;
-  font-size: 30px;
+  color: $brand-color-white;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
   gap: 20px;
   padding: 20px 0 0 0;
 }
@@ -29,8 +32,11 @@
 .description-box {
   display: flex;
   flex-direction: column;
-  color: #ffffff;
+  color: $brand-color-white;
   padding: 15px 0 30px 0;
+  font-family: $font-secondary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
 }
 
 .input-wrapper {
@@ -45,9 +51,10 @@ input[type="email"] {
   height: 43px;
   padding: 0 0 0 12px;
   margin: 0;
-  border: 1px solid #ffffff;
-  //border-radius: 4px;
-  font-size: 16px;
+  border: 1px solid $brand-color-white;
+  font-family: $font-secondary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
 }
 
 button {
@@ -57,8 +64,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
-  background-color: #000000;
+  border: 1px solid $brand-color-white;
+  background-color: $brand-color-black;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
 }
@@ -68,7 +75,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Adjust gap as needed */
+  gap: 10px;
 }
 
 .logo-box,
