@@ -1,10 +1,10 @@
-@use '../../../colors' as colors;
-
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .faq-item {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  border-bottom: 1px solid colors.$brand-color-primary;
+  border-bottom: 1px solid $brand-color-primary;
   max-width: 100%; // Ensure item doesn't exceed container width
 }
 
@@ -16,8 +16,9 @@
 }
 
 .faq-title {
-  font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.125rem); // Responsive font size with max limit
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  font-size: clamp($font-size-xs, 2.5vw, 1.125rem); // Responsive font size with max limit
   max-width: calc(100% - 60px); // Leave space for toggle icon
 }
 
@@ -25,11 +26,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(36px, 6vw, 48px); // Responsive icon size with max limit
+  font-size: clamp($font-size-xl, 6vw, 48px); // Responsive icon size with max limit
   transform: rotate(0deg);
   transition: transform 0.5s ease;
-  color: colors.$brand-color-primary;
-  flex-shrink: 0; // Prevent icon from shrinking
+  color: $brand-color-primary;
+  flex-shrink: 0;
 }
 
 .toggle-icon.expanded {
@@ -46,11 +47,11 @@
 
   p {
     white-space: pre-line; // Respect newline characters
-    margin: 0; // Remove default paragraph margins
+    margin: 0;
     word-wrap: break-word; // Ensure long words wrap properly
   }
 }
 
 .faq-body.expanded {
-  max-height: 600px; // Increased max height for longer content
+  max-height: 600px;
 }

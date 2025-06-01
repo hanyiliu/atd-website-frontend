@@ -1,4 +1,5 @@
-@use "colors" as *;
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 
 .footer {
   background-color: $brand-color-black;
@@ -17,8 +18,10 @@
   flex: 1;
 }
 .header {
-  font-size: 36px;
-  color: white;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-header-sm;
+  color: $brand-color-white;
 }
 .link-list {
   flex: 2;
@@ -27,8 +30,10 @@
   justify-content: space-between;
 }
 .link {
-  font-size: 24px;
-  color: white;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  color: $brand-color-white;
   cursor: pointer;
 }
 .contact-section {
@@ -39,8 +44,10 @@
   justify-content: space-between;
 }
 .contact-des {
-  font-size: 24px;
-  color: white;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  color: $brand-color-white;
 }
 .contact-button {
   width: 10rem;
@@ -48,20 +55,21 @@
   padding: 1rem 5rem;
   background-color: $contact-button-grey;
   border-radius: 12px;
-  font-weight: bold;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
   text-align: center;
-  font-size: 28px;
+  font-size: $font-size-base-sm;
   cursor: pointer;
 }
 .footer-bottom {
-  border-top: 1px solid white;
+  border-top: 1px solid $brand-color-white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
 }
 .copyright {
-  font-size: 16px;
+  font-size: $font-size-xxs;
   color: rgb(255, 255, 255, 80%);
 }
 .social-icons {
@@ -76,7 +84,7 @@
 }
 
 .credit {
-  color: white;
-  font-size: 16px;
+  color: $brand-color-white;
+  font-size: $font-size-xxs;
   opacity: 0.6;
 }

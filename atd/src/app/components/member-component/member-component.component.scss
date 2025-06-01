@@ -1,0 +1,27 @@
+@use "src/styles/fonts" as *;
+@use "src/styles/colors" as *;
+
+.member-component-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  //padding-top: 100px;
+}
+
+.picture {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+}
+
+.name {
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+}

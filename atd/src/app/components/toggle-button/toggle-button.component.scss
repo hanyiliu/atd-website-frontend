@@ -1,9 +1,10 @@
-@use "../../../colors" as colors;
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 
 .toggle-switch {
   position: relative;
   display: flex;
-  border: 1px solid #000;
+  border: 1px solid $brand-color-black;
   border-radius: 10px;
   overflow: hidden;
   padding: 0px;
@@ -17,15 +18,16 @@
   border: none;
   outline: none;
   z-index: 1;
-  font-weight: bold;
-  font-size: 30px;
-  color: #000;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  color: $brand-color-black;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .toggle-switch button.selected {
-  color: #fff;
+  color: $brand-color-white;
 }
 
 .highlight {
@@ -34,7 +36,7 @@
   left: 5px;
   width: calc(50% - 10px);
   height: calc(100% - 10px);
-  background-color: colors.$brand-color-primary;
+  background-color: $brand-color-primary;
   transition: left 0.3s;
   border-radius: 10px;
 }

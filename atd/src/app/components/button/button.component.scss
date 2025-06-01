@@ -1,3 +1,4 @@
+@use "src/styles/fonts" as *;
 .button-wrapper {
   display: inline-block;
 }
@@ -7,7 +8,9 @@
   border: 2px solid transparent; // Thicker default transparent border
   cursor: pointer;
   border-radius: 50em; // Fully circular border (adapts to button height)
-  font-size: 1.5rem; // Responsive font size
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  font-family: $font-primary;
 
   transition: all 0.3s ease; // Smooth transitions for hover effects
   outline: none; // Remove default focus outline

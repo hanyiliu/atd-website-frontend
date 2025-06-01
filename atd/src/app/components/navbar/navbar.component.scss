@@ -1,10 +1,12 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   height: 131px;
-  background-color: #000000;
+  background-color: $brand-color-black;
   position: sticky; // Added for sticky behavior
   top: 0; // Stick to the top
   z-index: 1000; // Ensure it's above other content
@@ -23,9 +25,10 @@
 }
 .atd-text {
   margin-left: -8px;
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: normal;
+  color: $brand-color-white;
+  font-size: $font-size-header-xs;
+  font-weight: $font-weight-regular;
+  font-family: $font-primary;
 }
 .route-buttons {
   display: flex;

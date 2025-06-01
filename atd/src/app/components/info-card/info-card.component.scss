@@ -1,5 +1,7 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .container {
-  background-color: #f3f3f3;
+  background-color: $info-card-white;
   box-shadow: 64px 182px 54px 0 rgba(0, 0, 0, 0),
     41px 116px 49px 0 rgba(0, 0, 0, 0.01), 23px 65px 42px rgba(0, 0, 0, 0.05),
     10px 29px 31px 0 rgba(0, 0, 0, 0.09), 3px 7px 17px 0 rgba(0, 0, 0, 0.1);
@@ -13,8 +15,9 @@
 .header {
   display: flex;
   flex-direction: row;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  font-family: $font-primary;
   height: max-content;
   margin-bottom: 1rem;
 }
@@ -32,9 +35,11 @@
 }
 
 .detail {
-  font-size: 16px;
+  font-size: $font-size-xs;
+  font-family: $font-secondary;
+  font-weight: $font-weight-regular;
   width: 270px;
-  border-left: 2px solid #ff00d9;
+  border-left: 2px solid $brand-color-primary;
   padding-left: 1rem;
   display: flex;
   height: 64px;

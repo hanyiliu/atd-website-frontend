@@ -1,12 +1,15 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .container {
-  background-color: #f4f4f4;
-  width: 100%; // Changed from 1510px to 100% to stretch horizontally
+  background-color: $event-card-white;
+  width: 100%;
   height: auto;
 }
 
 .header {
-  font-size: 30px;
-  font-weight: bold;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
   padding-bottom: 1rem;
   width: 100%; // Take full width of the inner container
   text-align: left; // Ensure left alignment

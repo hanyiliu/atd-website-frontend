@@ -1,5 +1,5 @@
-@use '../../../colors' as colors;
-
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 .values-wrapper {
   position: relative;
   display: block; // Changed from inline-block to block
@@ -29,24 +29,29 @@
 }
 
 .text-content {
-    font-weight: bold;
-    font-size: 86px;
-    padding-left: 80px;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-header-base;
+  padding-left: 80px;
 }
 
 .line-one {
-  color: colors.$brand-color-white;
+  color: $brand-color-white;
 }
 
 .line-two {
-  color: colors.$brand-color-primary;
+  color: $brand-color-primary;
   overflow: hidden;
   height: 1em;
 
   .rotating-words {
     display: inline-block;
     animation: slide-up 9s ease-in-out infinite;
-    background: linear-gradient(to top, colors.$brand-color-primary, colors.$brand-color-primary-light);
+    background: linear-gradient(
+      to top,
+      $brand-color-primary,
+      $brand-color-primary-light
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -58,15 +63,26 @@
 }
 
 @keyframes slide-up {
-  0%, 25%    { transform: translateY(0); }
-  33.333%, 58.333%  { transform: translateY(-33.33%); }
-  66.667%, 91.667% { transform: translateY(-66.66%); }
-  100%   { transform: translateY(0); }
+  0%,
+  25% {
+    transform: translateY(0);
+  }
+  33.333%,
+  58.333% {
+    transform: translateY(-33.33%);
+  }
+  66.667%,
+  91.667% {
+    transform: translateY(-66.66%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .logo {
-    padding-right: 120px;
-    scale: 100%;
-    filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
-    -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, .6));
+  padding-right: 120px;
+  scale: 100%;
+  filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
+  -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
 }

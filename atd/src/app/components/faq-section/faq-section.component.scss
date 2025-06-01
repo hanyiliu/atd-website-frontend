@@ -1,4 +1,5 @@
-@use '../../../colors' as colors;
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
 
 .faq-container {
   position: relative;
@@ -33,8 +34,10 @@
 }
 
 .faq-title {
-  color: colors.$brand-color-primary;
-  font-size: clamp(0.875rem, 2vw, 3rem); // Responsive font size with max limit
+  color: $brand-color-primary;
+  font-family: $font-primary;
+  font-size: clamp($font-size-base, 2vw, 3rem); // Responsive font size with max limit
+  font-weight: $font-weight-bold;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -46,5 +49,5 @@
 app-faq-item {
   display: block;
   margin-bottom: 20px;
-  font-size: clamp(0.875rem, 4vw, 6rem); // Responsive font size with max limit
+  font-size: clamp($font-size-xs, 4vw, 6rem); // Responsive font size with max limit
 }
