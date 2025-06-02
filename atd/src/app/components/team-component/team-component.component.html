@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="team-wrapper">
+    <div class="header">
+      <div class="header-logo">
+        <img
+          src="images/person.svg"
+          alt="Header Logo"
+          width="27"
+          height="35.6"
+        />/div>
+        <div class="intro-title">Meet The Team</div>
+      </div>
+      <div class="VP">
+        <div class="VP-title">VP Board</div>
+        <div class="first-row">
+          <app-member-component
+            *ngFor="let member of vpMembers.slice(0, 4)"
+            [member]="member"
+          ></app-member-component>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
