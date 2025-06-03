@@ -1,0 +1,56 @@
+@use "src/styles/fonts" as *;
+@use "src/styles/colors" as *;
+
+.our-works-container {
+  width: 1083px;
+  height: 536px;
+}
+
+.text {
+  position: absolute;
+  top: -36px; // slightly above the images
+  left: 0; // adjust as needed
+  z-index: 2;
+  font-family: $font-primary;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bolder;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: black;
+  //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.background-pictures {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 17px;
+}
+
+.top img {
+  vertical-align: top;
+}
+
+.bottom img {
+  vertical-align: bottom;
+}
+
+.image4 {
+  margin-top: -65px; // adjust as needed to move image4 upward
+}
