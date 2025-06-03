@@ -1,0 +1,36 @@
+@use "src/styles/colors" as *;
+@use "src/styles/fonts" as *;
+
+.marquee-container {
+  width: 1514px;
+  height: 64px;
+  overflow: hidden;
+  background-color: $brand-color-black;
+  color: $brand-color-white;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  min-width: 200%;
+  animation: scroll-left 60s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
