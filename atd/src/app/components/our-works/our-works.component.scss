@@ -9,7 +9,7 @@
 .text {
   position: absolute;
   top: -36px; // slightly above the images
-  left: 0; // adjust as needed
+  left: -12px; // adjust as needed
   z-index: 2;
   font-family: $font-primary;
   font-size: $font-size-xxl;
