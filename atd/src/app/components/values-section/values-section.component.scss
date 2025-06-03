@@ -20,20 +20,20 @@
 .writings {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   font-family: $font-primary;
   font-size: $font-size-sm;
   font-weight: $font-weight-regular;
+  width: 318px;
+  height: 524.2px;
   flex: 1;
+  border: 2px solid red;
+  padding-top: 73.8px;
 }
 
 .icons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 524.2px;
-  padding-top: 73.8px;
-  margin-right: 25px;
 }
 
 .icon1 svg {
@@ -72,34 +72,38 @@
     1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
+.icon1,
+.icon2,
+.icon3,
+.icon4,
+.icon5,
+.icon6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46.88px;
+  width: 46.35px;
+  overflow: hidden;
+  position: relative;
+  //border: 2px solid blue;
+}
+
 .words {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  height: 524.2px;
-  margin-bottom: 25px;
+  justify-content: space-between;
+  width: 381px;
 }
 
-.words2 {
-  margin-top: 70px;
-}
-
-.words3 {
-  margin-top: 70px;
-}
-
-.words4 {
-  margin-top: 70px;
-}
-
-.words5 {
-  margin-top: 70px;
-}
-
+.words1,
+.words2,
+.words3,
+.words4,
+.words5,
 .words6 {
-  margin-top: 70px;
-}
-
-.words > div {
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 46.88px;
+  width: 250px;
 }
