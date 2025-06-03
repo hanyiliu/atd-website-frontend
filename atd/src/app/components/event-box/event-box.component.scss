@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 
 .event-box-container {
   display: flex;
@@ -13,7 +13,7 @@
     0 23px 14px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.09),
     0 3px 6px 0 rgba(0, 0, 0, 0.1);
 
-  width: 550px; 
+  width: 550px;
   aspect-ratio: 10 / 7;
   box-sizing: border-box;
 }

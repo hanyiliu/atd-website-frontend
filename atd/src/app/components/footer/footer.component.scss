@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 
 .footer {
   background-color: $brand-color-black;

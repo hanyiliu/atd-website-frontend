@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 .faq-item {
   display: flex;
   flex-direction: column;
@@ -18,7 +18,11 @@
 .faq-title {
   font-family: $font-secondary;
   font-weight: $font-weight-bold;
-  font-size: clamp($font-size-xs, 2.5vw, 1.125rem); // Responsive font size with max limit
+  font-size: clamp(
+    $font-size-xs,
+    2.5vw,
+    1.125rem
+  ); // Responsive font size with max limit
   max-width: calc(100% - 60px); // Leave space for toggle icon
 }
 
@@ -26,7 +30,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp($font-size-xl, 6vw, 48px); // Responsive icon size with max limit
+  font-size: clamp(
+    $font-size-xl,
+    6vw,
+    48px
+  ); // Responsive icon size with max limit
   transform: rotate(0deg);
   transition: transform 0.5s ease;
   color: $brand-color-primary;

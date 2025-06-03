@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 .container {
   background-color: $event-card-white;
   width: 100%;
@@ -36,4 +36,3 @@
   gap: 1rem;
   width: fit-content;
 }
-

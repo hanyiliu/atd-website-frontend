@@ -1,4 +1,4 @@
-@use "src/styles/fonts" as *;
+@use "fonts" as *;
 .button-wrapper {
   display: inline-block;
 }
@@ -14,18 +14,18 @@
 
   transition: all 0.3s ease; // Smooth transitions for hover effects
   outline: none; // Remove default focus outline
-  
+
   &:hover {
     transform: translateY(-4px); // Subtle hover effect
     opacity: 0.9; // Slight transparency on hover
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // Add shadow on hover
   }
-  
+
   &:active {
     transform: translateY(0); // Reset transform on click
     opacity: 1; // Full opacity on click
   }
-  
+
   &:focus {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); // Focus ring for accessibility
   }

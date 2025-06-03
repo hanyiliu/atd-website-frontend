@@ -1,4 +1,4 @@
-@use "src/styles/colors" as *;
+@use "colors" as *;
 .hero-section {
   /* Flexible height based on content with minimum height */
   min-height: 400px; /* Minimum height for mobile/small screens */
@@ -29,7 +29,7 @@
     padding: 50px 20px 50px 150px; /* Increase padding to move text (clockwise) */
     position: relative;
     z-index: 3; /* Ensure content is above background */
-    
+
     h1,
     p {
       margin: 0.5rem 0;
