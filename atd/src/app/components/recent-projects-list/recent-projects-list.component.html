@@ -1,0 +1,17 @@
+<div class="container">
+     <div class="header-container">
+         <div class="header-title">Recent Projects</div>
+     </div>
+     <div class="projects-list">
+         <div class="project" *ngFor="let project of projects">
+             <img
+                 [src]="project.image"
+                 alt="{{ project.alt }}"
+                 class="project-image"
+             />
+         </div>
+         <div class="no-projects" *ngIf="projects.length === 0">
+             No Recent Projects
+         </div>
+     </div>
+ </div>
