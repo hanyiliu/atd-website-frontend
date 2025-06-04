@@ -1,7 +1,7 @@
 @use "src/styles/colors" as *;
 @use "src/styles/fonts" as *;
 .container {
-  background-color: $event-card-white;
+  background-color: $brand-color-gray-3;
   width: 1510px;
   height: auto;
 }
