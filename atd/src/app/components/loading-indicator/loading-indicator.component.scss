@@ -1,0 +1,25 @@
+@use "src/styles/colors" as *;
+
+.container {
+    background-color: $brand-color-gray-4;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.loading-icon {
+    padding: 50px;
+    width: 120px;
+    aspect-ratio: 1;
+}
+
+.loading-right {
+
+}
+
+.loading-left {
+    
+}
