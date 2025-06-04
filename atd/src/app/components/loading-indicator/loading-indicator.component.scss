@@ -1,25 +1,75 @@
 @use "src/styles/colors" as *;
 
+// Main loading indicator values
+$container-size: 400px;
+$animation-duration: 7s;
+
 .container {
     background-color: $brand-color-gray-4;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    height: fit-content;
-    aspect-ratio: 1;
+    width: $container-size;
+    height: $container-size;
     border-radius: 50%;
+    position: relative;
+    overflow: hidden;
 }
 
 .loading-icon {
-    padding: 50px;
-    width: 120px;
-    aspect-ratio: 1;
+    width: 70%;
+    height: 70%;
+    position: relative;
+    z-index: 3;
+    animation: convertToWhite $animation-duration ease-out forwards; // Animation to convert from black to white
+}
+
+.loading-right,
+.loading-left {
+    position: absolute;
+    width: $container-size * 2.5;
+    height: $container-size * 2.5;
+    top: 100%; 
+    animation-fill-mode: forwards; // Animation stops at the last frame
+    animation-duration: $animation-duration;
+    animation-timing-function: ease-out;
 }
 
 .loading-right {
-
+    left: calc(50% - (#{$container-size} * 2.5 / 2));
+    z-index: 2;
+    animation-name: moveUpRight; // Animation to move the right loading icon up and to the right
 }
 
 .loading-left {
-    
+    left: calc(50% - (#{$container-size} * 2.5 / 2));
+    z-index: 1;
+    animation-name: moveUpLeft;  // Animation to move the left loading icon up and to the left
+}
+
+@keyframes convertToWhite {
+    0% {
+        filter: invert(100%);
+    }
+    100% {
+        filter: invert(0%);
+    }
+}
+
+@keyframes moveUpRight {
+    0% {
+        transform: translate(-25%, 0%); // Move left by quarter of its width, down by half its height
+    }
+    100% {
+        transform: translate(25%, -50%); // Move right by quarter of its width, up by half its height
+    }
+}
+
+@keyframes moveUpLeft {
+    0% {
+        transform: translate(25%, 0%); // Move right by quarter of its width, down by half its height
+    }
+    100% {
+        transform: translate(-25%, -50%); // Move left by quarter of its width, up by half its height
+    }
 }
