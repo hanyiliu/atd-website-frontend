@@ -1,5 +1,5 @@
-@use "styles/fonts" as *; // Corrected path
-@use "styles/colors" as *; // Corrected path
+@use "styles/fonts" as *;
+@use "styles/colors" as *;
 
 .container {
     width: fit-content;
@@ -19,7 +19,7 @@
     color: $brand-color-primary;
 }
 
-.logo {
+.icon {
     width: 30px;
     aspect-ratio: 1;
 }
