@@ -12,9 +12,9 @@ type Story = StoryObj<RecentProjectsListComponent>;
 
 export const Primary: Story = {
   args: {projects: [
-    { image: 'images/projects/project-neighborhood-market.svg', alt: 'Neighborhood Market'},
-    { image: 'images/projects/project-neighborhood-market.svg', alt: 'Neighborhood Market'},
-    { image: 'images/projects/project-sanju-market.svg', alt: 'Sanju Market'},
+    { image: 'images/projects/project-neighborhood-market.svg', alt: 'Neighborhood Market', link: 'https://example.com/neighborhood-market' },
+    { image: 'images/projects/project-neighborhood-market.svg', alt: 'Neighborhood Market', link: 'https://example.com/neighborhood-market' },
+    { image: 'images/projects/project-sanju-market.svg', alt: 'Sanju Market', link: 'https://example.com/sanju-market' },
   ]},
 };
 

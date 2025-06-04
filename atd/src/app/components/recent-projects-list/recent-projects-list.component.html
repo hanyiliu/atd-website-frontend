@@ -3,13 +3,15 @@
          <div class="header-title">Recent Projects</div>
      </div>
      <div class="projects-list">
-         <div class="project" *ngFor="let project of projects">
-             <img
-                 [src]="project.image"
-                 alt="{{ project.alt }}"
-                 class="project-image"
-             />
-         </div>
+         <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="project-link" *ngFor="let project of projects">
+            <div class="project">
+                <img
+                    [src]="project.image"
+                    alt="{{ project.alt }}"
+                    class="project-image"
+                />
+            </div>
+        </a>
          <div class="no-projects" *ngIf="projects.length === 0">
              No Recent Projects
          </div>
