@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 .container {
   background-color: $info-card-white;
   box-shadow: 64px 182px 54px 0 rgba(0, 0, 0, 0),

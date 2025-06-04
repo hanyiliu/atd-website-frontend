@@ -1,5 +1,12 @@
-<h2 class="faq-title">FAQ</h2>
-<app-faq-item
-  *ngFor="let item of faqItems"
-  [faqItem]="item">
-</app-faq-item>
+<div class="faq-container">
+  <img src="/images/faq_background.svg" alt="FAQ Background" class="faq-background-img">
+  <div class="faq-content">
+    <h2 class="faq-title">FAQ</h2>
+    <div class="faq-items">
+      <app-faq-item
+        *ngFor="let item of faqItems"
+        [faqItem]="item">
+      </app-faq-item>
+    </div>
+  </div>
+</div>

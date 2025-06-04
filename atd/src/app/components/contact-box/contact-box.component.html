@@ -1,40 +1,36 @@
 <div class="contact-box">
-  <div class="top-row">
-    <div class="logo-box">
-      <img
-        src="images/mailIcon.svg"
-        alt="Mail Icon"
-        width="73.33"
-        height="70.99"
-      />
+  <div class="logo-box">
+    <img
+      src="images/mailIcon.svg"
+      alt="Mail Icon"
+      width="120"
+      aspectRatio="1"
+    />
+  </div>
+  <div class="title-box">
+    <div class="left-dot">
+      <img src="images/email.svg" alt="Design" width="16" height="16" />
     </div>
-    <div class="title-box">
-      <div class="left-dot">
-        <img src="images/email.svg" alt="Design" width="16" height="16" />
-      </div>
-      <div class="title">Get In Touch</div>
-      <div class="right-dot">
-        <img src="images/email.svg" alt="Design" width="16" height="16" />
-      </div>
+    <div class="title">Get In Touch</div>
+    <div class="right-dot">
+      <img src="images/email.svg" alt="Design" width="16" height="16" />
     </div>
-    <div class="description-box">
-      <div class="description">
-        Connect with us to learn more about our events
-      </div>
-      <div class="description2">and news!</div>
+  </div>
+  <div class="description-box">
+    <div class="description">
+      Connect with us to learn more about our events
     </div>
-    <div class="bottom-row">
-      <div class="input-wrapper">
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          [(ngModel)]="email"
-          (keyup.enter)="onSubmit()"
-        />
-        <button (click)="onSubmit()">
-          <img src="images/submit.svg" alt="Send Icon" width="24" height="24" />
-        </button>
-      </div>
-    </div>
+    <div class="description2">and news!</div>
+  </div>
+  <div class="input-wrapper">
+    <input
+      type="email"
+      placeholder="Enter Your Email"
+      [(ngModel)]="email"
+      (keyup.enter)="onSubmit()"
+    />
+    <button (click)="onSubmit()">
+      <img src="images/submit.svg" alt="Send Icon" width="24" height="24" />
+    </button>
   </div>
 </div>
