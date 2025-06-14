@@ -14,67 +14,67 @@ export const Primary: Story = {
   args: {
     members: [
       {
-        image: 'images/richie.svg',
+        image: 'members/president1.svg',
         title: 'Co-Founder / President',
         name: 'Richie Huang',
       },
       {
-        image: 'images/giang.svg',
+        image: 'members/president2.svg',
         title: 'Co-Founder / President',
         name: 'Giang Ta',
       },
       {
-        image: 'images/katie.svg',
+        image: 'members/operationsVP.svg',
         title: 'VP of Operations',
         name: 'Katie Castro',
       },
       {
-        image: 'images/ryan.svg',
+        image: 'members/creativeVP.svg',
         title: 'VP of Creative Directory',
         name: 'Ryan Song',
       },
       {
-        image: 'images/nikita.svg',
+        image: 'members/education.svg',
         title: 'VP of Education',
         name: 'Nikita Dutt',
       },
       {
-        image: 'images/nicole.svg',
+        image: 'members/secretary.svg',
         title: 'VP of Secretary',
         name: 'Nicole Kim',
       },
       {
-        image: 'images/trinh.svg',
+        image: 'members/treasury.svg',
         title: 'VP of Treasury',
         name: 'Trinh Nguyen',
       },
       {
-        image: 'images/naomi.svg',
+        image: 'members/graphics1.svg',
         title: 'Graphics Chair',
         name: 'Naomi Solnick',
       },
       {
-        image: 'images/lauren.svg',
+        image: 'members/graphics2.svg',
         title: 'Graphics Chair',
         name: 'Lauren Calderon',
       },
       {
-        image: 'images/reiley.svg',
+        image: 'members/graphics3.svg',
         title: 'Graphics Chair',
         name: 'Reiley Johnson',
       },
       {
-        image: 'images/essie.svg',
+        image: 'members/apparel.svg',
         title: 'Apparel Chair',
         name: 'Essence (Essie) Bailey',
       },
       {
-        image: 'images/emily.svg',
+        image: 'members/uiux.svg',
         title: 'UI/UX Design Chair',
         name: 'Emily Kang',
       },
       {
-        image: 'images/sami.svg',
+        image: 'members/digital.svg',
         title: 'Digital Chair',
         name: 'Sami Deshatty',
       },
