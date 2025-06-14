@@ -1,5 +1,5 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 .contact-box {
   display: flex;
   flex-direction: column;
@@ -7,10 +7,11 @@
   align-items: center;
   padding: 20px;
   border-radius: 20px;
-  width: 1303px;
-  height: 549px;
+  width: 100%; // Changed from fixed 1303px to responsive 100%
+  aspect-ratio: 2.25; // Maintain aspect ratio;
   margin: auto;
   background-color: $brand-color-black;
+  box-sizing: border-box; // Ensure padding is included in width
 }
 
 .title-box {
@@ -23,7 +24,7 @@
   padding: 20px 0 0 0;
 }
 .left-dot {
-  padding: 2x 0 0 0;
+  padding: 2px 0 0 0;
 }
 .right-dot {
   padding: 2px 0 0 0;
@@ -43,12 +44,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   //gap: 5px;
 }
 
 input[type="email"] {
-  width: 440px;
-  height: 43px;
+  width: 35%;
+  height: 45px;
   padding: 0 0 0 12px;
   margin: 0;
   border: 1px solid $brand-color-white;
@@ -68,14 +70,6 @@ button {
   background-color: $brand-color-black;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
-}
-
-.top-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .logo-box,

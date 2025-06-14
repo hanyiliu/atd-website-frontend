@@ -1,10 +1,11 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 .faq-item {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid $brand-color-primary;
+  max-width: 100%; // Ensure item doesn't exceed container width
 }
 
 .faq-header {
@@ -17,17 +18,27 @@
 .faq-title {
   font-family: $font-secondary;
   font-weight: $font-weight-bold;
-  font-size: $font-size-xs;
+  font-size: clamp(
+    $font-size-xs,
+    2.5vw,
+    1.125rem
+  ); // Responsive font size with max limit
+  max-width: calc(100% - 60px); // Leave space for toggle icon
 }
 
 .toggle-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: $font-size-xl;
+  font-size: clamp(
+    $font-size-xl,
+    6vw,
+    48px
+  ); // Responsive icon size with max limit
   transform: rotate(0deg);
   transition: transform 0.5s ease;
   color: $brand-color-primary;
+  flex-shrink: 0;
 }
 
 .toggle-icon.expanded {
@@ -35,14 +46,20 @@
 }
 
 .faq-body {
-  padding-right: 100px;
-  font-size: 16px;
-  line-height: 1.3;
+  padding-right: clamp(20px, 10vw, 100px); // Responsive padding with max limit
+  font-size: clamp(0.875rem, 2vw, 1rem); // Responsive font size with max limit
+  line-height: 1.4; // Slightly increased for better readability
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+
+  p {
+    white-space: pre-line; // Respect newline characters
+    margin: 0;
+    word-wrap: break-word; // Ensure long words wrap properly
+  }
 }
 
 .faq-body.expanded {
-  max-height: 500px;
+  max-height: 600px;
 }

@@ -1,16 +1,22 @@
-@use "src/styles/fonts" as *;
+@use "fonts" as *;
 .container {
   width: 1303px;
   height: auto;
 }
+
 .header-container {
   display: flex;
   height: 65px;
+  justify-content: center; // Center the content horizontally
+  align-items: center; // Center the content vertically
+  position: relative; // Add relative positioning for absolute children
 }
 
 .title-box {
   display: flex;
   gap: 1rem;
+  position: absolute; // Position title absolutely
+  left: 0; // Align to left
 }
 
 .title {
@@ -18,12 +24,6 @@
   font-family: $font-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
-}
-
-.toggle-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-15%);
 }
 
 .offer-box {

@@ -1,0 +1,35 @@
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Custom margins for spacing between components */
+app-definition-box {
+    margin-top: 100px; // Space above Definition Box
+    margin-bottom: 150px; // Space below Definition Box
+}
+
+app-team-values-carousel {
+    margin-bottom: 240px; // Space below Team Values Carousel
+    width: 80%; // Set width to 80% of the home page width
+}
+
+app-event-calender-box {
+    margin-bottom: 200px; // Space below Event Calendar Box
+    width: 100%;
+}
+
+app-what-we-offer {
+    margin-bottom: 240px; // Space below What We Offer
+}
+
+app-contact-box {
+    margin-bottom: 30px; // Space below Contact Box
+    width: 80%; 
+}
+
+app-faq-section {
+    margin-bottom: 140px; // Space below FAQ Section
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+@use "src/styles/fonts" as *;
+@use "src/styles/colors" as *;
+
+.title {
+    font-family: $font-primary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-header-lg;
+    color: $brand-color-white;
+    margin-bottom: 2rem;
+}
+
+.body {
+    font-family: $font-secondary;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-sm;
+    color: $brand-color-white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 700px;
+    aspect-ratio: 3;
+}
