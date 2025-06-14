@@ -1,0 +1,110 @@
+@use "src/styles/fonts" as *;
+@use "src/styles/colors" as *;
+
+.title {
+  font-family: $font-primary;
+  font-size: $font-size-header-lg;
+  font-weight: $font-weight-bold;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.value {
+  margin-right: 50px;
+}
+
+.writings {
+  display: flex;
+  flex-direction: row;
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  width: 318px;
+  height: 524.2px;
+  flex: 1;
+  border: 2px solid red;
+  padding-top: 73.8px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon1 svg {
+  box-shadow: 8px 16px 5px 0 rgba(0, 0, 0, 0),
+    5px 10px 5px 0 rgba(0, 0, 0, 0.01), 3px 6px 4px 0 rgba(0, 0, 0, 0.05),
+    1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon2 svg {
+  box-shadow: 6px 20px 6px 0 rgba(0, 0, 0, 0),
+    4px 13px 5px 0 rgba(0, 0, 0, 0.01), 2px 7px 4px 0 rgba(0, 0, 0, 0.05),
+    1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon3 svg {
+  box-shadow: 6px 20px 6px 0 rgba(0, 0, 0, 0),
+    4px 13px 5px 0 rgba(0, 0, 0, 0.01), 2px 7px 4px 0 rgba(0, 0, 0, 0.05),
+    1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon4 svg {
+  box-shadow: 7px 25px 7px 0 rgba(0, 0, 0, 0),
+    4px 16px 7px 0 rgba(0, 0, 0, 0.01), 3px 9px 6px 0 rgba(0, 0, 0, 0.05),
+    1px 4px 4px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon5 svg {
+  box-shadow: 4px 17px 5px 0 rgba(0, 0, 0, 0),
+    3px 11px 5px 0 rgba(0, 0, 0, 0.01), 2px 6px 4px 0 rgba(0, 0, 0, 0.05),
+    1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon6 svg {
+  box-shadow: 4px 21px 6px 0 rgba(0, 0, 0, 0),
+    3px 13px 5px 0 rgba(0, 0, 0, 0.01), 2px 7px 5px 0 rgba(0, 0, 0, 0.05),
+    1px 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon1,
+.icon2,
+.icon3,
+.icon4,
+.icon5,
+.icon6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46.88px;
+  width: 46.35px;
+  overflow: hidden;
+  position: relative;
+  //border: 2px solid blue;
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 381px;
+  margin-left: 20px;
+}
+
+.words1,
+.words2,
+.words3,
+.words4,
+.words5,
+.words6 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 46.88px;
+  width: 250px;
+}
