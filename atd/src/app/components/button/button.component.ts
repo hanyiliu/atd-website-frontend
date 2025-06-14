@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router'; // to navigate to different page when button clicked
 
 @Component({
@@ -14,9 +14,12 @@ export class ButtonComponent {
   @Input() backgroundColor: string = '';
   @Input() borderColor: string = '';
   @Input() textColor: string = '';
-  @Input() route: string = ''; //routes page to about section of website
-  @Input() onClick: () => void = () => {}; //dont fully understand this line
   @Input() isActive: boolean = false;
+  @Output() buttonClick = new EventEmitter<void>(); // Add EventEmitter for click events
+
+  onButtonClick() {
+    this.buttonClick.emit(); // Emit the click event to parent component
+  }
 
   toggleActive() {
     if (this.isActive !== undefined) {
@@ -24,9 +27,3 @@ export class ButtonComponent {
     }
   }
 }
-/* constructor(private router: Router) {} //Why do we need this?
-
-  navigate() {
-    this.router.navigate([this.route]);
-  }
-} */
