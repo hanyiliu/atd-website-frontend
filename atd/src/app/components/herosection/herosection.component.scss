@@ -1,32 +1,34 @@
-@use "src/styles/colors" as *;
+@use "colors" as *;
 .hero-section {
-  height: 605px;
-  width: 1516px;
+  /* Flexible height based on content with minimum height */
+  min-height: 400px; /* Minimum height for mobile/small screens */
+  width: 100%;
+  height: 75vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: $brand-color-white;
   background-color: $brand-color-black;
   position: relative;
-  padding-left: 50px;
+  overflow: hidden; /* Ensure background image doesn't overflow */
 
+  /* Positioning and resizing the SVG file with aspect-fill */
   .hero-image {
     position: absolute;
-    bottom: -25px;
-    left: 0;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: auto;
-    z-index: 1;
+    height: 100%;
+    object-fit: cover; /* Aspect-fill: image covers entire container */
+    object-position: center; /* Center the image within the container */
   }
 
   .hero-content {
+    text-align: left; /* Align text to the left */
+    padding: 50px 20px 50px 150px; /* Increase padding to move text (clockwise) */
     position: relative;
-    z-index: 2;
-    text-align: left;
-    max-width: 80%;
-    padding: 50px 20px 50px 150px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 32px;
+    z-index: 3; /* Ensure content is above background */
 
     h1,
     p {
@@ -35,57 +37,20 @@
     }
 
     h1 {
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
+      font-size: 6.5rem;
     }
 
     .pre-title {
-      margin-bottom: 0rem;
-      margin-top: 4rem;
-      font-size: 1.8rem;
-      font-weight: normal;
+      margin-bottom: 0rem; /* Remove spacing between pretitle and title */
+      margin-top: 4rem; /* Push the pretitle farther down */
+      font-size: 3.5rem;
+      font-weight: normal; /* Remove bold font */
     }
 
-    button {
-      margin-top: 2rem;
-      padding: 8px 16px;
-      font-size: 1rem;
-      background-color: black;
-      color: $brand-color-white;
-      border: 1px solid $brand-color-white;
-      border-radius: 32px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: $hover-black; /* Darker black on hover */
-      }
-    }
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .hero-content {
-      text-align: left;
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1.2rem;
-      }
-      button {
-        font-size: 0.9rem;
-        padding: 6px 12px;
-      }
-    }
-
-    .hero-image {
-      max-width: 80%;
+    // Style the app-button component within hero section
+    app-button {
+      margin-top: 2rem; // Space between button and title
+      display: inline-block;
     }
   }
 }

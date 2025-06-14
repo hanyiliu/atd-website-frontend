@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="header-container">
+        <div class="header-title">Open Roles</div>
+        <img
+            src="images/open-roles-icon.svg"
+            alt="Open Roles Icon"
+            class="icon"
+        />
+    </div>
+    <div class="open-roles-list">
+        <div class="open-role" *ngFor="let role of openRoles">
+            <a [href]="role.link" target="_blank" rel="noopener noreferrer" class="role-link">
+                <div class="role-title">{{ role.title }}</div>
+                <mat-icon class="role-arrow-icon">chevron_right</mat-icon>
+            </a>
+        </div>
+        <div class="no-roles" *ngIf="openRoles.length === 0">
+            No Current Job Openings
+        </div>
+    </div>
+</div>
