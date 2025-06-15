@@ -1,3 +1,8 @@
+.join-us-page {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .background-container {
   background-color: black;
   position: relative;
@@ -9,6 +14,7 @@
   width: 100%;
   margin-top: -180px;
   display: block;
+  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
 }
 
 .roles-background {
@@ -18,14 +24,13 @@
   width: 100%;
   margin-bottom: -250px;
   z-index: 1;
-  background-color: purple;
+  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
 }
 
 .header-container {
   position: absolute;
   top: 180px;
   left: 100px;
-  width: 100%;
   z-index: 2;
 }
 
@@ -33,7 +38,6 @@
   position: absolute;
   bottom: -400px;
   left: 100px;
-  width: 100%;
   z-index: 2;
 }
 
