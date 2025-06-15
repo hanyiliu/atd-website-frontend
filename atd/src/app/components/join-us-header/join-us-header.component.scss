@@ -1,5 +1,5 @@
-@use "src/styles/fonts" as *;
-@use "src/styles/colors" as *;
+@use "fonts" as *;
+@use "colors" as *;
 
 .title {
     font-family: $font-primary;
