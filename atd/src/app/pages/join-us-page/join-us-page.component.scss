@@ -1,0 +1,43 @@
+.join-us-page {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.background-container {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.main-background {
+  width: 100%;
+  margin-top: -180px;
+  display: block;
+  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
+}
+
+.roles-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: -250px;
+  z-index: 1;
+  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
+}
+
+.header-container {
+  position: absolute;
+  top: 180px;
+  left: 100px;
+  z-index: 2;
+}
+
+.roles-container {
+  position: absolute;
+  bottom: -400px;
+  left: 100px;
+  z-index: 2;
+}
+
