@@ -52,6 +52,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  font-family: $font-secondary;
 
   p {
     white-space: pre-line; // Respect newline characters
