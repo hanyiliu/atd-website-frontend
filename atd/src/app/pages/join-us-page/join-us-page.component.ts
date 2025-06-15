@@ -11,19 +11,14 @@ import { OpenRole } from '../../components/open-roles-list/open-role.model';
   styleUrl: './join-us-page.component.scss'
 })
 export class JoinUsPageComponent {
-  // Sample data - this would typically come from a service
   openRoles: OpenRole[] = [
-    {
-      title: 'Frontend Developer',
-      link: 'https://example.com/frontend-developer'
-    },
-    {
-      title: 'UX/UI Designer', 
-      link: 'https://example.com/ux-ui-designer'
-    },
-    {
-      title: 'Marketing Specialist',
-      link: 'https://example.com/marketing-specialist'
-    }
+    // {
+    //   title: 'President',
+    //   link: 'https://example.com'
+    // },
+    // {
+    //   title: 'VP of Secretary', 
+    //   link: 'https://example.com'
+    // },
   ];
 }

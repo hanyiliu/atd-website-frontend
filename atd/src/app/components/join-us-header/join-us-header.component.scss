@@ -3,7 +3,7 @@
 
 .title {
     font-family: $font-primary;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-bolder;
     font-size: $font-size-header-lg;
     color: $brand-color-white;
     margin-bottom: 2rem;
@@ -12,7 +12,7 @@
 .body {
     font-family: $font-secondary;
     font-weight: $font-weight-regular;
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     color: $brand-color-white;
 }
 
@@ -21,6 +21,6 @@
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    width: 700px;
+    width: 1000px;
     aspect-ratio: 3;
 }
