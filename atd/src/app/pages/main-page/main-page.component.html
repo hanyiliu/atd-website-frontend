@@ -1,0 +1,14 @@
+<app-herosection></app-herosection>
+<div class="main-page-container">
+  <app-definition-box></app-definition-box>
+  <app-team-values-carousel></app-team-values-carousel>
+  <app-event-calender-box [events]="events"></app-event-calender-box>
+  <app-what-we-offer 
+    [studentOffers]="studentOffers" 
+    [clientOffers]="clientOffers"
+    studentTitle="For Students"
+    clientTitle="For Clients"
+  ></app-what-we-offer>
+  <app-contact-box></app-contact-box>
+  <app-faq-section [faqItems]="faqItems"></app-faq-section>
+</div>

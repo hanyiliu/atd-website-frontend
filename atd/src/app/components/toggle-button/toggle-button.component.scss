@@ -1,5 +1,8 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+
+
+@use "colors" as *;
+@use "fonts" as *;
+
 
 .toggle-switch {
   position: relative;
