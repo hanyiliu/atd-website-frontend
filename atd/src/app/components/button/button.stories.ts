@@ -1,16 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { action } from '@storybook/addon-actions';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ButtonComponent } from './button.component';
-import { moduleMetadata } from '@storybook/angular';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
   component: ButtonComponent,
   decorators: [
-    moduleMetadata({
-      imports: [RouterTestingModule],
-    }),
   ],
   tags: ['autodocs'],
   argTypes: {
@@ -27,7 +21,7 @@ const meta: Meta<ButtonComponent> = {
       control: 'text',
     },
   },
-  args: { onClick: action('clicked') },
+  args: { },
 };
 
 export default meta;
@@ -39,6 +33,5 @@ export const JoinUs: Story = {
     backgroundColor: '#FFE3FB',
     borderColor: '#FF00D9',
     textColor: '#FF00D9',
-    onClick: action('Button clicked'),
   },
 };

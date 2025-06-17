@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-herosection',
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './herosection.component.html',
   styleUrl: './herosection.component.scss'
 })
