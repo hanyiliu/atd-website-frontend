@@ -1,14 +1,17 @@
 
+
 @use "fonts" as *;
 .button-wrapper {
   display: inline-block;
 }
 
 
+
 .button-wrapper button {
   padding: 15px 40px; // Increased padding for more space between text and border
   border: 2px solid transparent; // Thicker default transparent border
   cursor: pointer;
+
   border-radius: 50em; // Fully circular border (adapts to button height)
   font-size: $font-size-sm;
   font-weight: $font-weight-semibold;
@@ -31,5 +34,6 @@
   &:focus {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); // Focus ring for accessibility
   }
+
 
 }

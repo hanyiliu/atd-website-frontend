@@ -1,12 +1,16 @@
 
+
 @use "colors" as *;
 @use "fonts" as *;
+
 .definition-box-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   justify-content: center;
   background-color: $brand-color-gray-4;
+
 
   padding: 5% 5%;
   border: 2px solid transparent;

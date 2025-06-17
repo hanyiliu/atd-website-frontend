@@ -1,6 +1,8 @@
 
+
 @use "colors" as *;
 @use "fonts" as *;
+
 .contact-box {
   display: flex;
   flex-direction: column;
@@ -12,7 +14,9 @@
   aspect-ratio: 2.25; // Maintain aspect ratio;
   margin: auto;
   background-color: $brand-color-black;
+
   box-sizing: border-box; // Ensure padding is included in width
+
 }
 
 .title-box {
