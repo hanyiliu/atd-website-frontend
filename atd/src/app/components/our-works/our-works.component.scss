@@ -1,5 +1,5 @@
-@use "src/styles/fonts" as *;
-@use "src/styles/colors" as *;
+@use "colors" as *;
+@use "fonts" as *;
 
 .our-works-container {
   width: 1083px;
@@ -7,10 +7,10 @@
 }
 
 .text {
-  position: absolute;
-  top: -36px; // slightly above the images
-  left: -12px; // adjust as needed
-  z-index: 2;
+  position: relative;
+  top: 40px; // more clearly overlap the images
+  left: -20px; // adjust as needed
+  z-index: 10;
   font-family: $font-primary;
   font-size: $font-size-xxl;
   font-weight: $font-weight-bolder;

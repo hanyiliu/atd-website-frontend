@@ -5,9 +5,10 @@ import { Project } from './project.model';
 
 @Component({
   selector: 'app-recent-projects-list',
+  standalone: true,
   imports: [CommonModule, MatIconModule],
   templateUrl: './recent-projects-list.component.html',
-  styleUrl: './recent-projects-list.component.scss'
+  styleUrl: './recent-projects-list.component.scss',
 })
 export class RecentProjectsListComponent {
   @Input() projects: Project[] = [];
