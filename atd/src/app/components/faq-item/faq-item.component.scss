@@ -1,11 +1,14 @@
+
 @use "colors" as *;
 @use "fonts" as *;
+
 .faq-item {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid $brand-color-primary;
   max-width: 100%; // Ensure item doesn't exceed container width
+
 }
 
 .faq-header {
@@ -30,6 +33,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   font-size: clamp(
     $font-size-xl,
     6vw,

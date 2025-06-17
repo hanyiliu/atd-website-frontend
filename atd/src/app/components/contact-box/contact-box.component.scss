@@ -1,3 +1,4 @@
+
 @use "colors" as *;
 @use "fonts" as *;
 .contact-box {
@@ -70,6 +71,15 @@ button {
   background-color: $brand-color-black;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
+}
+
+
+.top-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo-box,
