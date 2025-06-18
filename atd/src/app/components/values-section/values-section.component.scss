@@ -1,5 +1,5 @@
-@use "src/styles/fonts" as *;
-@use "src/styles/colors" as *;
+@use "fonts" as *;
+@use "colors" as *;
 
 .title {
   font-family: $font-primary;
@@ -26,7 +26,6 @@
   width: 318px;
   height: 524.2px;
   flex: 1;
-  border: 2px solid red;
   padding-top: 73.8px;
 }
 
