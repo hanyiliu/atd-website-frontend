@@ -1,4 +1,8 @@
+
+
 @use "fonts" as *;
+
+
 .container {
   width: 1303px;
   height: auto;
@@ -24,6 +28,7 @@
   font-family: $font-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
+
 }
 
 .offer-box {

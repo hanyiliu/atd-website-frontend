@@ -1,5 +1,7 @@
+
 @use "fonts" as *;
 @use "colors" as *;
+
 
 .member-component-container {
   display: flex;
@@ -9,6 +11,7 @@
 .text {
   //padding-top: 100px;
 }
+
 
 .picture {
   margin-bottom: 10px;

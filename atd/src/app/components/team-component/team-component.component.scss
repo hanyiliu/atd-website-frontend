@@ -1,0 +1,68 @@
+@use "src/styles/fonts" as *;
+@use "src/styles/colors" as *;
+
+.team-wrapper {
+  width: 1512px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-top: 10px;
+}
+
+.VP-title {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.Creative-title {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.third-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.fourth-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}

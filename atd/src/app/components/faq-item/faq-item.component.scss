@@ -1,11 +1,16 @@
+
+
 @use "colors" as *;
 @use "fonts" as *;
+
 .faq-item {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid $brand-color-primary;
+
   max-width: 100%; // Ensure item doesn't exceed container width
+
 }
 
 .faq-header {
@@ -18,18 +23,21 @@
 .faq-title {
   font-family: $font-secondary;
   font-weight: $font-weight-bold;
+
   font-size: clamp(
     $font-size-xs,
     2.5vw,
     1.125rem
   ); // Responsive font size with max limit
   max-width: calc(100% - 60px); // Leave space for toggle icon
+
 }
 
 .toggle-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   font-size: clamp(
     $font-size-xl,
     6vw,
@@ -39,6 +47,7 @@
   transition: transform 0.5s ease;
   color: $brand-color-primary;
   flex-shrink: 0;
+
 }
 
 .toggle-icon.expanded {
@@ -62,5 +71,7 @@
 }
 
 .faq-body.expanded {
+
   max-height: 600px;
+
 }
