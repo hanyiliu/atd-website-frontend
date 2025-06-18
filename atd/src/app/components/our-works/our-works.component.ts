@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-our-works',
+  standalone: true,
   imports: [],
   templateUrl: './our-works.component.html',
-  styleUrl: './our-works.component.scss'
+  styleUrl: './our-works.component.scss',
 })
-export class OurWorksComponent {
-
-}
+export class OurWorksComponent {}
