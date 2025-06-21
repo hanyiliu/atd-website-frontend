@@ -3,7 +3,32 @@
 @use "colors" as *;
 @use "fonts" as *;
 
-$transition-time: 1.0s;
+$transition-time: 0.5s;
+
+// Keyframe animations for bounce effects
+@keyframes faq-expand-bounce {
+  0% { max-height: 0; }
+  70% { max-height: 650px; } // Overshoot beyond normal 600px
+  100% { max-height: 600px; } // Settle to normal
+}
+
+@keyframes faq-collapse-bounce {
+  0% { max-height: 600px; }
+  70% { max-height: -50px; } // Undershoot below normal
+  100% { max-height: 0; }
+}
+
+@keyframes icon-expand-bounce {
+  0% { transform: rotate(0deg); }
+  70% { transform: rotate(200deg); } // Overshoot beyond 180deg
+  100% { transform: rotate(180deg); } // Settle to normal
+}
+
+@keyframes icon-collapse-bounce {
+  0% { transform: rotate(180deg); }
+  70% { transform: rotate(-20deg); } // Undershoot below 180deg
+  100% { transform: rotate(0deg); }
+}
 
 .faq-item {
   display: flex;
@@ -46,14 +71,9 @@ $transition-time: 1.0s;
     48px
   ); // Responsive icon size with max limit
   transform: rotate(0deg);
-  transition: transform $transition-time ease;
   color: $brand-color-primary;
   flex-shrink: 0;
 
-}
-
-.toggle-icon.expanded {
-  transform: rotate(180deg);
 }
 
 .faq-body {
@@ -62,18 +82,28 @@ $transition-time: 1.0s;
   line-height: 1.4; // Slightly increased for better readability
   max-height: 0;
   overflow: hidden;
-  transition: max-height $transition-time ease;
   font-family: $font-secondary;
-
   p {
     white-space: pre-line; // Respect newline characters
     margin: 0;
     word-wrap: break-word; // Ensure long words wrap properly
+    transform: translateY(0); // Keep text stationary during bounce
+    transition: none; // No bounce effect on text
   }
 }
 
 .faq-body.expanded {
+  animation: faq-expand-bounce $transition-time ease-out forwards;
+}
 
-  max-height: 600px;
+.faq-body:not(.expanded) {
+  animation: faq-collapse-bounce $transition-time ease-out forwards;
+}
 
+.toggle-icon.expanded {
+  animation: icon-expand-bounce $transition-time ease-out forwards;
+}
+
+.toggle-icon:not(.expanded) {
+  animation: icon-collapse-bounce $transition-time ease-out forwards;
 }
