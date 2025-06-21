@@ -2,55 +2,55 @@
 @use "colors" as *;
 
 .container {
-    width: fit-content;
+  width: fit-content;
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 3rem;
 }
 
-.header-title{
-    font-family: $font-primary;
-    font-weight: $font-weight-bolder;
-    font-size: $font-size-header-sm;
-    color: $brand-color-primary;
+.header-title {
+  font-family: $font-primary;
+  font-weight: $font-weight-bolder;
+  font-size: $font-size-header-sm;
+  color: $brand-color-primary;
 }
 
 .icon {
-    width: 30px;
-    aspect-ratio: 1;
+  width: 30px;
+  aspect-ratio: 1;
 }
 
 .open-roles-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .open-role {
-    font-family: $font-secondary;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-base;
-    color: $brand-color-black;
-    position: relative; 
-    width: fit-content;
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  color: $brand-color-black;
+  position: relative;
+  width: fit-content;
 }
 
 .open-role .role-link {
-    color: $brand-color-black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px; 
-    cursor: pointer;
+  color: $brand-color-black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .open-role .role-title {
-    position: relative;
-    padding-bottom: 4px; // Space for the underline below the text
+  position: relative;
+  padding-bottom: 4px; // Space for the underline below the text
 }
 
 .open-role .role-title::after {
@@ -67,20 +67,20 @@
 }
 
 .open-role:hover .role-title::after {
-    width: 100%;
+  width: 100%;
 }
 
 .role-arrow-icon {
-    font-size: $font-size-lg;
-    color: $brand-color-primary;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
+  font-size: $font-size-lg;
+  color: $brand-color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .no-roles {
-    font-family: $font-primary;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-base;
-    color: $brand-color-black;
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  color: $brand-color-black;
 }

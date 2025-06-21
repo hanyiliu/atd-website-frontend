@@ -1,14 +1,15 @@
-@use "src/styles/colors" as *;
-@use "src/styles/fonts" as *;
+@use "colors" as *;
+@use "fonts" as *;
 
 .video-section-container {
-  background-color: black;
+  background-color: $brand-color-black;
   width: 1304px;
   height: 611px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 .text {
   font-family: $font-primary;
