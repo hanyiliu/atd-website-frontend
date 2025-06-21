@@ -3,6 +3,8 @@
 @use "colors" as *;
 @use "fonts" as *;
 
+$transition-time: 1.0s;
+
 .faq-item {
   display: flex;
   flex-direction: column;
@@ -44,7 +46,7 @@
     48px
   ); // Responsive icon size with max limit
   transform: rotate(0deg);
-  transition: transform 0.5s ease;
+  transition: transform $transition-time ease;
   color: $brand-color-primary;
   flex-shrink: 0;
 
@@ -60,7 +62,7 @@
   line-height: 1.4; // Slightly increased for better readability
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height $transition-time ease;
   font-family: $font-secondary;
 
   p {
