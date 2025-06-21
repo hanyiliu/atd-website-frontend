@@ -1,9 +1,5 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
-
-
 
 .footer {
   background-color: $brand-color-black;
@@ -73,8 +69,10 @@
   margin: 1rem 0;
 }
 .copyright {
+  font-family: $font-secondary;
+  font-weight: $font-weight-regular;
   font-size: $font-size-xxs;
-  color: rgb(255, 255, 255, 80%);
+  color: $brand-color-gray-3;
 }
 .social-icons {
   display: flex;
@@ -88,7 +86,8 @@
 }
 
 .credit {
-  color: $brand-color-white;
+  color: $brand-color-gray-0;
+  font-family: $font-secondary;
+  font-weight: $font-weight-regular;
   font-size: $font-size-xxs;
-  opacity: 0.6;
 }
