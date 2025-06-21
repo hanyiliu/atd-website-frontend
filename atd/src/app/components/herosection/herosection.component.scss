@@ -6,9 +6,7 @@
   /* Flexible height based on content with minimum height */
   min-height: 400px; /* Minimum height for mobile/small screens */
   width: 100%;
-  height: 75vh;
-
-
+  height: 80vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -47,14 +45,14 @@ p {
 
     h1 {
 
-      font-size: 6.5rem;
+      font-size: $font-size-header-lg;
     }
 
     .pre-title {
       margin-bottom: 0rem; /* Remove spacing between pretitle and title */
       margin-top: 4rem; /* Push the pretitle farther down */
-      font-size: 3.5rem;
-      font-weight: normal; /* Remove bold font */
+      font-size: $font-size-header-sm;
+      font-weight: $font-weight-light; /* Remove bold font */
     }
 
     // Style the app-button component within hero section
