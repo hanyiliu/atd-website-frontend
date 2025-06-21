@@ -30,10 +30,4 @@
     transform: translateY(0); // Reset transform on click
     opacity: 1; // Full opacity on click
   }
-
-  &:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); // Focus ring for accessibility
-  }
-
-
 }
