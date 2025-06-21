@@ -54,15 +54,16 @@
 }
 
 .open-role .role-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: $brand-color-primary;
-  transition: all 0.3s ease-out;
-  transform: translateX(-50%);
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: $brand-color-primary;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out;
+    will-change: width;
 }
 
 .open-role:hover .role-title::after {
