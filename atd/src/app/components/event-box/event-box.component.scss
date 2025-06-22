@@ -2,24 +2,38 @@
 
 @use "colors" as *;
 @use "fonts" as *;
-
-
+@use "breakpoints" as *;
 
 .event-box-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: $brand-color-white;
-  padding: 5% 5%;
+  padding: 5% 5%; // Desktop padding
   border: 2px solid transparent;
   border-radius: 10px;
   box-shadow: 0 64px 18px 0 rgba(0, 0, 0, 0), 0 41px 16px 0 rgba(0, 0, 0, 0.01),
     0 23px 14px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.09),
     0 3px 6px 0 rgba(0, 0, 0, 0.1);
 
-  width: 400px;
-  aspect-ratio: 10 / 7;
+  width: 400px; // Desktop width
+  aspect-ratio: 10 / 7; // Desktop aspect ratio
   box-sizing: border-box;
+
+  @include respond-to('tablet') {
+    width: 300px;
+    aspect-ratio: 4 / 3;
+    padding: 4% 4%;
+    border-radius: 8px;
+  }
+
+  @include respond-to('mobile') {
+    width: 280px;
+    max-width: 90vw;
+    aspect-ratio: 3.5 / 3;
+    padding: 5% 5%;
+    border-radius: 8px;
+  }
 }
 
 .event-box-container.next-event {
@@ -36,18 +50,44 @@
   color: $brand-color-primary;
   font-family: $font-primary;
   font-weight: $font-weight-bold;
+  
   .day {
-    font-size: $font-size-lg;
+    font-size: $font-size-lg; // Desktop
+
+    @include respond-to('tablet') {
+      font-size: $font-size-base;
+    }
+
+    @include respond-to('mobile') {
+      font-size: $font-size-base-sm;
+    }
   }
+  
   .month {
-    font-size: $font-size-base;
+    font-size: $font-size-base; // Desktop
+
+    @include respond-to('tablet') {
+      font-size: $font-size-base-sm;
+    }
+
+    @include respond-to('mobile') {
+      font-size: $font-size-sm;
+    }
   }
 }
 
 .logo-box {
   .logo {
     height: auto;
-    width: 53.08px;
+    width: 53.08px; // Desktop
+
+    @include respond-to('tablet') {
+      width: 45px;
+    }
+
+    @include respond-to('mobile') {
+      width: 40px;
+    }
   }
 }
 
@@ -55,11 +95,22 @@
   .detail-box {
     .title-time,
     .location {
-      height: 30px;
+      height: 30px; // Desktop
       font-family: $font-secondary;
-      font-size: $font-size-sm;
+      font-size: $font-size-sm; // Desktop
       font-weight: $font-weight-regular;
       margin: 0;
+
+      @include respond-to('tablet') {
+        height: 25px;
+        font-size: $font-size-xs;
+      }
+
+      @include respond-to('mobile') {
+        height: auto;
+        line-height: 1.3;
+        font-size: $font-size-xxs;
+      }
     }
   }
 }
