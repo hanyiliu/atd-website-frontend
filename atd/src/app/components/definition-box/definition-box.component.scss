@@ -2,36 +2,70 @@
 
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
 
 .definition-box-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   justify-content: center;
   background-color: $brand-color-gray-4;
-
-
-  padding: 5% 5%;
+  padding: 5% 5%; // Desktop padding
   border: 2px solid transparent;
   border-radius: 20px;
   box-shadow: 0 69px 19px 0 rgba(0, 0, 0, 0), 0 44px 18px 0 rgba(0, 0, 0, 0.01),
     0 25px 15px 0 rgba(0, 0, 0, 0.05), 0 11px 11px 0 rgba(0, 0, 0, 0.09),
     0 3px 6px 0 rgba(0, 0, 0, 0.1);
-  width: 800px;
-  aspect-ratio: 4;
+  width: 800px; // Desktop width
+  aspect-ratio: 4; // Desktop aspect ratio
   box-sizing: border-box;
+
+  @include respond-to('tablet') {
+    width: 90%;
+    max-width: 600px;
+    aspect-ratio: 3.5;
+    padding: 6% 6%;
+    border-radius: 16px;
+  }
+
+  @include respond-to('mobile') {
+    width: 95%;
+    max-width: 400px;
+    aspect-ratio: 2.5;
+    padding: 6% 5%;
+    border-radius: 12px;
+  }
 }
 
 .top-row {
   display: flex;
   justify-content: center;
-  gap: 23px;
+  gap: 23px; // Desktop gap
+
+  @include respond-to('tablet') {
+    gap: 18px;
+  }
+
+  @include respond-to('mobile') {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
+
 .logo-box {
   .logo {
     height: auto;
-    width: 40px;
+    width: 40px; // Desktop size
+
+    @include respond-to('tablet') {
+      width: 35px;
+    }
+
+    @include respond-to('mobile') {
+      width: 30px;
+    }
   }
 }
 
@@ -40,8 +74,20 @@
   align-items: center;
   font-family: $font-primary;
   font-weight: $font-weight-bold;
-  font-size: $font-size-base;
+  font-size: $font-size-base; // Desktop
   gap: 7px;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base-sm;
+    gap: 6px;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+    gap: 5px;
+    justify-content: center;
+  }
+
   .title {
     color: $brand-color-black;
   }
@@ -57,8 +103,17 @@
 }
 
 .bottom-row {
-  padding-top: 10px;
+  padding-top: 10px; // Desktop spacing
   font-size: 28px;
+
+  @include respond-to('tablet') {
+    padding-top: 8px;
+  }
+
+  @include respond-to('mobile') {
+    padding-top: 6px;
+  }
+
   .definition-box {
     display: flex;
     flex-direction: column;
@@ -66,14 +121,32 @@
     justify-content: center;
     text-align: center;
   }
+
   .definition {
     text-align: center;
     font-family: $font-secondary;
     font-weight: $font-weight-regular;
-    font-size: $font-size-sm;
+    font-size: $font-size-sm; // Desktop
+
+    @include respond-to('tablet') {
+      font-size: $font-size-xs;
+    }
+
+    @include respond-to('mobile') {
+      font-size: $font-size-xxs;
+    }
   }
+
   .definition2 {
     text-align: center;
     margin-top: -20px;
+
+    @include respond-to('tablet') {
+      margin-top: -15px;
+    }
+
+    @include respond-to('mobile') {
+      margin-top: -10px;
+    }
   }
 }
