@@ -40,7 +40,6 @@
   }
 }
 .title {
-  // Remove flex: 1 since we're using grid now
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,7 +67,6 @@
   }
 }
 .link-list {
-  // Remove flex: 1.5 since we're using grid now
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,7 +91,6 @@
   cursor: pointer;
 }
 .contact-section {
-  // Remove flex: 1 since we're using grid now
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -119,25 +116,29 @@
 .contact-button {
   width: 80%; // Desktop default
   height: auto;
-  padding: 1rem 5rem; // Desktop default
+  padding: 1rem 2rem; // Equal horizontal padding
   background-color: $brand-color-gray-1;
   border-radius: 12px;
   font-family: $font-primary;
   font-weight: $font-weight-bold;
-  text-align: center;
   font-size: $font-size-base-sm;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  
+  // Use flexbox for perfect centering
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   @include respond-to('tablet') {
     width: 70%;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 1.5rem; // Equal horizontal padding
   }
 
   @include respond-to('mobile') {
     width: 90%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem; // Equal horizontal padding
     font-size: $font-size-xs;
   }
 }
