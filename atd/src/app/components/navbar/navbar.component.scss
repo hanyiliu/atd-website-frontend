@@ -17,12 +17,10 @@
   z-index: 1000;
 
   @include respond-to('tablet') {
-    height: 64px;
     padding: 0 2rem;
   }
 
   @include respond-to('mobile') {
-    height: 56px;
     padding: 0 1rem;
   }
 }
