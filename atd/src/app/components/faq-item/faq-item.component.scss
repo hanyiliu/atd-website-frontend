@@ -1,21 +1,38 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
 
 $transition-time: 0.5s;
 
 // Keyframe animations for bounce effects
-@keyframes faq-expand-bounce {
-  0% { max-height: 0; }
-  70% { max-height: 650px; } // Overshoot beyond normal 600px
-  100% { max-height: 600px; } // Settle to normal
+@keyframes faq-item-expand-bounce {
+  0% { 
+    padding-bottom: 0;
+  }
+  70% { 
+    padding-bottom: 40px; // Overshoot - pushes border further down
+  }
+  100% { 
+    padding-bottom: 20px; // Settle to normal expanded state
+  }
 }
 
-@keyframes faq-collapse-bounce {
-  0% { max-height: 600px; }
-  70% { max-height: -50px; } // Undershoot below normal
-  100% { max-height: 0; }
+@keyframes faq-item-collapse-bounce {
+  0% { 
+    padding-bottom: 20px;
+  }
+  100% { 
+    padding-bottom: 0;
+  }
+}
+
+@keyframes faq-body-expand {
+  0% { max-height: 0 }
+  100% { max-height: 200px; }
+}
+
+@keyframes faq-body-collapse {
+  0% { max-height: 200px; }
+  100% { max-height: 0 }
 }
 
 @keyframes icon-expand-bounce {
@@ -30,14 +47,38 @@ $transition-time: 0.5s;
   100% { transform: rotate(0deg); }
 }
 
+.faq-item.expanded {
+  animation: faq-item-expand-bounce $transition-time ease-out forwards;
+}
+
+.faq-item:not(.expanded) {
+  animation: faq-item-collapse-bounce $transition-time ease-out forwards;
+}
+
+.faq-body.expanded {
+  animation: faq-body-expand $transition-time*1.3 ease-out forwards;
+}
+
+.faq-body:not(.expanded) {
+  animation: faq-body-collapse $transition-time*1.3 ease-out forwards;
+}
+
+.toggle-icon.expanded {
+  animation: icon-expand-bounce $transition-time ease-out forwards;
+}
+
+.toggle-icon:not(.expanded) {
+  animation: icon-collapse-bounce $transition-time ease-out forwards;
+}
+
 .faq-item {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid $brand-color-primary;
-
   max-width: 100%; // Ensure item doesn't exceed container width
-
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .faq-header {
@@ -90,20 +131,4 @@ $transition-time: 0.5s;
     transform: translateY(0); // Keep text stationary during bounce
     transition: none; // No bounce effect on text
   }
-}
-
-.faq-body.expanded {
-  animation: faq-expand-bounce $transition-time ease-out forwards;
-}
-
-.faq-body:not(.expanded) {
-  animation: faq-collapse-bounce $transition-time ease-out forwards;
-}
-
-.toggle-icon.expanded {
-  animation: icon-expand-bounce $transition-time ease-out forwards;
-}
-
-.toggle-icon:not(.expanded) {
-  animation: icon-collapse-bounce $transition-time ease-out forwards;
 }
