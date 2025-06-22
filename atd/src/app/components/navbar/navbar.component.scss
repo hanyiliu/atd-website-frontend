@@ -3,47 +3,27 @@
 @use "fonts" as *;
 @use "breakpoints" as *;
 
-// CSS Variables for responsive design
-:root {
-  --navbar-height: 100px;
-  --navbar-padding: 75px;
-  --logo-size: 61px;
-  --logo-height: 40px;
-}
-
-@include respond-to('tablet') {
-  :root {
-    --navbar-height: 64px;
-    --navbar-padding: 2rem;
-    --logo-size: 50px;
-    --logo-height: 32px;
-  }
-}
-
-@include respond-to('mobile') {
-  :root {
-    --navbar-height: 56px;
-    --navbar-padding: 1rem;
-    --logo-size: 45px;
-    --logo-height: 28px;
-  }
-}
-
 .navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: var(--navbar-height);
+  height: 100px; // Desktop default
   background-color: $brand-color-black;
-  padding: 0 var(--navbar-padding);
+  padding: 0 75px; // Desktop default
 
   position: sticky;
   top: 0;
   z-index: 1000;
 
+  @include respond-to('tablet') {
+    height: 64px;
+    padding: 0 2rem;
+  }
+
   @include respond-to('mobile') {
-    padding: 0 var(--navbar-padding);
+    height: 56px;
+    padding: 0 1rem;
   }
 }
 
@@ -60,8 +40,18 @@
   margin-right: 0.5rem;
   
   img {
-    width: var(--logo-size);
-    height: var(--logo-height);
+    width: 61px; // Desktop default
+    height: 40px; // Desktop default
+
+    @include respond-to('tablet') {
+      width: 50px;
+      height: 32px;
+    }
+
+    @include respond-to('mobile') {
+      width: 45px;
+      height: 28px;
+    }
   }
 }
 
@@ -143,15 +133,25 @@
 // Mobile Navigation Overlay
 .mobile-nav-overlay {
   position: fixed;
-  top: var(--navbar-height);
+  top: 100px; // Desktop navbar height
   left: 0;
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - 100px); // Desktop navbar height
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+
+  @include respond-to('tablet') {
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
+  @include respond-to('mobile') {
+    top: 56px;
+    height: calc(100vh - 56px);
+  }
 
   &.open {
     opacity: 1;
