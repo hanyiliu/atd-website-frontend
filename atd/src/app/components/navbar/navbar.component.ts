@@ -3,6 +3,7 @@ import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,18 +17,25 @@ export class NavbarComponent implements OnInit {
   isOurWorksActive: boolean = false;
   isJoinUsActive: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private navigationService: NavigationService
+  ) {}
 
   ngOnInit() {
     // Listen to router events to update active states
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.updateActiveStates(event.url);
       });
 
     // Set initial active state
     this.updateActiveStates(this.router.url);
+
+    this.navigationService.aboutUsActive$.subscribe((state: boolean) => {
+      this.isAboutUsActive = state;
+    });
   }
 
   private updateActiveStates(url: string) {
@@ -41,6 +49,7 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleAboutUs() {
+    this.navigationService.setAboutUsActive(true);
     this.navigateTo('/about-us');
   }
 
