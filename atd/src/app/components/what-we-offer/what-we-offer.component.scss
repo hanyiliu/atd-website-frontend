@@ -1,11 +1,20 @@
 
 
 @use "fonts" as *;
-
+@use "breakpoints" as *;
 
 .container {
-  width: 1303px;
+  width: min(100vw, 1303px); // Responsive from desktop, max 1303px
   height: auto;
+  margin: 0 auto; // Center the container
+
+  @include respond-to('tablet') {
+    width: min(90vw, 1000px); // Scale down while maintaining aspect ratio
+  }
+
+  @include respond-to('mobile') {
+    width: 95vw;
+  }
 }
 
 .header-container {
@@ -14,6 +23,17 @@
   justify-content: center; // Center the content horizontally
   align-items: center; // Center the content vertically
   position: relative; // Add relative positioning for absolute children
+
+  @include respond-to('tablet') {
+    height: 55px;
+  }
+
+  @include respond-to('mobile') {
+    height: 50px;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
 }
 
 .title-box {
@@ -21,40 +41,90 @@
   gap: 1rem;
   position: absolute; // Position title absolutely
   left: 0; // Align to left
+
+  @include respond-to('mobile') {
+    position: static;
+    justify-content: center;
+  }
 }
 
 .title {
   align-content: center;
   font-family: $font-primary;
-  font-size: $font-size-base;
+  font-size: $font-size-base; // Desktop
   font-weight: $font-weight-bold;
 
+  @include respond-to('tablet') {
+    font-size: $font-size-base-sm;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+  }
 }
 
 .offer-box {
   background-image: url("/images/what-we-do-background.svg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain; // Scale background with container
   background-position: center;
   width: 100%;
-  aspect-ratio: 1303/652;
+  aspect-ratio: 1303/652; // Desktop aspect ratio
   position: relative;
+
+  @include respond-to('tablet') {
+    // Maintain aspect ratio and background scaling
+    aspect-ratio: 1303/652;
+    background-size: contain;
+  }
+
+  @include respond-to('mobile') {
+    // Remove background and reset layout for mobile
+    background-image: none;
+    background: none;
+    aspect-ratio: auto;
+    height: auto;
+    position: static;
+  }
 }
 
 .offer-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1fr; // Desktop grid
   justify-content: start;
-  row-gap: 8rem;
-  padding: 7rem 12rem;
+  row-gap: clamp(4rem, 8vw, 8rem); // Responsive gap that scales with viewport
+  padding: clamp(3rem, 7vw, 7rem) clamp(6rem, 12vw, 12rem); // Responsive padding
   position: absolute;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   z-index: 0;
+
+  @include respond-to('tablet') {
+    // Maintain grid but adjust padding proportionally
+    padding: clamp(2.5rem, 5vw, 5rem) clamp(4rem, 8vw, 8rem);
+    row-gap: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  @include respond-to('mobile') {
+    // Switch to column layout for mobile
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    position: static;
+    padding: 2rem 1rem;
+    row-gap: 0;
+    gap: 2rem;
+    opacity: 1; // Always visible on mobile
+  }
 }
 
 .offer-grid.active {
   opacity: 1;
   pointer-events: auto;
   z-index: 1;
+
+  @include respond-to('mobile') {
+    // Ensure mobile stays visible regardless of active state
+    opacity: 1;
+  }
 }
