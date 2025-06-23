@@ -1,5 +1,7 @@
 <div class="app-container">
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
+  <ng-container [ngClass]="{ 'fade-in': fadeKey }">
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+  </ng-container>
+  <app-footer></app-footer>
 </div>
