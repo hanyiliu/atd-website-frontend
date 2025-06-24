@@ -27,11 +27,11 @@ $transition-time: 0.5s;
 
 @keyframes faq-body-expand {
   0% { max-height: 0 }
-  100% { max-height: 200px; }
+  100% { max-height: 500px; } // Increased significantly to accommodate mobile text wrapping
 }
 
 @keyframes faq-body-collapse {
-  0% { max-height: 200px; }
+  0% { max-height: 500px; }
   100% { max-height: 0 }
 }
 
