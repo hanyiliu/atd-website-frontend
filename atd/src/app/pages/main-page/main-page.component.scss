@@ -54,11 +54,13 @@ app-what-we-offer {
     margin-bottom: 240px; // Desktop spacing
 
     @include respond-to('tablet') {
-        margin-bottom: 150px;
+        display: none; // Hide component on mobile screens
+        margin-bottom: 0; // Remove margin since it's hidden
     }
 
     @include respond-to('mobile') {
-        margin-bottom: 100px;
+        display: none; // Hide component on mobile screens
+        margin-bottom: 0; // Remove margin since it's hidden
     }
 }
 
