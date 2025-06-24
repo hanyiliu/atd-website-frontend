@@ -79,6 +79,11 @@ $transition-time: 0.5s;
   max-width: 100%; // Ensure item doesn't exceed container width
   padding-bottom: 0;
   margin-bottom: 0;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px); // Subtle hover effect
+  }
 }
 
 .faq-header {
