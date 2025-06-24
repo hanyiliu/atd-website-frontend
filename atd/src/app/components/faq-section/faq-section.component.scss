@@ -8,20 +8,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 1000px;
+  min-height: 200px; // Reduced from 1000px to 800px to make content more compact
   width: 100%;
   overflow: hidden; // Prevent background from overflowing
 }
 
 .faq-background-img {
   position: absolute;
-  top: 70%;
+  top: 65%; // Adjusted from 70% to 65% to better center the content within the background
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   min-width: 1512px; // Minimum size based on SVG viewBox
-  min-height: 1199px; // Minimum size based on SVG viewBox
+  min-height: 1100px; // Reduced from 1199px to 1100px to make background more compact
   object-fit: cover;
   z-index: 1;
 }
@@ -31,7 +31,7 @@
   z-index: 2;
   width: 70%;
   max-width: 1200px; // Increased maximum width for wider FAQ items
-  padding: 60px 40px;
+  padding: 30px 40px; // Reduced padding from 60px to 30px to make items closer to top
   box-sizing: border-box;
 }
 
@@ -47,7 +47,7 @@
   ); // Responsive font size with max limit
 
   font-weight: $font-weight-bold;
-  margin-bottom: 40px;
+  margin-bottom: 25px; // Reduced from 40px to 25px to bring items closer to title
   text-align: center;
 }
 
@@ -57,7 +57,7 @@
 
 app-faq-item {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 12px; // Reduced from 20px to 12px to make items closer together
 
   font-size: clamp(
     $font-size-xs,
