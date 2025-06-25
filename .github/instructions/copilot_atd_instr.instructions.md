@@ -18,7 +18,7 @@ Keep in mind that we are not using unit tests for this product. Therefore, while
 We also do not have a backend, and there are no components which require such functionality.
 
 # Accessing Designs
-Only when explictly told by the user to access the designs of the website, the designs for the frontend application are available in the Figma file at the following link:
+Only when explicitly told by the user to access the designs of the website, the designs for the frontend application are available in the Figma file at the following link:
 - Landing Page (Main Page in Code): https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1416&t=f6FxBsrhUh7f2lXX-4
 - About Us Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1267&t=LCvMIhFoubQ3ISHm-4
 - Our Works Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1208&t=LCvMIhFoubQ3ISHm-4
