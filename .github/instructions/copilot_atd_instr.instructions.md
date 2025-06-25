@@ -24,7 +24,7 @@ Only when explictly told by the user to access the designs of the website, the d
 - Our Works Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1208&t=LCvMIhFoubQ3ISHm-4
 - Join Us Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1129&t=LCvMIhFoubQ3ISHm-4
 
-You have access to a Model Context Protocol (MCP) called `figma-mcp-server`, that allows you to directly access these files.
+You have access to a Model Context Protocol (MCP) called `figma-mcp-server`, that allows you to directly access these files. If you do not have access, ask the user to set up this MCP.
 
 # Coding Style
 The coding style taken in this project adheres to the following standards:
