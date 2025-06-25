@@ -32,7 +32,9 @@ The coding style taken in this project adheres to the following standards:
     - Individual files are also split into as many smaller files as possible, with each file having a single responsibility. For example, define a component's relevant model as a separate file.
 - **Simplicity**: Component files, especially the HTML and SCSS files, should be kept as simple as possible, with logic that is easy to follow. 
     - In parts where they have any possibility of being unclear or complex, write clear comments to explain what the relevent code does.
-
+- **Reuseability**: Variables and mixins in SCSS should be used to ensure that styles are consistent across the application, and to avoid duplication of styles. 
+    - Keep in mind of defined values in styles. Use them in all circumstances. Never hardcode values in individual styles.
+    
 # Codebase Structure
 The structure of the codebase follows the standard Angular structure:
 - All components are placed in the `src/app/components` directory.
