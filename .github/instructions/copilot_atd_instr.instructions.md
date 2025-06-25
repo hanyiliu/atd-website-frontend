@@ -3,7 +3,7 @@ applyTo: '**'
 ---
 # Project Description
 
-You are assisting developers in programming a frontend application for a UC Davis design club organization called All Things Design, acroynmed ATD.
+You are assisting developers in programming a frontend application for a UC Davis design club organization called All Things Design, acronymed ATD.
 The frontend application will be viewed by the general public, with its main visitor segments:
 - **Potential New Members**: College students at UC Davis, or incoming freshmens to UC Davis, who are interested in design and have interest in joining the club.
 - **Potential Clients**: Local businesses in Davis, California, who are interested in hiring the club for design-related projects.
