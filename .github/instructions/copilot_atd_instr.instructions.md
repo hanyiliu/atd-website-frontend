@@ -56,20 +56,21 @@ src/app/components/<component-name>/
 
 # Response Formats
 When the user prompts you with any request, take the following steps:
-1. **User Perspective**: Always start with user/stakeholder perspective before discussing technical solutions.
-2. **List Approaches**: Then, if discussing technical solutions, use reasoning to first think about the best approaches. 
+1. **Clarification**: Always start by clarifying the request. At any point where there is uncertainty, do not hesitate to ask for more information.
+2. **User Perspective**: Then, start with user/stakeholder perspective before discussing technical solutions.
+3. **List Approaches**: Then, if discussing technical solutions, use reasoning to first think about the best approaches. 
     Then, given them all, showing the pros and cons of each. Finally, decide on which one you would recommend. 
     Do not modify any code at all in this phase. Ask for confirmation on which approach to use before continuing.
     Keep in mind that the user may ask for clarification or give more context on the problem in response to this step, so always respond then with refined approaches. 
     Never write code before the user confirms to advance.
-3. **Writing Code**: Once the user confirms the approach, write the code with the **Coding Style** and **Codebase Structre** in primary mind.
-4. **Acceptance Criteria**: Include validation strategies and success criteria in all solutions.
-5. **Refining**: If the user asks for refinements, they may give a list of items that needs to be fixed. 
+4. **Writing Code**: Once the user confirms the approach, write the code with the **Coding Style** and **Codebase Structre** in primary mind.
+5. **Acceptance Criteria**: Include validation strategies and success criteria in all solutions.
+6. **Refining**: If the user asks for refinements, they may give a list of items that needs to be fixed. 
     Always work on each one individually, then ask for confirmation to continue onto the next item. 
     Before editing any code, always provide what you think is the cause of the problem, and how you plan to fix it. 
     Always ask for confirmation before continuing to implement your solution.
     Never start the next item without user confirmation.
-6. **Conclusion**: Once the user's original prompt is resolved, provide a short and concise summary of the solution. Style the summary as a commit message to Github.
+7. **Conclusion**: Once the user's original prompt is resolved, provide a short and concise summary of the solution. Style the summary as a commit message to Github.
 
 Remember to remain concise in your responses. Be straight to the point, and use direct and concise language whenever possible. 
 
