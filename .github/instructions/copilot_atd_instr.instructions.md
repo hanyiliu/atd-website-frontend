@@ -34,7 +34,7 @@ The coding style taken in this project adheres to the following standards:
     - In parts where they have any possibility of being unclear or complex, write clear comments to explain what the relevant code does.
 - **Reuseability**: Variables and mixins in SCSS should be used to ensure that styles are consistent across the application, and to avoid duplication of styles. 
     - Keep in mind of defined values in styles. Use them in all circumstances. Never hardcode values in individual styles.
-    
+
 # Codebase Structure
 The structure of the codebase follows the standard Angular structure:
 - All components are placed in the `src/app/components` directory.
@@ -57,7 +57,8 @@ src/app/components/<component-name>/
 ```
 
 # Response Formats
-When the user prompts you with any request, take the following steps:
+When the user prompts you with any request, take the following steps.
+These steps must be exactly followed for every new prompt request that is not a follow-up on a previous request:
 1. **Clarification**: Always start by clarifying the request. At any point where there is uncertainty, do not hesitate to ask for more information.
 2. **User Perspective**: Then, start with user/stakeholder perspective before discussing technical solutions.
 3. **List Approaches**: Then, if discussing technical solutions, use reasoning to first think about the best approaches. 
