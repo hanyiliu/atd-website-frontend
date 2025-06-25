@@ -1,23 +1,55 @@
 
 
 @use "fonts" as *;
-
+@use "breakpoints" as *;
 
 .container {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  height: 150px;
+  height: 150px; // Desktop height
+
+  @include respond-to('tablet') {
+    height: 120px;
+  }
+
+  @include respond-to('mobile') {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
 }
+
 .title {
   font-family: $font-primary;
-  font-size: $font-size-base;
+  font-size: clamp($font-size-base-sm, 3vw, $font-size-base); // Responsive font size
   font-weight: $font-weight-bold;
   margin-bottom: 0.5rem;
+
+  @include respond-to('tablet') {
+    font-size: clamp($font-size-sm, 2.5vw, $font-size-base-sm);
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+    margin-bottom: 0.75rem;
+  }
 }
+
 .description {
   font-family: $font-secondary;
   font-weight: $font-weight-regular;
-  font-size: $font-size-xs;
-  width: 22rem;
+  font-size: clamp($font-size-xxs, 1.5vw, $font-size-xs); // Responsive font size
+  width: clamp(16rem, 22vw, 22rem); // Responsive width
+
+  @include respond-to('tablet') {
+    width: clamp(14rem, 20vw, 18rem);
+    font-size: clamp($font-size-xxs, 1.3vw, $font-size-xs);
+  }
+
+  @include respond-to('mobile') {
+    width: 100%;
+    font-size: $font-size-xxs;
+    line-height: 1.4;
+  }
 }
