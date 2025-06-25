@@ -38,7 +38,6 @@ export class NavbarComponent implements OnInit {
 
     // Monitor mobile breakpoint for hamburger menu
     this.breakpointObserver.observe(['(max-width: 768px)'])
-      .pipe(takeUntil(this.destroy$))
       .subscribe(result => {
         this.isMobile = result.matches;
         if (!this.isMobile) {
