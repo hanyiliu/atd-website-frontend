@@ -22,6 +22,7 @@ export class AppComponent {
       .subscribe(() => {
         const hasFragment = this.router.url.includes('#');
         if (!hasFragment) {
+          window.scrollTo(0, 0);
           this.fadeKey = 0;
           setTimeout(() => (this.fadeKey = 1), 0);
         }
