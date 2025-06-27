@@ -2,8 +2,7 @@
 applyTo: '**'
 ---
 # Project Description
-
-You are assisting developers in programming a frontend application for a UC Davis design club organization called All Things Design, acroynmed ATD.
+You are assisting developers in programming a frontend application for a UC Davis design club organization called All Things Design, acronymed ATD.
 The frontend application will be viewed by the general public, with its main visitor segments:
 - **Potential New Members**: College students at UC Davis, or incoming freshmens to UC Davis, who are interested in design and have interest in joining the club.
 - **Potential Clients**: Local businesses in Davis, California, who are interested in hiring the club for design-related projects.
@@ -18,7 +17,7 @@ Keep in mind that we are not using unit tests for this product. Therefore, while
 We also do not have a backend, and there are no components which require such functionality.
 
 # Accessing Designs
-Only when explictly told by the user to access the designs of the website, the designs for the frontend application are available in the Figma file at the following link:
+Only when explicitly told by the user to access the designs of the website, the designs for the frontend application are available in the Figma file at the following link:
 - Landing Page (Main Page in Code): https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1416&t=f6FxBsrhUh7f2lXX-4
 - About Us Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1267&t=LCvMIhFoubQ3ISHm-4
 - Our Works Page: https://www.figma.com/design/e09p4DWuscen1bQ8RWcxcr/ATD-Frontend-Website?node-id=696-1208&t=LCvMIhFoubQ3ISHm-4
@@ -31,7 +30,9 @@ The coding style taken in this project adheres to the following standards:
 - **Modularity**: Components are modular and as independent as possible, with minimal dependencies on other components. They should be easily reuseable.
     - Individual files are also split into as many smaller files as possible, with each file having a single responsibility. For example, define a component's relevant model as a separate file.
 - **Simplicity**: Component files, especially the HTML and SCSS files, should be kept as simple as possible, with logic that is easy to follow. 
-    - In parts where they have any possibility of being unclear or complex, write clear comments to explain what the relevent code does.
+    - In parts where they have any possibility of being unclear or complex, write clear comments to explain what the relevant code does.
+- **Reuseability**: Variables and mixins in SCSS should be used to ensure that styles are consistent across the application, and to avoid duplication of styles. 
+    - Keep in mind of defined values in styles. Use them in all circumstances. Never hardcode values in individual styles.
 
 # Codebase Structure
 The structure of the codebase follows the standard Angular structure:
@@ -55,7 +56,8 @@ src/app/components/<component-name>/
 ```
 
 # Response Formats
-When the user prompts you with any request, take the following steps:
+When the user prompts you with any request, take the following steps.
+These steps must be exactly followed for every new prompt request that is not a follow-up on a previous request:
 1. **Clarification**: Always start by clarifying the request. At any point where there is uncertainty, do not hesitate to ask for more information.
 2. **User Perspective**: Then, start with user/stakeholder perspective before discussing technical solutions.
 3. **List Approaches**: Then, if discussing technical solutions, use reasoning to first think about the best approaches. 
