@@ -2,6 +2,8 @@
 
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
+
 .container {
   background-color: $brand-color-gray-3;
   width: 100%;
@@ -10,11 +12,22 @@
 
 .header {
   font-family: $font-primary;
-  font-size: $font-size-base;
+  font-size: $font-size-base; // Desktop
   font-weight: $font-weight-bold;
   padding-bottom: 1rem;
   width: 100%; // Take full width of the inner container
   text-align: left; // Ensure left alignment
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base-sm;
+    text-align: center;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+    text-align: center;
+    padding-bottom: 0.75rem;
+  }
 }
 
 .event-calendar-wrapper {
@@ -22,19 +35,51 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; // This centers event-calendar-inner
-  padding: 3rem 1rem; // Reduced horizontal padding from 5rem to 1rem for more space
+  padding: 3rem 1rem; // Desktop padding
+
+  @include respond-to('tablet') {
+    padding: 2rem 1rem;
+  }
+
+  @include respond-to('mobile') {
+    padding: 1.5rem 0.5rem;
+  }
 }
 
 .event-calendar-inner {
-  padding: 1rem;
+  padding: 1rem; // Desktop padding
   display: flex;
   flex-direction: column; // Changed to column to stack header and events
   width: fit-content; // Set to 90% to allow centering by the wrapper
+
+  @include respond-to('tablet') {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  @include respond-to('mobile') {
+    padding: 0.5rem;
+    width: 100%;
+  }
 }
 
 .events-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1rem; // Desktop gap
   width: fit-content;
+
+  @include respond-to('tablet') {
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  @include respond-to('mobile') {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
 }
