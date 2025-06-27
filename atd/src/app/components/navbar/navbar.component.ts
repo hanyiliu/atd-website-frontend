@@ -2,10 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
+import { NavigationService } from '../../services/navigation.service';
 import { filter, takeUntil } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-navbar',
@@ -32,6 +34,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // Listen to router events to update active states
     this.router.events
+
       .pipe(
         filter(event => event instanceof NavigationEnd),
         takeUntil(this.destroy$)
@@ -79,6 +82,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleAboutUs() {
+    this.navigationService.setAboutUsActive(true);
     this.navigateTo('/about-us');
   }
 

@@ -1,5 +1,3 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
 @use "breakpoints" as *;
@@ -109,6 +107,16 @@
 
     // Style the app-button component within hero section
     app-button {
+
+      button {
+        border: 2px solid white;
+        border-radius: 32px;
+        transition: transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+
       margin-top: 2rem; // Desktop spacing
       display: inline-block;
 
@@ -118,6 +126,7 @@
 
       @include respond-to('mobile') {
         margin-top: 1rem;
+
       }
     }
   }
