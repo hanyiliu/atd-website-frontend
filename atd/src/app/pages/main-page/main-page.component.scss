@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .main-page-container {
     display: flex;
     flex-direction: column;
@@ -6,30 +8,86 @@
 
 /* Custom margins for spacing between components */
 app-definition-box {
-    margin-top: 100px; // Space above Definition Box
-    margin-bottom: 150px; // Space below Definition Box
+    margin-top: 100px; // Desktop spacing
+    margin-bottom: 150px;
+
+    @include respond-to('tablet') {
+        margin-top: 60px;
+        margin-bottom: 100px;
+    }
+
+    @include respond-to('mobile') {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
 }
 
 app-team-values-carousel {
-    margin-bottom: 240px; // Space below Team Values Carousel
-    width: 80%; // Set width to 80% of the home page width
+    margin-bottom: 240px; // Desktop spacing
+    width: 70%; // Desktop width
+
+    @include respond-to('tablet') {
+        margin-bottom: 150px;
+        width: 85%;
+    }
+
+    @include respond-to('mobile') {
+        margin-bottom: 100px;
+        width: 95%;
+    }
 }
 
 app-event-calender-box {
-    margin-bottom: 200px; // Space below Event Calendar Box
+    margin-bottom: 200px; // Desktop spacing
     width: 100%;
+
+    @include respond-to('tablet') {
+        margin-bottom: 120px;
+    }
+
+    @include respond-to('mobile') {
+        margin-bottom: 80px;
+    }
 }
 
 app-what-we-offer {
-    margin-bottom: 240px; // Space below What We Offer
+    margin-bottom: 240px; // Desktop spacing
+
+    @include respond-to('tablet') {
+        display: none; // Hide component on mobile screens
+        margin-bottom: 0; // Remove margin since it's hidden
+    }
+
+    @include respond-to('mobile') {
+        display: none; // Hide component on mobile screens
+        margin-bottom: 0; // Remove margin since it's hidden
+    }
 }
 
 app-contact-box {
-    margin-bottom: 30px; // Space below Contact Box
-    width: 80%; 
+    margin-bottom: 30px; // Desktop spacing
+    width: 80%; // Desktop width
+
+    @include respond-to('tablet') {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    @include respond-to('mobile') {
+        margin-bottom: 15px;
+        width: 95%;
+    }
 }
 
 app-faq-section {
-    margin-bottom: 140px; // Space below FAQ Section
+    margin-bottom: 140px; // Desktop spacing
     width: 100%;
+
+    @include respond-to('tablet') {
+        margin-bottom: 80px;
+    }
+
+    @include respond-to('mobile') {
+        margin-bottom: 60px;
+    }
 }

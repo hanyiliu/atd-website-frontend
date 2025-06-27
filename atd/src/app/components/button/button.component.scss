@@ -4,10 +4,8 @@
 }
 
 .button-wrapper button {
-  padding: 15px 40px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;
+  padding: 10px 30px; // Increased padding for more space between text and border
+  border: 2px solid transparent; // Thicker default transparent border
   cursor: pointer;
 
   border-radius: 32px;
