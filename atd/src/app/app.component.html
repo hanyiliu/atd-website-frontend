@@ -1,6 +1,6 @@
 <div class="app-container">
   <app-navbar></app-navbar>
-  <div [ngClass]="{ 'fade-in': fadeKey }">
+  <div class="router-wrapper" [@routeTransition]="route.snapshot.data">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>

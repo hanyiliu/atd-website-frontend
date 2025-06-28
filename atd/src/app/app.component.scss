@@ -3,15 +3,9 @@ app-container {
   align-items: center;
 }
 
-.fade-in {
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.router-wrapper {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
