@@ -38,11 +38,11 @@ app-info-section {
   width: 100%;
 
   @include respond-to('tablet') {
-    display: none; // Hide the info-section completely on tablet
+    margin-bottom: 120px;
   }
 
   @include respond-to('mobile') {
-    display: none; // Hide the info-section completely on mobile
+    margin-bottom: 80px;
   }
 }
 

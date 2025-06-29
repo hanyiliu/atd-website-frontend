@@ -13,12 +13,9 @@
   justify-content: center;
   align-items: center;
   
-  @include respond-to('tablet') {
-    display: none;
-  }
-  
-  @include respond-to('mobile') {
-    display: none;
+  /* Hide background when viewport is too small for original size (1100px is approximate threshold) */
+  @media (max-width: 1400px) {
+    background-image: none;
   }
 }
 
