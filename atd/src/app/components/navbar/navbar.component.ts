@@ -8,7 +8,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { Subject } from 'rxjs';
 
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -28,7 +27,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private navigationService: NavigationService
   ) {}
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.router.events
 
       .pipe(
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd),
         takeUntil(this.destroy$)
       )
       .subscribe((event: NavigationEnd) => {
@@ -47,9 +47,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.updateActiveStates(this.router.url);
 
     // Monitor mobile breakpoint for hamburger menu
-    this.breakpointObserver.observe(['(max-width: 768px)'])
+    this.breakpointObserver
+      .observe(['(max-width: 768px)'])
       .pipe(takeUntil(this.destroy$))
-      .subscribe(result => {
+      .subscribe((result) => {
         this.isMobile = result.matches;
         if (!this.isMobile) {
           this.isMobileMenuOpen = false; // Close menu when switching to desktop
