@@ -3,12 +3,12 @@ import {
   provideRouter,
   withInMemoryScrolling, // Import withInMemoryScrolling
 } from '@angular/router';
-
-import { routes } from './app.routes';
 import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
@@ -22,5 +22,6 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(withEventReplay()),
     provideAnimations(),
+    provideHttpClient(), // Add this line
   ],
 };

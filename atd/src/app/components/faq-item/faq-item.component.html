@@ -1,4 +1,4 @@
-<div class="faq-item">
+<div class="faq-item" [class.expanded]="isExpanded">
   <div class="faq-header" (click)="toggle()">
     <span class="faq-title">{{ faqItem.question }}</span>
     <mat-icon

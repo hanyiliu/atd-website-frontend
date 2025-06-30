@@ -1,5 +1,6 @@
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
 
 .values-wrapper {
   position: relative;
@@ -8,7 +9,22 @@
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   width: 100%; // Make it take full width of parent
-  aspect-ratio: 2.2; // Maintain aspect ratio based on the background image
+  aspect-ratio: 2.2; // Desktop aspect ratio
+  min-height: 200px; // Minimum height to ensure content visibility
+
+  @include respond-to('tablet') {
+    border-radius: 16px;
+    aspect-ratio: 2.0; // Adjusted for better image display on tablet
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.4);
+    min-height: 180px;
+  }
+
+  @include respond-to('mobile') {
+    border-radius: 12px;
+    aspect-ratio: 1.8; // Adjusted for better image display on mobile
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+    min-height: 150px;
+  }
 }
 
 .background-image {
@@ -16,6 +32,15 @@
   width: 100%; // Make background image responsive
   height: 100%; // Fill the container
   object-fit: cover; // Maintain aspect ratio while covering the container
+  object-position: center; // Ensure image is centered
+  
+  @include respond-to('tablet') {
+    object-position: center; // Center the image on tablet
+  }
+  
+  @include respond-to('mobile') {
+    object-position: center; // Center the image on mobile
+  }
 }
 
 .values-container {
@@ -27,13 +52,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 10px; // Add some horizontal padding
+
+  @include respond-to('tablet') {
+    align-items: center;
+    padding: 0 15px; // More padding on tablet
+  }
+
+  @include respond-to('mobile') {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 15px;
+  }
 }
 
 .text-content {
   font-family: $font-primary;
   font-weight: $font-weight-bold;
-  font-size: $font-size-header-base;
-  padding-left: 80px;
+  font-size: clamp($font-size-xl, 4vw, $font-size-header-base); // Responsive font sizing
+  padding-left: 80px; // Desktop padding
+
+  @include respond-to('tablet') {
+    font-size: clamp($font-size-base, 3.5vw, $font-size-xl);
+    padding-left: 50px;
+  }
+
+  @include respond-to('mobile') {
+    font-size: clamp($font-size-sm, 3vw, $font-size-base-sm);
+    padding-left: 0;
+    padding: 0 15px;
+  }
 }
 
 .line-one {
@@ -43,7 +93,7 @@
 .line-two {
   color: $brand-color-primary;
   overflow: hidden;
-  height: 1em;
+  height: 1.2em; // Increased height for better visibility
 
   .rotating-words {
     display: inline-block;
@@ -82,8 +132,23 @@
 }
 
 .logo {
-  padding-right: 120px;
-  scale: 100%;
+  padding-right: 120px; // Desktop padding
+  scale: 100%; // Desktop scale
   filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
   -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
+  max-width: 30%; // Prevent logo from being too large
+
+  @include respond-to('tablet') {
+    padding-right: 80px;
+    scale: 85%;
+    max-width: 28%; // Slightly smaller on tablet
+  }
+
+  @include respond-to('mobile') {
+    padding-right: 0;
+    scale: 60%; // Increased from 50% for better visibility
+    max-width: 35%; // Different proportion on mobile
+    filter: drop-shadow(-1px -1px 4px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(-1px -1px 4px rgba(0, 0, 0, 0.6));
+  }
 }
