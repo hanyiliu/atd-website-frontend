@@ -32,7 +32,7 @@ export class AppComponent {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         if (isPlatformBrowser(this.platformId)) {
-          window.scrollTo(0, 0);
+          //window.scrollTo(0, 0);
         }
       });
   }
