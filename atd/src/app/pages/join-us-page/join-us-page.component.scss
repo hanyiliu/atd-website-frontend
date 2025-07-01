@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoints';
+
 .join-us-page {
   overflow-x: hidden;
   width: 100%;
@@ -15,6 +17,14 @@
   margin-top: -180px;
   display: block;
   transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
+  
+  @include respond-to('tablet') {
+    margin-top: -130px;
+  }
+  
+  @include respond-to('mobile') {
+    margin-top: -80px;
+  }
 }
 
 .roles-background {
@@ -25,6 +35,14 @@
   margin-bottom: -250px;
   z-index: 1;
   transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
+  
+  @include respond-to('tablet') {
+    margin-bottom: -180px;
+  }
+  
+  @include respond-to('mobile') {
+    margin-bottom: -120px;
+  }
 }
 
 .header-container {
@@ -32,6 +50,16 @@
   top: 125px;
   left: 100px;
   z-index: 2;
+  
+  @include respond-to('tablet') {
+    top: 100px;
+    left: 60px;
+  }
+  
+  @include respond-to('mobile') {
+    top: 80px;
+    left: 30px;
+  }
 }
 
 .roles-container {
@@ -39,5 +67,15 @@
   bottom: -400px;
   left: 100px;
   z-index: 2;
+  
+  @include respond-to('tablet') {
+    bottom: -350px;
+    left: 60px;
+  }
+  
+  @include respond-to('mobile') {
+    bottom: -300px;
+    left: 30px;
+  }
 }
 
