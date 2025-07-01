@@ -11,32 +11,24 @@
       </div>
       <div class="intro-title">Meet The Team</div>
     </div>
+    
+    <!-- VP Board section with grid layout, max 4 items per row -->
     <div class="VP">
       <div class="VP-title">VP Board</div>
-      <div class="first-row">
+      <div class="vp-grid">
         <app-member-component
-          *ngFor="let member of members.slice(0, 4)"
-          [member]="member"
-        ></app-member-component>
-      </div>
-      <div class="second-row">
-        <app-member-component
-          *ngFor="let member of members.slice(4, 7)"
+          *ngFor="let member of members.slice(0, 7)"
           [member]="member"
         ></app-member-component>
       </div>
     </div>
+    
+    <!-- Creative Board section with grid layout, max 3 items per row -->
     <div class="Creative">
       <div class="Creative-title">Creative Board</div>
-      <div class="third-row">
+      <div class="creative-grid">
         <app-member-component
-          *ngFor="let member of members.slice(7, 10)"
-          [member]="member"
-        ></app-member-component>
-      </div>
-      <div class="fourth-row">
-        <app-member-component
-          *ngFor="let member of members.slice(10)"
+          *ngFor="let member of members.slice(7)"
           [member]="member"
         ></app-member-component>
       </div>

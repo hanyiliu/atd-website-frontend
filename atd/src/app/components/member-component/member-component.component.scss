@@ -1,30 +1,69 @@
 
 @use "fonts" as *;
 @use "colors" as *;
-
+@use "breakpoints" as *;
 
 .member-component-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .text {
-  //padding-top: 100px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: center;
+  width: 100%;
 
+  @include respond-to('mobile') {
+    gap: 2px;
+  }
+}
 
 .picture {
   margin-bottom: 10px;
+
+  img {
+    width: 243px;
+    height: auto;
+    object-fit: cover;
+
+    @include respond-to('tablet') {
+      width: 180px;
+    }
+
+    @include respond-to('mobile') {
+      width: 130px;
+    }
+  }
 }
 
 .title {
   font-family: $font-primary;
   font-size: $font-size-sm;
   font-weight: $font-weight-bold;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-xs;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-xxs;
+  }
 }
 
 .name {
   font-family: $font-primary;
   font-size: $font-size-xs;
   font-weight: $font-weight-regular;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-xxs;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-xxs;
+  }
 }
