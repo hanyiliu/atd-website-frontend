@@ -23,17 +23,31 @@ import { routeTransition } from './components/routeTransitions';
 export class AppComponent {
   title = 'atd';
 
+  private scrollPositions: Record<string, number> = {};
+
   constructor(
     private router: Router,
     protected route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        if (isPlatformBrowser(this.platformId)) {
-          //window.scrollTo(0, 0);
+    this.router.events.subscribe((event) => {
+      if (!isPlatformBrowser(this.platformId)) return;
+
+      if (event instanceof NavigationStart) {
+        // Save current scroll position before navigating away
+        const currentUrl = this.router.url;
+        this.scrollPositions[currentUrl] = window.scrollY;
+      }
+
+      if (event instanceof NavigationEnd) {
+        const newUrl = event.urlAfterRedirects;
+        const savedScroll = this.scrollPositions[newUrl];
+
+        // Restore scroll position if available
+        if (savedScroll !== undefined) {
+          setTimeout(() => window.scrollTo(0, savedScroll), 0);
         }
-      });
+      }
+    });
   }
 }

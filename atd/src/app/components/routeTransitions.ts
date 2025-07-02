@@ -12,21 +12,20 @@ export const routeTransition = trigger('routeTransition', [
     query(
       ':enter, :leave',
       style({
-        position: 'fixed',
+        position: 'absolute',
         width: '100%',
-        top: '131px',
         left: 0,
         zIndex: 1,
       }),
       { optional: true }
     ),
     group([
-      query(':leave', [animate('400ms ease', style({ opacity: 0 }))], {
+      query(':leave', [animate('500ms ease', style({ opacity: 0 }))], {
         optional: true,
       }),
       query(
         ':enter',
-        [style({ opacity: 0 }), animate('400ms ease', style({ opacity: 1 }))],
+        [style({ opacity: 0 }), animate('500ms ease', style({ opacity: 1 }))],
         { optional: true }
       ),
     ]),
