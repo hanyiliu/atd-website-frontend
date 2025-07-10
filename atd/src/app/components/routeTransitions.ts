@@ -14,8 +14,6 @@ export const routeTransition = trigger('routeTransition', [
       style({
         position: 'absolute',
         width: '100%',
-        left: 0,
-        zIndex: 1,
       }),
       { optional: true }
     ),
