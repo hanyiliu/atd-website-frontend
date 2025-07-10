@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
+import { NavigationService } from '../../services/navigation.service';
 import { filter, takeUntil } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,14 +27,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private navigationService: NavigationService
   ) {}
 
   ngOnInit() {
     // Listen to router events to update active states
     this.router.events
+
       .pipe(
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd),
         takeUntil(this.destroy$)
       )
       .subscribe((event: NavigationEnd) => {
@@ -44,9 +47,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.updateActiveStates(this.router.url);
 
     // Monitor mobile breakpoint for hamburger menu
-    this.breakpointObserver.observe(['(max-width: 768px)'])
+    this.breakpointObserver
+      .observe(['(max-width: 768px)'])
       .pipe(takeUntil(this.destroy$))
-      .subscribe(result => {
+      .subscribe((result) => {
         this.isMobile = result.matches;
         if (!this.isMobile) {
           this.isMobileMenuOpen = false; // Close menu when switching to desktop
@@ -79,6 +83,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleAboutUs() {
+    this.navigationService.setAboutUsActive(true);
     this.navigateTo('/about-us');
   }
 
