@@ -1,19 +1,34 @@
 @use "colors" as *;
 @use "fonts" as *;
+@import '../../../styles/breakpoints';
 
 .our-works-container {
-  width: 1083px;
-  height: 536px;
+  width: 100%;
+  max-width: 1083px;
+  position: relative;
+  overflow: visible; /* Changed from hidden to allow overlapping elements to be visible */
+  min-height: 680px; /* Increased height to provide more space */
+  
+  @include respond-to('tablet') {
+    max-width: 90%;
+    min-height: 580px;
+  }
+  
+  @include respond-to('mobile') {
+    max-width: 95%;
+    min-height: 480px;
+  }
 }
 
 .text {
   position: relative;
-  top: 40px; // more clearly overlap the images
-  left: -20px; // adjust as needed
+  top: 40px;
+  left: -20px;
   z-index: 10;
   font-family: $font-primary;
   font-size: $font-size-xxl;
   font-weight: $font-weight-bolder;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 1) 10%,
@@ -21,36 +36,147 @@
     rgba(255, 255, 255, 0.2) 80%,
     rgba(255, 255, 255, 0) 100%
   );
-  color: black;
-  //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  
+  @include respond-to('tablet') {
+    font-size: calc($font-size-xl + 0.5rem);
+    top: 30px;
+    left: -10px;
+  }
+  
+  @include respond-to('mobile') {
+    font-size: $font-size-xl;
+    top: 20px;
+    left: -5px;
+  }
 }
+
 .background-pictures {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+  position: relative;
 }
 
 .top {
   display: flex;
   align-items: flex-start;
   gap: 17px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60px; /* Added padding to create more space */
+  
+  @include respond-to('tablet') {
+    gap: 10px;
+    padding-bottom: 50px;
+  }
+  
+  @include respond-to('mobile') {
+    gap: 5px;
+    padding-bottom: 40px;
+  }
 }
 
 .bottom {
   display: flex;
   align-items: flex-end;
   gap: 17px;
+  width: 100%;
+  position: relative;
+  margin-top: -100px; /* Adjusted for better spacing while maintaining overlap */
+  z-index: 2; /* Position bottom row above top row */
+  
+  @include respond-to('tablet') {
+    gap: 10px;
+    margin-top: -70px;
+  }
+  
+  @include respond-to('mobile') {
+    gap: 5px;
+    margin-top: -50px;
+  }
 }
 
-.top img {
-  vertical-align: top;
+.top img, .bottom img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.bottom img {
-  vertical-align: bottom;
+/* Top row images */
+.img-1 {
+  width: 28.9%; /* 313px / 1083px */
+  aspect-ratio: 313 / 256;
+}
+
+.img-2 {
+  width: 39.15%; /* 424px / 1083px */
+  aspect-ratio: 424 / 346;
+}
+
+.img-3 {
+  width: 28.9%; /* 313px / 1083px */
+  aspect-ratio: 313 / 346;
+}
+
+/* Bottom row images with adjusted sizing */
+.image4, .image5, .image6 {
+  display: flex;
+  justify-content: center;
 }
 
 .image4 {
-  margin-top: -65px; // adjust as needed to move image4 upward
+  width: 28.9%; /* Maintains proportion of original width */
+}
+
+.image5 {
+  width: 17.08%; /* Maintains proportion of original width */
+}
+
+.image6 {
+  width: 50.88%; /* Maintains proportion of original width */
+}
+
+.img-4 {
+  width: 100%;
+  aspect-ratio: 313 / 256;
+}
+
+.img-5 {
+  width: 100%;
+  aspect-ratio: 185 / 176;
+}
+
+.img-6 {
+  width: 100%;
+  aspect-ratio: 551 / 176;
+}
+
+.image4, .image5, .image6 {
+  position: relative;
+  z-index: 3; /* Position all bottom images above other elements */
+}
+
+.image4 {
+  margin-top: -20px; /* Adjust position for better overlap */
+  
+  @include respond-to('tablet') {
+    margin-top: -15px;
+  }
+  
+  @include respond-to('mobile') {
+    margin-top: -10px;
+  }
+}
+
+/* Hide certain images on very small screens */
+@media (max-width: 380px) {
+  .img-5 {
+    display: none;
+  }
+  
+  .img-6 {
+    width: 70%;
+  }
 }

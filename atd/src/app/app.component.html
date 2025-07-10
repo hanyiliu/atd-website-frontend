@@ -1,5 +1,7 @@
 <div class="app-container">
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
+  <div class="router-wrapper" [@routeTransition]="route.snapshot.data">
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+  </div>
+  <app-footer></app-footer>
 </div>
