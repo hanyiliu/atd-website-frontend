@@ -1,17 +1,41 @@
+@use "breakpoints" as *;
+
 .info-box {
   background-image: url("/images/what-we-do-background.svg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
   background-position: center;
-  width: 1303px;
+  max-width: 1303px;
+  width: 100%;
   aspect-ratio: 1303/652;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  /* Hide background when viewport is too small for original size (1100px is approximate threshold) */
+  @media (max-width: 1400px) {
+    background-image: none;
+  }
 }
+
 .info-card-wrapper {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
+  width: 90%;
+  max-width: 900px;
+  align-items: stretch; /* Ensures cards stretch to match the tallest one */
+  
+  @include respond-to('tablet') {
+    width: 95%;
+    gap: 1.5rem;
+  }
+  
+  @include respond-to('mobile') {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
 }
