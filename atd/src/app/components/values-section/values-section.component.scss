@@ -1,20 +1,80 @@
 @use "fonts" as *;
 @use "colors" as *;
+@use "breakpoints" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
 .title {
   font-family: $font-primary;
   font-size: $font-size-header-lg;
   font-weight: $font-weight-bold;
+  text-align: center;
+  margin-bottom: 40px;
+  
+  @include respond-to('tablet') {
+    font-size: $font-size-header-base;
+    margin-bottom: 30px;
+  }
+  
+  @include respond-to('mobile') {
+    font-size: $font-size-header-sm;
+    margin-bottom: 20px;
+  }
 }
 
 .body {
   display: flex;
   flex-direction: row;
-  flex: 1;
+  width: 100%;
+  justify-content: center;
+  
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  @include respond-to('mobile') {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .value {
   margin-right: 50px;
+  text-align: center;
+  
+  img {
+    max-width: 720px;
+    width: 100%;
+    height: auto;
+  }
+  
+  @include respond-to('tablet') {
+    margin-right: 0;
+    margin-bottom: 40px;
+    
+    img {
+      max-width: 500px;
+    }
+  }
+  
+  @include respond-to('mobile') {
+    margin-right: 0;
+    margin-bottom: 30px;
+    
+    img {
+      max-width: 320px;
+    }
+  }
 }
 
 .writings {
@@ -23,16 +83,48 @@
   font-family: $font-primary;
   font-size: $font-size-sm;
   font-weight: $font-weight-regular;
-  width: 318px;
-  height: 524.2px;
-  flex: 1;
+  width: 100%;
+  max-width: 318px;
   padding-top: 73.8px;
+  
+  @include respond-to('tablet') {
+    padding-top: 0;
+    max-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  @include respond-to('mobile') {
+    padding-top: 0;
+    max-width: 320px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .icons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 30px;
+  
+  @include respond-to('tablet') {
+    gap: 25px;
+  }
+  
+  @include respond-to('tablet') {
+    gap: 25px;
+    align-items: center;
+  }
+  
+  @include respond-to('mobile') {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 .icon1 svg {
@@ -85,14 +177,52 @@
   overflow: hidden;
   position: relative;
   //border: 2px solid blue;
+  
+  @include respond-to('tablet') {
+    height: 42px;
+    width: 42px;
+  }
+  
+  @include respond-to('mobile') {
+    height: 38px;
+    width: 38px;
+  }
+  
+  img {
+    @include respond-to('tablet') {
+      max-width: 90%;
+      height: auto;
+    }
+    
+    @include respond-to('mobile') {
+      max-width: 85%;
+      height: auto;
+    }
+  }
 }
 
 .words {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 381px;
+  width: 100%;
+  max-width: 381px;
   margin-left: 20px;
+  gap: 30px;
+  
+  @include respond-to('tablet') {
+    margin-left: 20px;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  @include respond-to('mobile') {
+    margin-left: 0;
+    margin-top: 30px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
 }
 
 .words1,
@@ -105,5 +235,18 @@
   align-items: center;
   justify-content: flex-start;
   height: 46.88px;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
+  font-size: $font-size-sm;
+  
+  @include respond-to('tablet') {
+    font-size: $font-size-xs;
+    height: 42px;
+  }
+  
+  @include respond-to('mobile') {
+    font-size: $font-size-xs;
+    height: 38px;
+    justify-content: center;
+  }
 }
