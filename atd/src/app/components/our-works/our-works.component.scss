@@ -29,6 +29,13 @@
   font-size: $font-size-xxl;
   font-weight: $font-weight-bolder;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
   
   @include respond-to('tablet') {
     font-size: calc($font-size-xl + 0.5rem);
