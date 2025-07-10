@@ -1,4 +1,11 @@
 app-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+.router-wrapper {
+  display: block;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }

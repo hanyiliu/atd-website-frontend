@@ -1,19 +1,43 @@
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
 
 .video-section-container {
   background-color: $brand-color-black;
-  width: 1304px;
-  height: 611px;
+  max-width: 1304px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1304 / 611;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  
+  @include respond-to('tablet') {
+    max-width: 90%;
+    border-radius: 15px;
+  }
+  
+  @include respond-to('mobile') {
+    max-width: 100%;
+    border-radius: 10px;
+  }
 }
+
 .text {
   font-family: $font-primary;
   font-size: $font-size-lg;
   font-weight: $font-weight-bold;
   color: $brand-color-white;
+  text-align: center;
+  padding: 0 20px;
+  
+  @include respond-to('tablet') {
+    font-size: $font-size-lg;
+  }
+  
+  @include respond-to('mobile') {
+    font-size: $font-size-base;
+  }
 }

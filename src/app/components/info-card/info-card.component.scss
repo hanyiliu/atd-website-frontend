@@ -1,19 +1,32 @@
 
-
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
+
 .container {
   background-color: $brand-color-gray-2;
-
   box-shadow: 64px 182px 54px 0 rgba(0, 0, 0, 0),
     41px 116px 49px 0 rgba(0, 0, 0, 0.01), 23px 65px 42px rgba(0, 0, 0, 0.05),
     10px 29px 31px 0 rgba(0, 0, 0, 0.09), 3px 7px 17px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 2rem;
-  width: fit-content;
-  height: 415px;
-  aspect-ratio: 383/415;
+  width: 100%;
+  flex: 1; /* This makes the cards equal height */
+  min-width: 0; /* Critical for flex item shrinking */
+  height: 100%; /* Use height: 100% to fill the parent height */
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
+  @include respond-to('tablet') {
+    padding: 1.5rem;
+  }
+  
+  @include respond-to('mobile') {
+    padding: 1.25rem;
+    width: 90%;
+    height: auto; /* On mobile, allow natural height */
+  }
 }
 .header {
   display: flex;
@@ -34,21 +47,56 @@
 }
 .details-wrapper {
   margin-left: 1.6rem;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  
+  /* Add margin-top: auto to push content to the top */
+  &:last-child {
+    margin-bottom: auto;
+  }
+  
+  @include respond-to('tablet') {
+    margin-left: 1.2rem;
+    margin-bottom: 16px;
+  }
+  
+  @include respond-to('mobile') {
+    margin-left: 1rem;
+    margin-bottom: 12px;
+  }
 }
 
 .detail {
   font-size: $font-size-xs;
   font-family: $font-secondary;
   font-weight: $font-weight-regular;
-  width: 270px;
+  width: 100%;
   border-left: 2px solid $brand-color-primary;
   padding-left: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   display: flex;
-  height: 64px;
+  align-items: center;
+  /* Remove flex: 1 to avoid stretching */
   box-sizing: border-box;
+  word-wrap: break-word; /* Allow text to wrap */
+  
+  @include respond-to('tablet') {
+    font-size: $font-size-xs;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  @include respond-to('mobile') {
+    font-size: $font-size-xs;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .single-detail .detail {
-  height: 104px;
+  /* For cards with only one detail item */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
