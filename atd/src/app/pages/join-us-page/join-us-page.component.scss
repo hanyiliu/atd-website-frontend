@@ -27,14 +27,13 @@
   }
 }
 
-.roles-background {
+.roles-section {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  margin-bottom: -250px;
   z-index: 1;
-  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
+  margin-bottom: -250px; /* Match the margin of roles-background */
   
   @include respond-to('tablet') {
     margin-bottom: -180px;
@@ -43,6 +42,13 @@
   @include respond-to('mobile') {
     margin-bottom: -120px;
   }
+}
+
+.roles-background {
+  display: block;
+  width: 100%;
+  z-index: 1;
+  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
 }
 
 .header-container {
@@ -64,17 +70,19 @@
 
 .roles-container {
   position: absolute;
-  bottom: 0px;
+  top: 100px; /* This aligns with the top of roles-background */
   left: 100px;
   z-index: 2;
+  /* Since roles-background is now position:relative and the direct parent of this element,
+     top:0 (and any added padding) will place it at the exact top of the roles-background */
   
   @include respond-to('tablet') {
-    bottom: -350px;
+    top: 200px;
     left: 60px;
   }
   
   @include respond-to('mobile') {
-    bottom: -300px;
+    top: 150px;
     left: 30px;
   }
 }
