@@ -4,7 +4,6 @@ import {
   NavigationStart,
   ActivatedRoute,
 } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
