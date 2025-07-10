@@ -5,10 +5,9 @@ import { OurWorksPageComponent } from './pages/our-works-page/our-works-page.com
 import { JoinUsPageComponent } from './pages/join-us-page/join-us-page.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: MainPageComponent },
+  { path: '', component: MainPageComponent },
   { path: 'about-us', component: AboutUsPageComponent },
   { path: 'our-works', component: OurWorksPageComponent },
   { path: 'join-us', component: JoinUsPageComponent },
-  { path: '**', redirectTo: '/home' } // Wildcard route for 404 pages
+  { path: '**', redirectTo: '' } // Wildcard route for 404 pages
 ];
