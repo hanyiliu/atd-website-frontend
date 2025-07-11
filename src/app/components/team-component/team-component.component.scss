@@ -1,0 +1,128 @@
+@use "fonts" as *;
+@use "colors" as *;
+@use "breakpoints" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.team-wrapper {
+  width: 100%;
+  max-width: 1512px;
+  padding: 0 20px;
+  
+  @include respond-to('tablet') {
+    padding: 0 15px;
+  }
+  
+  @include respond-to('mobile') {
+    padding: 0 10px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-title {
+  font-family: $font-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin-top: 10px;
+}
+
+.VP, .Creative {
+  width: 100%;
+}
+
+.VP-title, .Creative-title {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  display: flex;
+  justify-content: center;
+}
+
+.VP-title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.Creative-title {
+  margin-top: 200px;
+  margin-bottom: 30px;
+}
+
+/* VP Board grid - maximum 4 items per row */
+.vp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  max-width: 1080px; /* Allow up to 4 items per row (240px * 4 + gap) */
+  gap: 20px;
+  margin: 0 auto; /* Center the grid */
+  justify-content: center;
+  
+  /* Ensure items are centered when there are fewer than max items */
+  &::before {
+    content: '';
+    grid-column: 1 / -1;
+    height: 0;
+  }
+  
+  &::after {
+    content: '';
+    grid-column: 1 / -1;
+    height: 0;
+  }
+  
+  @include respond-to('tablet') {
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 850px; /* Adjusted for tablet */
+  }
+  
+  @include respond-to('mobile') {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    max-width: 330px; /* Maximum 2 items per row on mobile */
+  }
+}
+
+/* Creative Board grid - maximum 3 items per row */
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  max-width: 780px; /* Allow up to 3 items per row (240px * 3 + gap) */
+  gap: 20px;
+  margin: 0 auto; /* Center the grid */
+  justify-content: center;
+  
+  /* Ensure items are centered when there are fewer than max items */
+  &::before {
+    content: '';
+    grid-column: 1 / -1;
+    height: 0;
+  }
+  
+  &::after {
+    content: '';
+    grid-column: 1 / -1;
+    height: 0;
+  }
+  
+  @include respond-to('tablet') {
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 635px; /* Adjusted for tablet */
+  }
+  
+  @include respond-to('mobile') {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    max-width: 330px; /* Maximum 2 items per row on mobile */
+  }
+}

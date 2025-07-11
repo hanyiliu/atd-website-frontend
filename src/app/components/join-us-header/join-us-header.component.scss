@@ -1,0 +1,53 @@
+@use "fonts" as *;
+@use "colors" as *;
+@import '../../../styles/breakpoints';
+
+.title {
+    font-family: $font-primary;
+    font-weight: $font-weight-bolder;
+    font-size: $font-size-header-base;
+    color: $brand-color-white;
+    margin-bottom: 1rem;
+    
+    @include respond-to('tablet') {
+        font-size: calc($font-size-xxl + 0.5rem); /* Reduced size for tablets */
+    }
+    
+    @include respond-to('mobile') {
+        font-size: $font-size-xxl; /* Smaller size for mobile */
+        margin-bottom: 0.75rem;
+    }
+}
+
+.body {
+    font-family: $font-secondary;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-sm;
+    color: $brand-color-white;
+    line-height: 1.5;
+    
+    @include respond-to('tablet') {
+        font-size: $font-size-xs;
+    }
+    
+    @include respond-to('mobile') {
+        font-size: $font-size-xxs;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 600px;
+    aspect-ratio: 3;
+    
+    @include respond-to('tablet') {
+        width: 450px;
+    }
+    
+    @include respond-to('mobile') {
+        width: 280px;
+    }
+}

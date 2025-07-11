@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="team-wrapper">
+    <div class="header">
+      <div class="header-logo">
+        <img
+          src="images/person.svg"
+          alt="Header Logo"
+          width="27"
+          height="35.6"
+        />
+      </div>
+      <div class="intro-title">Meet The Team</div>
+    </div>
+    <div class="VP">
+      <div class="VP-title">VP Board</div>
+      <div class="vp-grid">
+        <app-member-component
+          *ngFor="let member of members.slice(0, 7)"
+          [member]="member"
+        ></app-member-component>
+      </div>
+    </div>
+    <div class="Creative">
+      <div class="Creative-title">Creative Board</div>
+      <div class="creative-grid">
+        <app-member-component
+          *ngFor="let member of members.slice(7)"
+          [member]="member"
+        ></app-member-component>
+      </div>
+    </div>
+  </div>
+</div>
