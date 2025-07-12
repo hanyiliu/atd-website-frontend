@@ -13,7 +13,7 @@ type Story = StoryObj<MemberComponentComponent>;
 export const Primary: Story = {
   args: {
     member: {
-      image: 'members/secretary.svg',
+      image: 'members/secretary.png',
       title: 'VP of Secretary',
       name: 'Nicole Kim',
     },
