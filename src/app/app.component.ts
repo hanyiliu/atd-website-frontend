@@ -34,17 +34,40 @@ export class AppComponent {
 
       if (event instanceof NavigationStart) {
         // Save current scroll position before navigating away
-        const currentUrl = this.router.url;
+        const currentUrl = this.router.url.split('?')[0].split('#')[0];
         this.scrollPositions[currentUrl] = window.scrollY;
       }
 
       if (event instanceof NavigationEnd) {
-        const newUrl = event.urlAfterRedirects;
-        const savedScroll = this.scrollPositions[newUrl];
+        const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
 
-        // Restore scroll position if available
-        if (savedScroll !== undefined) {
-          setTimeout(() => window.scrollTo(0, savedScroll), 0);
+        // HIGHEST PRIORITY: Handle fragment scrolling
+        if (fragment) {
+          setTimeout(() => {
+            const element = document.getElementById(fragment);
+            if (element) {
+              const offset = 200; // Your desired offset in pixels
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition =
+                elementPosition + window.pageYOffset - offset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+              });
+            }
+          }, 100); // Delay to ensure the element is rendered
+        } else {
+          // If no fragment, fall back to your scroll restoration logic
+          const newUrl = event.urlAfterRedirects.split('?')[0].split('#')[0];
+          const savedScroll = this.scrollPositions[newUrl];
+
+          if (savedScroll !== undefined) {
+            setTimeout(() => window.scrollTo(0, savedScroll), 0);
+          } else {
+            // Default: If no saved position, scroll to top
+            setTimeout(() => window.scrollTo(0, 0), 0);
+          }
         }
       }
     });
