@@ -10,12 +10,18 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  //will need to come back to update routes in the future
   navLinks = [
-    { path: '/about', label: 'About ATD' },
-    { path: '/board', label: 'Meet Our Board' },
-    { path: '/home/contact', label: 'Contact Us' },
-    { path: '/ourWorks', label: 'Our Works' },
-    { path: '/home/calendar', label: 'Calendar' },
+    { label: 'About ATD', route: '/about-us', fragment: undefined },
+    {
+      label: 'Meet Our Board',
+      route: '/about-us',
+      fragment: 'members-component',
+    },
+    { label: 'Our Works', route: '/our-works', fragment: undefined },
+    {
+      label: 'Calendar',
+      route: '/home',
+      fragment: 'calender-component',
+    },
   ];
 }

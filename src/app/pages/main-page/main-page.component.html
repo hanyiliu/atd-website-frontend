@@ -2,9 +2,12 @@
 <div class="main-page-container">
   <app-definition-box></app-definition-box>
   <app-team-values-carousel></app-team-values-carousel>
-  <app-event-calender-box [events]="events"></app-event-calender-box>
-  <app-what-we-offer 
-    [studentOffers]="studentOffers" 
+  <app-event-calender-box
+    id="calender-component"
+    [events]="events"
+  ></app-event-calender-box>
+  <app-what-we-offer
+    [studentOffers]="studentOffers"
     [clientOffers]="clientOffers"
     studentTitle="For Students"
     clientTitle="For Clients"
