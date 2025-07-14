@@ -10,7 +10,7 @@ import { InfoCardComponent } from '../info-card/info-card.component';
 export class InfoSectionComponent {
   mission: any = {
     title: 'Mission',
-    image: '/images/target.svg',
+    image: '/icons/target.svg',
     details: [
       'To contribute exceptional pro-bono design to all clients.',
       'To strengthen the design community at UC Davis by bringing all disciplines together as a unified community.',
@@ -19,7 +19,7 @@ export class InfoSectionComponent {
   };
   vision: any = {
     title: 'Vision',
-    image: '/images/vision.svg',
+    image: '/icons/vision.svg',
     details: [
       'Our vision is to build a home where students can grow, flourish and discover anything they put their minds to.',
     ],

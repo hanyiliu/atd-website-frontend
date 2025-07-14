@@ -13,7 +13,7 @@ type Story = StoryObj<InfoCardComponent>;
 export const Primary: Story = {
   args: {
     title: 'Mission',
-    image: '/images/target.svg',
+    image: '/icons/target.svg',
     details: [
       'To contribute exceptional pro-bono design to all clients.',
       'To strengthen the design community at UC Davis by bringing all disciplines together as a unified community.',
