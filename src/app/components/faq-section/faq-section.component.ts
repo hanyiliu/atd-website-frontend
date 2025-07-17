@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FaqItemComponent } from "../faq-item/faq-item.component";
-import { FaqItem } from '../faq-item/faq-item.model';
+import { FaqItem } from '../../models/faq-item.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
