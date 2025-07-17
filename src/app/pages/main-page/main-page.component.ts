@@ -6,7 +6,6 @@ import { EventCalenderBoxComponent } from '../../components/event-calender-box/e
 import { TeamValuesCarouselComponent } from '../../components/team-values-carousel/team-values-carousel.component';
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component';
 import { ContactBoxComponent } from '../../components/contact-box/contact-box.component';
-import { Event } from '../../models/event.model';
 
 @Component({
   selector: 'app-main-page',
@@ -24,6 +23,7 @@ import { Event } from '../../models/event.model';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
+
   studentOffers = [
     {
       title: 'Community',
@@ -59,30 +59,6 @@ export class MainPageComponent {
     {
       title: 'Low-risk. Free of Charge.',
       description: 'ATD values trust and amplification, believing that great partnerships start with trust. That is why we offer services at no cost, allowing businesses to experience our passion and professional expertise. We want businesses to feel confident in the value we bring and to invest in success, risk-free.',
-    }
-  ];
-
-  events: Event[] = [
-    {
-      day: "22", // Changed from date to day
-      month: "April",
-      title: "Info Night",
-      time: "TBD",
-      location: "@TBD"
-    },
-    {
-      day: "23", // Changed from date to day
-      month: "April",
-      title: "Design Challenge Workshop",
-      time: "TBD",
-      location: "@TBD"
-    },
-    {
-      day: "24", // Changed from date to day
-      month: "April",
-      title: "Meet the Board",
-      time: "TBD",
-      location: "@Frenzy Coffee"
     }
   ];
 

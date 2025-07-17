@@ -10,12 +10,4 @@ import { RecentProjectsListComponent } from '../../components/recent-projects-li
   templateUrl: './our-works-page.component.html',
   styleUrl: './our-works-page.component.scss',
 })
-export class OurWorksPageComponent {
-  recentProjects = [
-    {
-      image: 'projects/neighborhood-market.png',
-      alt: 'Neighborhood Market',
-      link: '/projects/neighborhood-market',
-    },
-  ]
-}
+export class OurWorksPageComponent {}
