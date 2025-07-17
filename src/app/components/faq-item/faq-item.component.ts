@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { FaqItem } from './faq-item.model';
+import { FaqItem } from '../../models/faq-item.model';
 import { CommonModule } from '@angular/common';
 
 @Component({

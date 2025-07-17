@@ -6,7 +6,7 @@ import { EventCalenderBoxComponent } from '../../components/event-calender-box/e
 import { TeamValuesCarouselComponent } from '../../components/team-values-carousel/team-values-carousel.component';
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component';
 import { ContactBoxComponent } from '../../components/contact-box/contact-box.component';
-import { Event } from '../../components/event-box/event.model';
+import { Event } from '../../models/event.model';
 
 @Component({
   selector: 'app-main-page',

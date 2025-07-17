@@ -1,0 +1,32 @@
+[
+  {
+    "image": "assets/images/projects/Frame9.svg",
+    "alt": "Davis Community Coffee Shop Branding",
+    "link": "https://example.com/project1"
+  },
+  {
+    "image": "assets/images/projects/Frame10.svg",
+    "alt": "UC Davis Student App UI Design",
+    "link": "https://example.com/project2"
+  },
+  {
+    "image": "assets/images/projects/Frame11.svg",
+    "alt": "Local Restaurant Menu Design",
+    "link": "https://example.com/project3"
+  },
+  {
+    "image": "assets/images/projects/Frame12.svg",
+    "alt": "Campus Event Poster Series",
+    "link": "https://example.com/project4"
+  },
+  {
+    "image": "assets/images/projects/Frame13.svg",
+    "alt": "Student Organization Website",
+    "link": "https://example.com/project5"
+  },
+  {
+    "image": "assets/images/projects/Frame14.svg",
+    "alt": "Davis Farmers Market Campaign",
+    "link": "https://example.com/project6"
+  }
+]

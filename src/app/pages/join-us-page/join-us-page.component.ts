@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { JoinUsHeaderComponent } from '../../components/join-us-header/join-us-header.component';
 import { OpenRolesListComponent } from '../../components/open-roles-list/open-roles-list.component';
-import { OpenRole } from '../../components/open-roles-list/open-role.model';
+import { OpenRole } from '../../models/open-role.model';
 
 @Component({
   selector: 'app-join-us-page',

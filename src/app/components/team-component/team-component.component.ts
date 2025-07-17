@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Member } from '../member-component/member.model';
+import { Member } from '../../models/member.model';
 import { MemberComponentComponent } from '../member-component/member-component.component';
 import { CommonModule } from '@angular/common';
 

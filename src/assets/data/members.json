@@ -1,0 +1,67 @@
+[
+  {
+    "image": "assets/members/president1.png",
+    "title": "Co-Founder / President",
+    "name": "Richie Huang"
+  },
+  {
+    "image": "assets/members/president2.png",
+    "title": "Co-Founder / President",
+    "name": "Giang Ta"
+  },
+  {
+    "image": "assets/members/operationsVP.png",
+    "title": "VP of Operations",
+    "name": "Katie Castro"
+  },
+  {
+    "image": "assets/members/creativeVP.png",
+    "title": "VP of Creative Directory",
+    "name": "Ryan Song"
+  },
+  {
+    "image": "assets/members/education.png",
+    "title": "VP of Education",
+    "name": "Nikita Dutt"
+  },
+  {
+    "image": "assets/members/secretary.png",
+    "title": "VP of Secretary",
+    "name": "Nicole Kim"
+  },
+  {
+    "image": "assets/members/treasury.png",
+    "title": "VP of Treasury",
+    "name": "Trinh Nguyen"
+  },
+  {
+    "image": "assets/members/graphics1.png",
+    "title": "Graphics Chair",
+    "name": "Naomi Solnick"
+  },
+  {
+    "image": "assets/members/graphics2.png",
+    "title": "Graphics Chair",
+    "name": "Lauren Calderon"
+  },
+  {
+    "image": "assets/members/graphics3.png",
+    "title": "Graphics Chair",
+    "name": "Reiley Johnson"
+  },
+  {
+    "image": "assets/members/apparel.png",
+    "title": "Apparel Chair",
+    "name": "Essence (Essie) Bailey"
+  },
+  {
+    "image": "assets/members/uiux.png",
+    "title": "UI/UX Design Chair",
+    "name": "Emily Kang"
+  },
+  {
+    "image": "assets/members/digital.png",
+    "title": "Digital Chair",
+    "name": "Sami Deshatty"
+  }
+]

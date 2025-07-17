@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { OpenRole } from './open-role.model';
+import { OpenRole } from '../../models/open-role.model';
 import { MatIconModule } from '@angular/material/icon'; 
 
 @Component({

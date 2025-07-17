@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Project } from './project.model';
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-recent-projects-list',
