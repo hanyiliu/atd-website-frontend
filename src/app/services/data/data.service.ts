@@ -7,6 +7,7 @@ import { Project } from '../../models/project.model';
 import { OpenRole } from '../../models/open-role.model';
 import { Content } from '../../models/content.model';
 import { FaqItem } from '../../models/faq-item.model';
+import { OfferItem } from '../../models/offer-item.model';
 
 import eventsData from '../../../assets/data/events.json';
 import membersData from '../../../assets/data/members.json';
@@ -14,6 +15,7 @@ import projectsData from '../../../assets/data/projects.json';
 import rolesData from '../../../assets/data/roles.json';
 import contentData from '../../../assets/data/content.json';
 import faqData from '../../../assets/data/faq.json';
+import offersData from '../../../assets/data/offers.json';
 
 /**
  * DataService provides centralized access to all dynamic content data.
@@ -52,5 +54,15 @@ export class DataService {
   // Get dynamic content (video URL, contact info, social media)
   getContent(): Content {
     return contentData as Content;
+  }
+
+  // Get student offers for the what-we-offer component
+  getStudentOffers(): OfferItem[] {
+    return (offersData as any).studentOffers as OfferItem[];
+  }
+
+  // Get client offers for the what-we-offer component
+  getClientOffers(): OfferItem[] {
+    return (offersData as any).clientOffers as OfferItem[];
   }
 }
