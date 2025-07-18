@@ -1,5 +1,4 @@
-@import '../../../styles/breakpoints';
-
+@use "breakpoints" as *;
 .join-us-page {
   overflow-x: hidden;
   width: 100%;

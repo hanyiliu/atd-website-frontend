@@ -1,7 +1,6 @@
 @use "fonts" as *;
 @use "colors" as *;
-@import '../../../styles/breakpoints';
-
+@use "breakpoints" as *;
 .container {
   width: 100%;
 }

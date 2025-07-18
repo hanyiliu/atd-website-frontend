@@ -1,7 +1,6 @@
 @use "fonts" as *;
 @use "colors" as *;
-@import '../../../styles/breakpoints';
-
+@use "breakpoints" as *;
 .title {
     font-family: $font-primary;
     font-weight: $font-weight-bolder;
