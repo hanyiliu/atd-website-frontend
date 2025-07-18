@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FaqItemComponent } from "../faq-item/faq-item.component";
-import { FaqItem } from '../faq-item/faq-item.model';
+import { FaqItem } from '../../models/faq-item.model';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data/data.service';
 
 @Component({
   selector: 'app-faq-section',
@@ -9,6 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './faq-section.component.html',
   styleUrl: './faq-section.component.scss'
 })
-export class FaqSectionComponent {
-  @Input() faqItems!: FaqItem[];
+export class FaqSectionComponent implements OnInit {
+  faqItems: FaqItem[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.faqItems = this.dataService.getFaqItems();
+  }
 }
