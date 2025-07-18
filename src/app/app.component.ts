@@ -5,6 +5,7 @@ import {
   ActivatedRoute,
 } from '@angular/router';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -27,7 +28,8 @@ export class AppComponent {
   constructor(
     private router: Router,
     protected route: ActivatedRoute,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title
   ) {
     this.router.events.subscribe((event) => {
       if (!isPlatformBrowser(this.platformId)) return;
@@ -39,6 +41,18 @@ export class AppComponent {
       }
 
       if (event instanceof NavigationEnd) {
+        // Dynamically update the document title using route data.title
+        let route = this.route.firstChild;
+        while (route?.firstChild) {
+          route = route.firstChild;
+        }
+        const pageTitle = route?.snapshot.data['title'];
+        if (pageTitle) {
+          this.titleService.setTitle(pageTitle);
+        } else {
+          this.titleService.setTitle('All Things Design');
+        }
+
         const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
 
         // HIGHEST PRIORITY: Handle fragment scrolling
