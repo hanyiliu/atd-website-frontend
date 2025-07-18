@@ -6,12 +6,14 @@ import { Member } from '../../models/member.model';
 import { Project } from '../../models/project.model';
 import { OpenRole } from '../../models/open-role.model';
 import { Content } from '../../models/content.model';
+import { FaqItem } from '../../models/faq-item.model';
 
 import eventsData from '../../../assets/data/events.json';
 import membersData from '../../../assets/data/members.json';
 import projectsData from '../../../assets/data/projects.json';
 import rolesData from '../../../assets/data/roles.json';
 import contentData from '../../../assets/data/content.json';
+import faqData from '../../../assets/data/faq.json';
 
 /**
  * DataService provides centralized access to all dynamic content data.
@@ -42,6 +44,10 @@ export class DataService {
     return rolesData as OpenRole[];
   }
 
+  // Get FAQ items for the main page
+  getFaqItems(): FaqItem[] {
+    return faqData as FaqItem[];
+  }
 
   // Get dynamic content (video URL, contact info, social media)
   getContent(): Content {

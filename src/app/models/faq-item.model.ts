@@ -1,5 +1,5 @@
 export interface FaqItem {
-    question: String;
-    answer: String;
-  }
+  question: string;
+  answer: string;
+}
   
