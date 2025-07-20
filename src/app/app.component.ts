@@ -61,20 +61,10 @@ export class AppComponent {
           setTimeout(() => {
             const element = document.getElementById(fragment);
             if (element) {
-              // const offset = 200; // Your desired offset in pixels
-              // const elementPosition = element.getBoundingClientRect().top;
-              // const offsetPosition =
-              //   elementPosition + window.pageYOffset - offset;
-
-              // window.scrollTo({
-              //   top: offsetPosition,
-              //   behavior: 'smooth',
-              // });
               this.lenis?.scrollTo(element, { offset: -200, duration: 1.5 });
             }
           }, 300); // Delay to ensure the element is rendered
         } else {
-          // If no fragment, fall back to your scroll restoration logic
           const newUrl = event.urlAfterRedirects.split('?')[0].split('#')[0];
           const savedScroll = this.scrollPositions[newUrl];
 
@@ -83,7 +73,6 @@ export class AppComponent {
               this.lenis?.scrollTo(savedScroll, { immediate: true });
             }, 600);
           } else {
-            // Default: If no saved position, scroll to top
             this.lenis?.scrollTo(0, { immediate: true });
           }
         }
