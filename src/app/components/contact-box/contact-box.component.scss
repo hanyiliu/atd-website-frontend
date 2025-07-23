@@ -1,5 +1,3 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
 @use "breakpoints" as *;
@@ -17,12 +15,12 @@
   background-color: $brand-color-black;
   box-sizing: border-box; // Ensure padding is included in width
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     aspect-ratio: 1.75; // Shorter and wider for tablet
     border-radius: 16px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     aspect-ratio: 1.4; // More square for mobile
     border-radius: 12px;
     padding: 15px;
@@ -38,12 +36,12 @@
   gap: 20px;
   padding: 20px 0 0 0;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     font-size: $font-size-base-sm;
     gap: 15px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     font-size: $font-size-sm;
     gap: 10px;
     padding: 15px 0 0 0;
@@ -53,7 +51,7 @@
 .left-dot {
   padding: 2px 0 0 0;
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     img {
       width: 12px;
       height: 12px;
@@ -64,7 +62,7 @@
 .right-dot {
   padding: 2px 0 0 0;
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     img {
       width: 12px;
       height: 12px;
@@ -82,12 +80,12 @@
   font-weight: $font-weight-regular;
   text-align: center;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     font-size: $font-size-xs;
     padding: 12px 0 25px 0;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     font-size: $font-size-xxs;
     padding: 10px 0 20px 0;
     max-width: 280px;
@@ -95,6 +93,14 @@
 }
 
 .input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,13 +118,13 @@ input[type="email"] {
   font-weight: $font-weight-regular;
   border-radius: 4px 0 0 4px;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     width: 50%;
     height: 42px;
     font-size: $font-size-xxs;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     width: 70%;
     height: 38px;
     font-size: $font-size-xxs;
@@ -138,12 +144,12 @@ button {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     width: 36px;
     height: 42px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     width: 32px;
     height: 38px;
 
@@ -153,7 +159,6 @@ button {
     }
   }
 }
-
 
 .top-row {
   display: flex;
@@ -178,12 +183,99 @@ button {
     width: 120px; // Desktop
     aspect-ratio: 1;
 
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       width: 90px;
     }
 
-    @include respond-to('mobile') {
+    @include respond-to("mobile") {
       width: 60px;
     }
+  }
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+  img {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-box {
+  position: absolute;
+  top: 100%;
+  margin-top: 8px;
+  max-width: 70%;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: $font-secondary;
+  font-size: $font-size-xs;
+  animation: fadeInUp 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  word-wrap: break-word;
+  z-index: 2;
+  // removed left, right, transform
+}
+
+.status-box.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.status-box.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.status-box.fade-out {
+  animation: fadeOutDown 0.3s ease-in forwards;
+}
+
+input[type="email"] {
+  appearance: none;
+  box-shadow: none;
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px $brand-color-black inset !important;
+    -webkit-text-fill-color: $brand-color-white !important;
   }
 }

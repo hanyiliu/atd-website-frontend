@@ -12,17 +12,27 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class ContactBoxComponent {
   email: string = '';
+  loading = false;
+  statusMessage = '';
+  statusClass = '';
   private googleAppsScriptUrl =
     'https://script.google.com/macros/s/AKfycbxnJQBYNDfQF-ad_sUPCAR-7_kFAj7eyLAg4Kj-doSlSzWJ5ldJc5l8IJVT6GzdR0jJBg/exec';
   constructor(private http: HttpClient) {} // Inject HttpClient
 
   onSubmit() {
+    this.statusMessage = '';
+    this.statusClass = '';
+    this.loading = false;
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(this.email)) {
-      alert('Please enter a valid email address.');
+      this.statusMessage = 'Please enter a valid email address.';
+      this.statusClass = 'error';
+      this.autoClearStatus();
       return;
     }
 
+    this.loading = true;
     const formData = new URLSearchParams();
     formData.set('email', this.email);
 
@@ -36,13 +46,36 @@ export class ContactBoxComponent {
       .subscribe(
         (response) => {
           console.log('✅ Success:', response);
-          alert('Email submitted successfully!');
+          this.statusMessage = 'Email submitted successfully!';
+          this.statusClass = 'success';
           this.email = '';
+          this.loading = false;
+          this.autoClearStatus();
         },
         (error) => {
           console.error('❌ Error:', error);
-          alert('There was an error submitting your email.');
+          this.statusMessage = 'There was an error submitting your email.';
+          this.statusClass = 'error';
+          this.loading = false;
+          this.autoClearStatus();
         }
       );
+  }
+
+  private statusTimeoutId: any;
+
+  private autoClearStatus() {
+    if (this.statusTimeoutId) {
+      clearTimeout(this.statusTimeoutId);
+    }
+
+    this.statusTimeoutId = setTimeout(() => {
+      this.statusClass += ' fade-out';
+      setTimeout(() => {
+        this.statusMessage = '';
+        this.statusClass = '';
+        this.statusTimeoutId = null;
+      }, 300); // duration of fade out animation
+    }, 3000);
   }
 }
