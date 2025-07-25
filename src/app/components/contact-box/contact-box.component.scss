@@ -193,22 +193,6 @@ button {
   }
 }
 
-.loading-spinner {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-
-  img {
-    animation: spin 1s linear infinite;
-  }
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -278,4 +262,9 @@ input[type="email"] {
     box-shadow: 0 0 0px 1000px $brand-color-black inset !important;
     -webkit-text-fill-color: $brand-color-white !important;
   }
+}
+
+// Spinner for inline usage (e.g., inside button)
+.inline-spinner {
+  animation: spin 1s linear infinite;
 }

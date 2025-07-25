@@ -26,8 +26,19 @@
         (keyup.enter)="onSubmit()"
         autocomplete="off"
       />
-      <button (click)="onSubmit()">
-        <img src="icons/submit.svg" alt="Send Icon" width="24" height="24" />
+      <button (click)="onSubmit()" [disabled]="loading || cooldownActive">
+        <ng-container *ngIf="!loading">
+          <img src="icons/submit.svg" alt="Send Icon" width="24" height="24" />
+        </ng-container>
+        <ng-container *ngIf="loading">
+          <img
+            src="icons/spinner.svg"
+            alt="Loading..."
+            width="24"
+            height="24"
+            class="inline-spinner"
+          />
+        </ng-container>
       </button>
     </div>
 
@@ -37,10 +48,6 @@
       class="status-box"
     >
       {{ statusMessage }}
-    </div>
-
-    <div *ngIf="loading && !statusMessage" class="loading-spinner">
-      <img src="icons/spinner.svg" alt="Loading..." width="24" height="24" />
     </div>
   </div>
 </div>

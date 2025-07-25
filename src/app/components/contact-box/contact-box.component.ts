@@ -15,11 +15,14 @@ export class ContactBoxComponent {
   loading = false;
   statusMessage = '';
   statusClass = '';
+  cooldownActive = false;
   private googleAppsScriptUrl =
     'https://script.google.com/macros/s/AKfycbxnJQBYNDfQF-ad_sUPCAR-7_kFAj7eyLAg4Kj-doSlSzWJ5ldJc5l8IJVT6GzdR0jJBg/exec';
   constructor(private http: HttpClient) {} // Inject HttpClient
 
   onSubmit() {
+    if (this.loading || this.cooldownActive) return;
+
     this.statusMessage = '';
     this.statusClass = '';
     this.loading = false;
@@ -50,6 +53,10 @@ export class ContactBoxComponent {
           this.statusClass = 'success';
           this.email = '';
           this.loading = false;
+          this.cooldownActive = true;
+          setTimeout(() => {
+            this.cooldownActive = false;
+          }, 1500);
           this.autoClearStatus();
         },
         (error) => {
@@ -57,6 +64,10 @@ export class ContactBoxComponent {
           this.statusMessage = 'There was an error submitting your email.';
           this.statusClass = 'error';
           this.loading = false;
+          this.cooldownActive = true;
+          setTimeout(() => {
+            this.cooldownActive = false;
+          }, 1500);
           this.autoClearStatus();
         }
       );
