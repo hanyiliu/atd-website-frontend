@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { UserSessionData } from './user-session.model';
 
 /**
@@ -11,9 +10,18 @@ import { UserSessionData } from './user-session.model';
 })
 export class UserSessionService {
   private readonly storageKey = 'atd-user-session';
+  private isInitialized = false;
 
-  constructor() {
-    this.initializeSession();
+  /**
+   * Initialize session tracking - must be called in browser environment
+   * This method should be called by the app component after platform check
+   */
+  initializeSession(): void {
+    if (this.isInitialized) {
+      return; // Prevent multiple initializations
+    }
+    
+    this.isInitialized = true; // Setting this to true means we are in a browser environment
   }
 
   /**
@@ -21,6 +29,11 @@ export class UserSessionService {
    * @returns true if first visit, false if user has navigated between pages.
    */
   isFirstVisit(): boolean {
+    // Return true (safe default) if not initialized yet
+    if (!this.isInitialized) {
+      return true;
+    }
+    
     const sessionData = this.getSessionData();
     return sessionData ? sessionData.isFirstVisit : true;
   }
@@ -49,13 +62,6 @@ export class UserSessionService {
       console.warn('Error reading session data:', error);
       return null;
     }
-  }
-
-  /**
-   * Initialize session tracking on service startup.
-   */
-  private initializeSession(): void {
-    const sessionData = this.getSessionData();
   }
 
   /**

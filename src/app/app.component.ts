@@ -4,24 +4,33 @@ import {
   NavigationStart,
   ActivatedRoute,
 } from '@angular/router';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { CommonModule } from '@angular/common';
 import { routeTransition } from './components/routeTransitions';
 import { UserSessionService } from './services/user-session/user-session.service';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, LoadingIndicatorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [routeTransition],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'atd';
+
+  // Loading overlay state management
+  showLoadingOverlay = false;
+  isLoadingFadingOut = false;
+  
+  // Loading indicator animation duration
+  private readonly LOADING_ANIMATION_DURATION = 5500; // 5.5 seconds (unfortunately hardcoded because the duration in loading-indicator also includes off-screen animation that isn't visible)
+  private readonly FADE_OUT_DURATION = 1000; // 1 second
 
   private scrollPositions: Record<string, number> = {};
 
@@ -78,13 +87,29 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    // Example: Check if this is user's first visit to show different content
+    // Only initialize loading overlay in browser environment (not during SSR)
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // Initialize user session service in browser environment
+    this.userSessionService.initializeSession();
+
+    // Initialize loading overlay for first-time visitors
     if (this.userSessionService.isFirstVisit()) {
-      console.log('Welcome! This is your first visit to the website.');
-      // You can add special first-visit logic here:
-      // - Show welcome animation
-      // - Display onboarding tooltips
-      // - Track analytics event
+      this.showLoadingOverlay = true;
+      
+      // Start fade-out after loading animation completes
+      setTimeout(() => {
+        this.isLoadingFadingOut = true;
+        
+        // Remove overlay completely after fade-out completes
+        setTimeout(() => {
+          this.showLoadingOverlay = false;
+          this.isLoadingFadingOut = false;
+        }, this.FADE_OUT_DURATION);
+        
+      }, this.LOADING_ANIMATION_DURATION);
     }
   }
 }

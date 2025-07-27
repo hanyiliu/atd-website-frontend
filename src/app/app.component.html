@@ -1,3 +1,9 @@
+<!-- Loading overlay for first-time visit -->
+<div *ngIf="showLoadingOverlay" class="loading-overlay" [class.fade-out]="isLoadingFadingOut">
+  <app-loading-indicator></app-loading-indicator>
+</div>
+
+<!-- Main application content -->
 <div class="app-container">
   <app-navbar></app-navbar>
   <div class="router-wrapper" [@routeTransition]="route.snapshot.data">
