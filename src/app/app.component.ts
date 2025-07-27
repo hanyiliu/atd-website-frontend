@@ -4,7 +4,8 @@ import {
   NavigationStart,
   ActivatedRoute,
 } from '@angular/router';
-import { Component, Inject, PLATFORM_ID, OnInit, ElementRef } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,7 +38,9 @@ export class AppComponent implements OnInit {
     private router: Router,
     protected route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.router.events.subscribe((event) => {
       if (!isPlatformBrowser(this.platformId)) return;
@@ -90,6 +93,9 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    // Disable scrolling when loading overlay is visible
+    this.disableScroll();
+
     // Set CSS custom property for fade-out duration (convert ms to seconds)
     const fadeOutDurationSeconds = this.FADE_OUT_DURATION / 1000;
     this.elementRef.nativeElement.style.setProperty('--fade-out-duration', `${fadeOutDurationSeconds}s`);
@@ -102,8 +108,31 @@ export class AppComponent implements OnInit {
       setTimeout(() => {
         this.showLoadingOverlay = false;
         this.isLoadingFadingOut = false;
+        
+        // Re-enable scrolling when loading is completely finished
+        this.enableScroll();
       }, this.FADE_OUT_DURATION);
       
     }, this.LOADING_ANIMATION_DURATION);
+  }
+
+  /**
+   * Disables page scrolling by adding 'no-scroll' class to body element
+   * Uses Angular's Renderer2 for safe DOM manipulation
+   */
+  private disableScroll(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.addClass(this.document.body, 'no-scroll');
+    }
+  }
+
+  /**
+   * Enables page scrolling by removing 'no-scroll' class from body element
+   * Uses Angular's Renderer2 for safe DOM manipulation
+   */
+  private enableScroll(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.removeClass(this.document.body, 'no-scroll');
+    }
   }
 }
