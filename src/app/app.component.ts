@@ -12,7 +12,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { CommonModule } from '@angular/common';
 import { routeTransition } from './components/routeTransitions';
-import { UserSessionService } from './services/user-session/user-session.service';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +37,6 @@ export class AppComponent implements OnInit {
     private router: Router,
     protected route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private userSessionService: UserSessionService,
     private elementRef: ElementRef
   ) {
     this.router.events.subscribe((event) => {
@@ -51,7 +49,6 @@ export class AppComponent implements OnInit {
       }
 
       if (event instanceof NavigationEnd) {
-        this.userSessionService.markAsVisited();
         
         const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
 
@@ -97,26 +94,16 @@ export class AppComponent implements OnInit {
     const fadeOutDurationSeconds = this.FADE_OUT_DURATION / 1000;
     this.elementRef.nativeElement.style.setProperty('--fade-out-duration', `${fadeOutDurationSeconds}s`);
 
-    // Initialize user session service in browser environment
-    this.userSessionService.initializeSession();
-
-    // Initialize loading overlay for first-time visitors
-    if (this.userSessionService.isFirstVisit()) {
-      this.showLoadingOverlay = true;
+    // Start fade-out after loading animation completes
+    setTimeout(() => {
+      this.isLoadingFadingOut = true;
       
-      // Start fade-out after loading animation completes
+      // Remove overlay completely after fade-out completes
       setTimeout(() => {
-        this.isLoadingFadingOut = true;
-        
-        // Remove overlay completely after fade-out completes
-        setTimeout(() => {
-          this.showLoadingOverlay = false;
-          this.isLoadingFadingOut = false;
-        }, this.FADE_OUT_DURATION);
-        
-      }, this.LOADING_ANIMATION_DURATION);
-    } else {
-      this.showLoadingOverlay = false;
-    }
+        this.showLoadingOverlay = false;
+        this.isLoadingFadingOut = false;
+      }, this.FADE_OUT_DURATION);
+      
+    }, this.LOADING_ANIMATION_DURATION);
   }
 }
