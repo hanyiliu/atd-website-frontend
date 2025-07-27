@@ -22,20 +22,47 @@
         We help businesses and orgs stay modern in the new age.
       </p>
       <div></div>
-      <a href="mailto:davisatd@gmail.com?subject=All Things Design Organization Inquiry" class="contact-button"> Contact Us </a>
+      <a
+        [href]="'mailto:' + contactEmail + '?subject=' + contactSubject"
+        class="contact-button"
+      >
+        Contact Us
+      </a>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="copyright">©All Things Design. All Rights Reserved.</p>
-    <div class="credit">Site by Hanyi Liu | Cody Chen | Sanjith Iype</div>
+    <div class="credit">
+      <span>Site by </span>
+      <a
+        class="name-link"
+        href="https://www.linkedin.com/in/hanyiliu/"
+        target="_blank"
+        >Hanyi Liu</a
+      >
+      <span> | </span>
+      <a
+        class="name-link"
+        href="https://www.linkedin.com/in/cody-chen-05b379303/"
+        target="_blank"
+        >Cody Chen</a
+      >
+      <span> | </span>
+      <a
+        class="name-link"
+        href="https://www.linkedin.com/in/sanjithiype/"
+        target="_blank"
+        >Sanjith Iype</a
+      >
+    </div>
     <div class="social-icons">
-      <a href="https://instagram.com" aria-label="Instagram">
+      <a [href]="instagramUrl" aria-label="Instagram">
         <img src="icons/instagram.svg" alt="Insta" />
       </a>
-      <a href="https://linkedin.com" aria-label="LinkedIn">
+      <a [href]="linkedinUrl" aria-label="LinkedIn">
         <img src="icons/linkedin.svg" alt="LinkedIn" />
       </a>
-      <a href="https://tiktok.com" aria-label="TikTok">
+      <a [href]="tiktokUrl" aria-label="TikTok">
         <img src="icons/tiktok.svg" alt="Tiktok" />
       </a>
     </div>

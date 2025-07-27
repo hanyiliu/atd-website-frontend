@@ -1,5 +1,4 @@
-@import '../../../styles/breakpoints';
-
+@use "breakpoints" as *;
 .our-works-container {
   display: flex;
   flex-direction: column;

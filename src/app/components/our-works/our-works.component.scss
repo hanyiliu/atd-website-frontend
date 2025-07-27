@@ -1,7 +1,6 @@
 @use "colors" as *;
 @use "fonts" as *;
-@import '../../../styles/breakpoints';
-
+@use "breakpoints" as *;
 .our-works-container {
   width: 100%;
   max-width: 1083px;

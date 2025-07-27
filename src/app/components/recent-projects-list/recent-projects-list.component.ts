@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Project } from './project.model';
+import { Project } from '../../models/project.model';
+import { DataService } from '../../services/data/data.service';
 
 @Component({
   selector: 'app-recent-projects-list',
@@ -10,6 +11,12 @@ import { Project } from './project.model';
   templateUrl: './recent-projects-list.component.html',
   styleUrl: './recent-projects-list.component.scss',
 })
-export class RecentProjectsListComponent {
-  @Input() projects: Project[] = [];
+export class RecentProjectsListComponent implements OnInit {
+  projects: Project[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.projects = this.dataService.getProjects();
+  }
 }
