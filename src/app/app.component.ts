@@ -35,7 +35,13 @@ export class AppComponent {
   ) {
     if (isPlatformBrowser(this.platformId)) {
       this.ngZone.runOutsideAngular(() => {
-        this.lenis = new Lenis();
+        const content = document.getElementById('main-container');
+        if (content) {
+          this.lenis = new Lenis({
+            content: content,
+          });
+        }
+
         const raf = (time: number) => {
           this.lenis?.raf(time);
           requestAnimationFrame(raf);
@@ -54,6 +60,8 @@ export class AppComponent {
       }
 
       if (event instanceof NavigationEnd) {
+        this.lenis?.resize();
+
         const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
 
         // HIGHEST PRIORITY: Handle fragment scrolling
