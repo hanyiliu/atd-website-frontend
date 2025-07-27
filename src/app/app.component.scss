@@ -23,7 +23,7 @@ app-container {
   align-items: center;
   z-index: 9999; // Ensure it's above all other content
   opacity: 1;
-  transition: opacity 1.0s ease-out;
+  transition: opacity var(--fade-out-duration, 1.0s) ease-out;
 
   // Fade-out effect when animation completes
   &.fade-out {

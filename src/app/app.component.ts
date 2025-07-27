@@ -4,7 +4,7 @@ import {
   NavigationStart,
   ActivatedRoute,
 } from '@angular/router';
-import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit, ElementRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -38,7 +38,8 @@ export class AppComponent implements OnInit {
     private router: Router,
     protected route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private userSessionService: UserSessionService
+    private userSessionService: UserSessionService,
+    private elementRef: ElementRef
   ) {
     this.router.events.subscribe((event) => {
       if (!isPlatformBrowser(this.platformId)) return;
@@ -91,6 +92,10 @@ export class AppComponent implements OnInit {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
+
+    // Set CSS custom property for fade-out duration (convert ms to seconds)
+    const fadeOutDurationSeconds = this.FADE_OUT_DURATION / 1000;
+    this.elementRef.nativeElement.style.setProperty('--fade-out-duration', `${fadeOutDurationSeconds}s`);
 
     // Initialize user session service in browser environment
     this.userSessionService.initializeSession();
