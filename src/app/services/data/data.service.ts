@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// Import models from their locations
 import { Event } from '../../models/event.model';
 import { Member } from '../../models/member.model';
 import { Project } from '../../models/project.model';
