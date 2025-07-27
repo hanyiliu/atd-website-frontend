@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   title = 'atd';
 
   // Loading overlay state management
-  showLoadingOverlay = false;
+  showLoadingOverlay = true;
   isLoadingFadingOut = false;
   
   // Loading indicator animation duration
@@ -115,6 +115,8 @@ export class AppComponent implements OnInit {
         }, this.FADE_OUT_DURATION);
         
       }, this.LOADING_ANIMATION_DURATION);
+    } else {
+      this.showLoadingOverlay = false;
     }
   }
 }
