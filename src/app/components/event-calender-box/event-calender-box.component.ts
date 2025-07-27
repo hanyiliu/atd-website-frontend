@@ -17,6 +17,14 @@ export class EventCalenderBoxComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.events = this.dataService.getEvents();
+    const allEvents = this.dataService.getEvents();
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    today.setHours(0, 0, 0, 0); // Set time to midnight to include all events for the current day
+    this.events = allEvents.filter((event) => {
+      // Create a valid date from the event's day, month, and the current year
+      const eventDate = new Date(`${event.month} ${event.day}, ${currentYear}`);
+      return eventDate >= today;
+    });
   }
 }
