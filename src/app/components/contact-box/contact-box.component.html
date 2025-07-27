@@ -1,11 +1,6 @@
 <div class="contact-box">
   <div class="logo-box">
-    <img
-      src="icons/mail.svg"
-      alt="Mail Icon"
-      width="120"
-      aspectRatio="1"
-    />
+    <img src="icons/mail.svg" alt="Mail Icon" width="120" aspectRatio="1" />
   </div>
   <div class="title-box">
     <div class="left-dot">
@@ -23,14 +18,36 @@
     <div class="description2">and news!</div>
   </div>
   <div class="input-wrapper">
-    <input
-      type="email"
-      placeholder="Enter Your Email"
-      [(ngModel)]="email"
-      (keyup.enter)="onSubmit()"
-    />
-    <button (click)="onSubmit()">
-      <img src="icons/submit.svg" alt="Send Icon" width="24" height="24" />
-    </button>
+    <div class="input-row">
+      <input
+        type="email"
+        placeholder="Enter Your Email"
+        [(ngModel)]="email"
+        (keyup.enter)="onSubmit()"
+        autocomplete="off"
+      />
+      <button (click)="onSubmit()" [disabled]="loading || cooldownActive">
+        <ng-container *ngIf="!loading">
+          <img src="icons/submit.svg" alt="Send Icon" width="24" height="24" />
+        </ng-container>
+        <ng-container *ngIf="loading">
+          <img
+            src="icons/spinner.svg"
+            alt="Loading..."
+            width="24"
+            height="24"
+            class="inline-spinner"
+          />
+        </ng-container>
+      </button>
+    </div>
+
+    <div
+      *ngIf="statusMessage && !loading"
+      [ngClass]="statusClass"
+      class="status-box"
+    >
+      {{ statusMessage }}
+    </div>
   </div>
 </div>
