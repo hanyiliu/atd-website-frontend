@@ -17,3 +17,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+// Global utility class for disabling page scroll. Used by the loading overlay to prevent background scrolling.
+body.no-scroll {
+  overflow: hidden;
+}
