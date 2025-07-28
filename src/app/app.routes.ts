@@ -5,9 +5,25 @@ import { OurWorksPageComponent } from './pages/our-works-page/our-works-page.com
 import { JoinUsPageComponent } from './pages/join-us-page/join-us-page.component';
 
 export const routes: Routes = [
-  { path: '', component: MainPageComponent },
-  { path: 'about-us', component: AboutUsPageComponent },
-  { path: 'our-works', component: OurWorksPageComponent },
-  { path: 'join-us', component: JoinUsPageComponent },
-  { path: '**', redirectTo: '' } // Wildcard route for 404 pages
+  {
+    path: '',
+    component: MainPageComponent,
+    data: { title: 'All Things Design' },
+  },
+  {
+    path: 'about-us',
+    component: AboutUsPageComponent,
+    data: { title: 'About Us - All Things Design' },
+  },
+  {
+    path: 'our-works',
+    component: OurWorksPageComponent,
+    data: { title: 'Our Works - All Things Design' },
+  },
+  {
+    path: 'join-us',
+    component: JoinUsPageComponent,
+    data: { title: 'Join Us - All Things Design' },
+  },
+  { path: '**', redirectTo: '' }, // Wildcard route for 404 pages
 ];

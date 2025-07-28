@@ -4,8 +4,9 @@ import {
   NavigationStart,
   ActivatedRoute,
 } from '@angular/router';
-import { Component, Inject, PLATFORM_ID, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, NgZone, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 import { CommonModule } from '@angular/common';
 import { routeTransition } from './components/routeTransitions';
+//Lenis is for smooth scrolling
+import Lenis from '@studio-freight/lenis';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +36,7 @@ export class AppComponent implements OnInit {
   private readonly FADE_OUT_DURATION = 1000; // 1 second
 
   private scrollPositions: Record<string, number> = {};
+  private lenis: Lenis | undefined;
 
   constructor(
     private router: Router,
@@ -41,17 +45,49 @@ export class AppComponent implements OnInit {
     private elementRef: ElementRef,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document
+    private ngZone: NgZone,
+    private titleService: Title
   ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.ngZone.runOutsideAngular(() => {
+        const content = document.getElementById('main-container');
+        if (content) {
+          this.lenis = new Lenis({
+            content: content,
+          });
+        }
+
+        const raf = (time: number) => {
+          this.lenis?.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+      });
+    }
+
     this.router.events.subscribe((event) => {
       if (!isPlatformBrowser(this.platformId)) return;
 
       if (event instanceof NavigationStart) {
         // Save current scroll position before navigating away
         const currentUrl = this.router.url.split('?')[0].split('#')[0];
-        this.scrollPositions[currentUrl] = window.scrollY;
+        this.scrollPositions[currentUrl] = this.lenis?.scroll || window.scrollY;
       }
 
       if (event instanceof NavigationEnd) {
+        this.lenis?.resize();
+        
+        // Dynamically update the document title using route data.title
+        let route = this.route.firstChild;
+        while (route?.firstChild) {
+          route = route.firstChild;
+        }
+        const pageTitle = route?.snapshot.data['title'];
+        if (pageTitle) {
+          this.titleService.setTitle(pageTitle);
+        } else {
+          this.titleService.setTitle('All Things Design');
+        }
         
         const fragment = this.router.parseUrl(event.urlAfterRedirects).fragment;
 
@@ -60,27 +96,19 @@ export class AppComponent implements OnInit {
           setTimeout(() => {
             const element = document.getElementById(fragment);
             if (element) {
-              const offset = 200; // Your desired offset in pixels
-              const elementPosition = element.getBoundingClientRect().top;
-              const offsetPosition =
-                elementPosition + window.pageYOffset - offset;
-
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth',
-              });
+              this.lenis?.scrollTo(element, { offset: -200, duration: 1.5 });
             }
-          }, 100); // Delay to ensure the element is rendered
+          }, 300); // Delay to ensure the element is rendered
         } else {
-          // If no fragment, fall back to your scroll restoration logic
           const newUrl = event.urlAfterRedirects.split('?')[0].split('#')[0];
           const savedScroll = this.scrollPositions[newUrl];
 
           if (savedScroll !== undefined) {
-            setTimeout(() => window.scrollTo(0, savedScroll), 0);
+            setTimeout(() => {
+              this.lenis?.scrollTo(savedScroll, { immediate: true });
+            }, 600);
           } else {
-            // Default: If no saved position, scroll to top
-            setTimeout(() => window.scrollTo(0, 0), 0);
+            this.lenis?.scrollTo(0, { immediate: true });
           }
         }
       }
