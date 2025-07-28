@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
     private elementRef: ElementRef,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
     private ngZone: NgZone,
     private titleService: Title
   ) {
