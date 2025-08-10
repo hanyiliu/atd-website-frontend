@@ -53,19 +53,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10px; // Add some horizontal padding
-
-  @include respond-to('tablet') {
-    align-items: center;
-    padding: 0 15px; // More padding on tablet
-  }
-
-  @include respond-to('mobile') {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding: 15px;
-  }
 }
 
 .text-content {
@@ -80,7 +67,7 @@
   }
 
   @include respond-to('mobile') {
-    font-size: clamp($font-size-sm, 30vw, $font-size-base-sm);
+    font-size: clamp($font-size-xs, 20vw, $font-size-header-xs);
     padding-left: 0;
     padding: 0 15px;
   }
