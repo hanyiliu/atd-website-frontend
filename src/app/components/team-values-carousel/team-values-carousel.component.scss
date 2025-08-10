@@ -9,7 +9,7 @@
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   width: 100%; // Make it take full width of parent
-  aspect-ratio: 2.2; // Desktop aspect ratio
+  aspect-ratio: 2.6; // Desktop aspect ratio
   min-height: 200px; // Minimum height to ensure content visibility
 
   @include respond-to('tablet') {
@@ -71,16 +71,16 @@
 .text-content {
   font-family: $font-primary;
   font-weight: $font-weight-bold;
-  font-size: clamp($font-size-xl, 4vw, $font-size-header-base); // Responsive font sizing
+  font-size: clamp($font-size-header-sm, 20vw, $font-size-header-base); // Responsive font sizing
   padding-left: 80px; // Desktop padding
 
   @include respond-to('tablet') {
-    font-size: clamp($font-size-base, 3.5vw, $font-size-xl);
+    font-size: clamp($font-size-base, 20vw, $font-size-xl);
     padding-left: 50px;
   }
 
   @include respond-to('mobile') {
-    font-size: clamp($font-size-sm, 3vw, $font-size-base-sm);
+    font-size: clamp($font-size-sm, 30vw, $font-size-base-sm);
     padding-left: 0;
     padding: 0 15px;
   }
