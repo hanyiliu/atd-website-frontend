@@ -196,6 +196,10 @@
   font-weight: $font-weight-light;
   font-size: $font-size-xxs;
   color: $brand-color-gray-3;
+
+  @include respond-to("mobile") {
+    display: none;
+  }
 }
 .social-icons {
   display: flex;
