@@ -13,8 +13,9 @@
     }
     
     @include respond-to('mobile') {
-        font-size: $font-size-xxl; /* Smaller size for mobile */
+        font-size: $font-size-xl; /* Smaller size for mobile */
         margin-bottom: 0.75rem;
+        text-align: center; /* Center title text on mobile */
     }
 }
 
@@ -31,6 +32,7 @@
     
     @include respond-to('mobile') {
         font-size: $font-size-xxs;
+        text-align: center; /* Center body text on mobile */
     }
 }
 
@@ -39,14 +41,9 @@
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    width: 600px;
     aspect-ratio: 3;
     
-    @include respond-to('tablet') {
-        width: 450px;
-    }
-    
     @include respond-to('mobile') {
-        width: 280px;
+        align-items: center; /* Center container items on mobile */
     }
 }
