@@ -52,42 +52,18 @@
   font-weight: $font-weight-bold;
   
   .day {
-    font-size: $font-size-lg; // Desktop
-
-    @include respond-to('tablet') {
-      font-size: $font-size-base;
-    }
-
-    @include respond-to('mobile') {
-      font-size: $font-size-base-sm;
-    }
+    font-size: $font-size-lg;
   }
   
   .month {
-    font-size: $font-size-base; // Desktop
-
-    @include respond-to('tablet') {
-      font-size: $font-size-base-sm;
-    }
-
-    @include respond-to('mobile') {
-      font-size: $font-size-sm;
-    }
+    font-size: $font-size-base;
   }
 }
 
 .logo-box {
   .logo {
     height: auto;
-    width: 53.08px; // Desktop
-
-    @include respond-to('tablet') {
-      width: 45px;
-    }
-
-    @include respond-to('mobile') {
-      width: 40px;
-    }
+    width: 53.08px;
   }
 }
 
@@ -95,22 +71,10 @@
   .detail-box {
     .title-time,
     .location {
-      height: 30px; // Desktop
       font-family: $font-secondary;
-      font-size: $font-size-sm; // Desktop
+      font-size: $font-size-sm;
       font-weight: $font-weight-regular;
       margin: 0;
-
-      @include respond-to('tablet') {
-        height: 25px;
-        font-size: $font-size-xs;
-      }
-
-      @include respond-to('mobile') {
-        height: auto;
-        line-height: 1.3;
-        font-size: $font-size-xxs;
-      }
     }
   }
 }
