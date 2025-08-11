@@ -10,6 +10,7 @@
     
     @include respond-to('tablet') {
         font-size: calc($font-size-xxl + 0.5rem); /* Reduced size for tablets */
+        text-align: center; /* Center body text on mobile */
     }
     
     @include respond-to('mobile') {
@@ -27,7 +28,8 @@
     line-height: 1.5;
     
     @include respond-to('tablet') {
-        font-size: $font-size-xs;
+        font-size: $font-size-base-sm;
+        text-align: center; /* Center body text on mobile */
     }
     
     @include respond-to('mobile') {

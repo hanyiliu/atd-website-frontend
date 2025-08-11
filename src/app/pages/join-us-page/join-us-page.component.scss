@@ -18,7 +18,7 @@
   transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
   
   @include respond-to('tablet') {
-    margin-top: -130px;
+    margin-top: 0px;
   }
   
   @include respond-to('mobile') {
@@ -58,8 +58,9 @@
   width: 40%;
   
   @include respond-to('tablet') {
-    left: 60px;
-    width: 40%;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%); /* Center horizontally on mobile */
   }
   
   @include respond-to('mobile') {
