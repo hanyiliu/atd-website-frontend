@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="header-container">
+    <div class="title-box">
+      <div class="title">What We Offer</div>
+      <img src="/icons/stars.svg" alt="star" />
+    </div>
+    <div class="toggle-wrapper">
+      <app-toggle-button
+        (selectionChanged)="updateSelection($event)"
+      ></app-toggle-button>
+    </div>
+  </div>
+  <div class="offer-box">
+    <div class="offer-stack" [class.active]="selected === 'clients'">
+      <div
+        class="card"
+        *ngFor="let card of clientOffers; let i = index"
+        [style.--index]="i + 1"
+      >
+        <div class="card-body">
+          <div class="card-title">
+            {{ card.title }}
+          </div>
+          <div class="card-description">
+            {{ card.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offer-stack" [class.active]="selected === 'students'">
+      <div
+        class="card"
+        *ngFor="let card of studentOffers; let i = index"
+        [style.--index]="i + 1"
+      >
+        <div class="card-body">
+          <div class="card-title">
+            {{ card.title }}
+          </div>
+          <div class="card-description">
+            {{ card.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
