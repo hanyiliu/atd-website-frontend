@@ -7,7 +7,7 @@
     aria-label="Toggle answer"
   >expand_more</mat-icon>
   </div>
-  <div class="faq-body" [class.expanded]="isExpanded">
+  <div class="faq-body" [class.expanded]="isExpanded" #faqBody>
     <p>{{ faqItem.answer }}</p>
   </div>
 </div>
