@@ -1,0 +1,132 @@
+@use "fonts" as *;
+@use "breakpoints" as *;
+
+.container {
+  width: min(100vw, 1303px); // Responsive from desktop, max 1303px
+  height: auto;
+  margin: 0 auto; // Center the container
+
+  @include respond-to("tablet") {
+    width: min(90vw, 1000px); // Scale down while maintaining aspect ratio
+  }
+
+  @include respond-to("mobile") {
+    width: 95vw;
+  }
+}
+
+:host {
+  --cards: 4;
+  --cardHeight: 25vh;
+  --cardTopPadding: 2vh;
+  --cardMargin: clamp(2vw, 4vw, 6vw);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Center the content horizontally
+  align-items: center; // Center the content vertically
+  position: relative; // Add relative positioning for absolute children
+  height: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.title-box {
+  display: flex;
+  gap: 1rem;
+  position: static;
+  justify-content: center;
+}
+
+.title {
+  align-content: center;
+  font-family: $font-primary;
+  font-size: $font-size-base-sm; // tablet
+  font-weight: $font-weight-bold;
+
+  @include respond-to("mobile") {
+    font-size: $font-size-sm;
+  }
+}
+
+.offer-box {
+  width: clamp(90%, 80%, 50%);
+  margin: 0 auto; // Center the box
+  display: grid;
+  align-items: start;
+}
+
+.offer-stack {
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: repeat(var(--cards), var(--cardHeight));
+  // gap: var(--cardMargin);
+  padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+  margin-bottom: var(--cardMargin);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.offer-stack.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+
+  @include respond-to("mobile") {
+    // Maintain toggle functionality on mobile
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.card {
+  position: sticky;
+  top: 0px;
+  padding-top: var(--cardTopPadding);
+  display: grid;
+  place-items: center;
+}
+
+.card-body {
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  min-height: var(--cardHeight);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.card-title {
+  font-family: $font-primary;
+  font-size: clamp($font-size-sm, 2.5vw, $font-size-base-sm); // tablet
+  font-weight: $font-weight-bold;
+  margin-bottom: 0.5rem;
+
+  @include respond-to("mobile") {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.card-description {
+  font-family: $font-secondary;
+  font-weight: $font-weight-regular;
+  width: clamp(20rem, 25rem, 30rem);
+  font-size: $font-size-xs; // tablet
+  @include respond-to("mobile") {
+    width: 100%;
+    font-size: $font-size-xs;
+    line-height: 1.4;
+  }
+}

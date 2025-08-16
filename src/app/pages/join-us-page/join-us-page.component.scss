@@ -15,14 +15,13 @@
   width: 100%;
   margin-top: -100px;
   display: block;
-  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
-  
+
   @include respond-to('tablet') {
     margin-top: 0px;
   }
   
   @include respond-to('mobile') {
-    margin-top: 0px;
+    margin-top: 50px;
   }
 }
 
@@ -47,7 +46,6 @@
   display: block;
   width: 100%;
   z-index: 1;
-  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
 }
 
 .header-container {
@@ -61,12 +59,14 @@
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
   }
   
   @include respond-to('mobile') {
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 70%);
   }
 }
 

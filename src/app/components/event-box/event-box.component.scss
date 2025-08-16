@@ -28,9 +28,9 @@
   }
 
   @include respond-to('mobile') {
-    width: 280px;
+    width: 250px;
     max-width: 90vw;
-    aspect-ratio: 3.5 / 3;
+    aspect-ratio: 4 / 3;
     padding: 5% 5%;
     border-radius: 8px;
   }
@@ -53,10 +53,18 @@
   
   .day {
     font-size: $font-size-lg;
+ 
+    @include respond-to('mobile') {
+      font-size: $font-size-base;
+    }
   }
   
   .month {
     font-size: $font-size-base;
+     
+    @include respond-to('mobile') {
+      font-size: $font-size-sm;
+    }
   }
 }
 
@@ -75,6 +83,11 @@
       font-size: $font-size-sm;
       font-weight: $font-weight-regular;
       margin: 0;
+
+       
+      @include respond-to('mobile') {
+        font-size: $font-size-xs;
+      }
     }
   }
 }
