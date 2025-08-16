@@ -24,7 +24,7 @@ app-definition-box {
 
 app-team-values-carousel {
     margin-bottom: 240px; // Desktop spacing
-    width: 70%; // Desktop width
+    width: 85%; // Desktop width
 
     @include respond-to('tablet') {
         margin-bottom: 150px;
