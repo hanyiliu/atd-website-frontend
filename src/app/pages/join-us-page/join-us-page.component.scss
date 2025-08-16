@@ -15,8 +15,7 @@
   width: 100%;
   margin-top: -100px;
   display: block;
-  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
-  
+
   @include respond-to('tablet') {
     margin-top: 0px;
   }
