@@ -44,6 +44,6 @@ export class FaqItemComponent implements AfterViewInit {
   toggle(): void {
     this.isExpanded = !this.isExpanded;
     // Recalculate height in case content changed
-    setTimeout(() => this.calculateActualHeight(), 0);
+    requestAnimationFrame(() => this.calculateActualHeight());
   }
 }
