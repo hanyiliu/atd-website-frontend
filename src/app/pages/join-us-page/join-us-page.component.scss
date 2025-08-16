@@ -22,7 +22,7 @@
   }
   
   @include respond-to('mobile') {
-    margin-top: 0px;
+    margin-top: 50px;
   }
 }
 
@@ -47,7 +47,6 @@
   display: block;
   width: 100%;
   z-index: 1;
-  transform: translateZ(0); // Uses GPU to render the background instead of the CPU, which causes immense lag
 }
 
 .header-container {
@@ -61,12 +60,14 @@
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
+    background-color: black;
   }
   
   @include respond-to('mobile') {
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
+    background-color: black;
   }
 }
 
