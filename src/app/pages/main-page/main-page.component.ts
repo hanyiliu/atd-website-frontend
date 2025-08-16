@@ -6,6 +6,7 @@ import { EventCalenderBoxComponent } from '../../components/event-calender-box/e
 import { TeamValuesCarouselComponent } from '../../components/team-values-carousel/team-values-carousel.component';
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component';
 import { ContactBoxComponent } from '../../components/contact-box/contact-box.component';
+import { WhatWeOfferComponentMobile } from '../../components/what-we-offer-mobile/what-we-offer-mobile.component';
 
 @Component({
   selector: 'app-main-page',
@@ -17,9 +18,10 @@ import { ContactBoxComponent } from '../../components/contact-box/contact-box.co
     EventCalenderBoxComponent,
     TeamValuesCarouselComponent,
     FaqSectionComponent,
-    ContactBoxComponent
+    ContactBoxComponent,
+    WhatWeOfferComponentMobile,
   ],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.scss'
+  styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent {}
