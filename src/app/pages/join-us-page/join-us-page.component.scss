@@ -59,14 +59,14 @@
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
-    background-color: black;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
   }
   
   @include respond-to('mobile') {
     left: 50%;
     width: 80%;
     transform: translateX(-50%); /* Center horizontally on mobile */
-    background-color: black;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 70%);
   }
 }
 
