@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { HeroSectionComponent } from './herosection.component';
+import { HeroSectionComponent } from './hero-section.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<HeroSectionComponent> = {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeroSectionComponent } from '../../components/herosection/herosection.component';
+import { HeroSectionComponent } from '../../components/hero-section/hero-section.component';
 import { DefinitionBoxComponent } from '../../components/definition-box/definition-box.component';
 import { WhatWeOfferComponent } from '../../components/what-we-offer/what-we-offer.component';
 import { EventCalenderBoxComponent } from '../../components/event-calender-box/event-calender-box.component';
