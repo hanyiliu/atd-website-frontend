@@ -22,6 +22,14 @@
     height: 60vh;
     min-height: 300px;
   }
+
+  @include respond-to("mobile") {
+    width: 100%;
+    height: auto; // allow hero section height to adjust to content
+    min-height: 250px; // ensure it’s not too small
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 .hero-image {
@@ -30,35 +38,16 @@
   height: 100%;
   object-fit: cover; /* Aspect-fill: image covers entire container */
   object-position: top; /* Center the image within the container */
+
+  @include respond-to("mobile") {
+    display: none; // hide original image on mobile
+  }
 }
 
 .hero-image-mobile {
   display: none; // hidden on desktop/tablet
-}
 
-.hero-content {
-  text-align: left; /* Align text to the left */
-  padding: 50px 20px 50px 150px; /* Desktop padding */
-  position: relative;
-  z-index: 3; /* Ensure content is above background */
-  font-family: $font-primary;
-
-  @include respond-to("tablet") {
-    padding: 40px 15px 40px 80px; // Reduced padding for tablet
-  }
-}
-
-/* Mobile styles */
-@include respond-to("mobile") {
-  .hero-section {
-    width: 100%;
-    height: auto; // allow hero section height to adjust to content
-    min-height: 250px; // ensure it’s not too small
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-image-mobile {
+  @include respond-to("mobile") {
     display: flex; // already set
     width: 102%; // reduce zoom by using 100% width instead of 120%
     height: auto; // maintain aspect ratio
@@ -71,11 +60,20 @@
     z-index: 1;
   }
 
-  .hero-image {
-    display: none; // hide original image on mobile
+}
+
+.hero-content {
+  text-align: left; /* Align text to the left */
+  padding: 50px 20px 50px 150px; /* Desktop padding */
+  position: relative;
+  z-index: 3; /* Ensure content is above background */
+  font-family: $font-primary;
+
+  @include respond-to("tablet") {
+    padding: 40px 15px 40px 80px; // Reduced padding for tablet
   }
 
-  .hero-content {
+  @include respond-to("mobile") {
     padding: 20px; // smaller padding for mobile
     z-index: 3; // ensure content is above mobile image
   }
@@ -142,8 +140,8 @@
       
       // Override button size for mobile
       ::ng-deep .button-wrapper button {
-        padding: 8px 20px;
-        font-size: $font-size-xs;
+        padding: 8px 16px;
+        font-size: $font-size-xxs;
       }
     }
   }
