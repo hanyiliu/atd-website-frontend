@@ -4,9 +4,9 @@
 
 .hero-section {
   /* Flexible height based on content with minimum height */
-  min-height: 400px; /* Minimum height for mobile/small screens */
+  min-height: 450px; /* increased from 350px */
   width: 100%;
-  height: 80vh;
+  height: 75vh; /* increased from 65vh */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -15,108 +15,136 @@
   position: relative;
   overflow: hidden; /* Ensure background image doesn't overflow */
 
-  @include respond-to('tablet') {
-    height: 70vh;
-    min-height: 350px;
-  }
-
-  @include respond-to('mobile') {
+  @include respond-to("tablet") {
     height: 60vh;
     min-height: 300px;
-    justify-content: center; // Center content on mobile
-    align-items: center;
+  }
+}
+
+.hero-image {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Aspect-fill: image covers entire container */
+  object-position: center; /* Center the image within the container */
+}
+
+.hero-image-mobile {
+  display: none; // hidden on desktop/tablet
+}
+
+.hero-content {
+  text-align: left; /* Align text to the left */
+  padding: 50px 20px 50px 150px; /* Desktop padding */
+  position: relative;
+  z-index: 3; /* Ensure content is above background */
+  font-family: $font-primary;
+
+  @include respond-to("tablet") {
+    padding: 40px 15px 40px 80px; // Reduced padding for tablet
+  }
+}
+
+/* Mobile styles */
+@include respond-to("mobile") {
+  .hero-section {
+    width: 100%;
+    height: auto; // allow hero section height to adjust to content
+    min-height: 250px; // ensure it’s not too small
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/images/mobileBackground.svg"); // mobile-specific SVG
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
-  /* Positioning and resizing the SVG file with aspect-fill */
-  .hero-image {
+  .hero-image-mobile {
+    display: flex; // already set
+    justify-content: flex-start; // left alignment
+    align-items: flex-end; // push content to bottom
+    width: 102%; // reduce zoom by using 100% width instead of 120%
+    height: auto; // maintain aspect ratio
     position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Aspect-fill: image covers entire container */
-    object-position: center; /* Center the image within the container */
+    bottom: 0; // anchor to bottom
+    left: -2%; // anchor to left
+    transform: translateY(10%); // push image slightly down
+    object-fit: contain; // ensure full image is visible
+    object-position: left bottom; // focus on bottom-left
+    z-index: 1;
+  }
 
-    @include respond-to('mobile') {
-      // Adjust positioning for mobile if needed
-      top: 55%;
-    }
+  .hero-image {
+    display: none; // hide original image on mobile
   }
 
   .hero-content {
-    text-align: left; /* Align text to the left */
-    padding: 50px 20px 50px 150px; /* Desktop padding */
-    position: relative;
-    z-index: 3; /* Ensure content is above background */
+    padding: 20px; // smaller padding for mobile
+    text-align: center; // center the text
+    z-index: 3; // ensure content is above mobile image
+  }
+}
+
+.hero-content {
+  p {
+    margin: 0.5rem 0;
     font-family: $font-primary;
+    font-size: $font-size-base; // Desktop
+    font-weight: $font-weight-light;
 
-    @include respond-to('tablet') {
-      padding: 40px 15px 40px 80px; // Reduced padding for tablet
+    @include respond-to("tablet") {
+      font-size: $font-size-base-sm;
     }
 
-    @include respond-to('mobile') {
-      padding: 30px 20px; // Centered padding for mobile
-      text-align: center; // Center text on mobile
+    @include respond-to("mobile") {
+      font-size: $font-size-sm;
+      margin: 0.3rem 0;
+    }
+  }
+
+  h1 {
+    font-size: $font-size-header-lg; // Desktop
+
+    @include respond-to("tablet") {
+      font-size: $font-size-header-base;
     }
 
-    p {
-      margin: 0.5rem 0;
-      font-family: $font-primary;
-      font-size: $font-size-base; // Desktop
-      font-weight: $font-weight-light;
+    @include respond-to("mobile") {
+      font-size: $font-size-header-sm;
+    }
+  }
 
-      @include respond-to('tablet') {
-        font-size: $font-size-base-sm;
-      }
+  .pre-title {
+    margin-bottom: 0rem; /* Remove spacing between pretitle and title */
+    margin-top: 4rem; /* Push the pretitle farther down */
+    font-size: $font-size-header-sm; // Desktop
+    font-weight: $font-weight-light; /* Remove bold font */
 
-      @include respond-to('mobile') {
-        font-size: $font-size-sm;
-        margin: 0.3rem 0;
-      }
+    @include respond-to("tablet") {
+      font-size: $font-size-header-xs;
+      margin-top: 2rem;
     }
 
-    h1 {
-      font-size: $font-size-header-lg; // Desktop
+    @include respond-to("mobile") {
+      font-size: $font-size-base;
+      margin-top: 1rem;
+    }
+  }
 
-      @include respond-to('tablet') {
-        font-size: $font-size-header-base;
-      }
+  // Style the app-button component within hero section
+  app-button {
+    margin-top: 2rem; // Desktop spacing
+    display: inline-block;
 
-      @include respond-to('mobile') {
-        font-size: $font-size-header-sm;
-      }
+    @include respond-to("tablet") {
+      margin-top: 1.5rem;
     }
 
-    .pre-title {
-      margin-bottom: 0rem; /* Remove spacing between pretitle and title */
-      margin-top: 4rem; /* Push the pretitle farther down */
-      font-size: $font-size-header-sm; // Desktop
-      font-weight: $font-weight-light; /* Remove bold font */
-
-      @include respond-to('tablet') {
-        font-size: $font-size-header-xs;
-        margin-top: 2rem;
-      }
-
-      @include respond-to('mobile') {
-        font-size: $font-size-base;
-        margin-top: 1rem;
-      }
-    }
-
-    // Style the app-button component within hero section
-    app-button {
-      margin-top: 2rem; // Desktop spacing
-      display: inline-block;
-
-      @include respond-to('tablet') {
-        margin-top: 1.5rem;
-      }
-
-      @include respond-to('mobile') {
-        margin-top: 1rem;
-      }
+    @include respond-to("mobile") {
+      margin-top: 1rem;
     }
   }
 }
