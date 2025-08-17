@@ -44,11 +44,13 @@ app-our-works {
   width: 50%;
   
   @include respond-to('tablet') {
+    width: 75%;
     margin-top: 90px;
     margin-bottom: 15vh;
   }
   
   @include respond-to('mobile') {
+    width: 90%;
     margin-top: 60px;
     margin-bottom: 10vh;
   }
