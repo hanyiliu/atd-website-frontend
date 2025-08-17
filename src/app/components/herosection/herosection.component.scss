@@ -6,14 +6,17 @@
   /* Flexible height based on content with minimum height */
   min-height: 450px; /* increased from 350px */
   width: 100%;
-  height: 75vh; /* increased from 65vh */
+  height: 80vh; /* increased from 65vh */
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   color: $brand-color-white;
   background-color: $brand-color-black;
   position: relative;
   overflow: hidden; /* Ensure background image doesn't overflow */
+
+  @include respond-to("desktop") {
+    align-items: center;
+  }
 
   @include respond-to("tablet") {
     height: 60vh;
@@ -23,13 +26,10 @@
 
 .hero-image {
   position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover; /* Aspect-fill: image covers entire container */
-  object-position: center; /* Center the image within the container */
+  object-position: top; /* Center the image within the container */
 }
 
 .hero-image-mobile {
@@ -56,16 +56,10 @@
     min-height: 250px; // ensure it’s not too small
     position: relative;
     overflow: hidden;
-    background-image: url("/assets/images/mobileBackground.svg"); // mobile-specific SVG
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   .hero-image-mobile {
     display: flex; // already set
-    justify-content: flex-start; // left alignment
-    align-items: flex-end; // push content to bottom
     width: 102%; // reduce zoom by using 100% width instead of 120%
     height: auto; // maintain aspect ratio
     position: absolute;
@@ -73,7 +67,7 @@
     left: -2%; // anchor to left
     transform: translateY(10%); // push image slightly down
     object-fit: contain; // ensure full image is visible
-    object-position: left bottom; // focus on bottom-left
+    object-position: top;
     z-index: 1;
   }
 
@@ -83,14 +77,14 @@
 
   .hero-content {
     padding: 20px; // smaller padding for mobile
-    text-align: center; // center the text
     z-index: 3; // ensure content is above mobile image
   }
 }
 
 .hero-content {
+
   p {
-    margin: 0.5rem 0;
+    margin: 0rem 0;
     font-family: $font-primary;
     font-size: $font-size-base; // Desktop
     font-weight: $font-weight-light;
@@ -100,7 +94,7 @@
     }
 
     @include respond-to("mobile") {
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
       margin: 0.3rem 0;
     }
   }
@@ -113,7 +107,7 @@
     }
 
     @include respond-to("mobile") {
-      font-size: $font-size-header-sm;
+      font-size: $font-size-header-xs;
     }
   }
 
@@ -129,14 +123,14 @@
     }
 
     @include respond-to("mobile") {
-      font-size: $font-size-base;
+      font-size: $font-size-sm;
       margin-top: 1rem;
     }
   }
 
   // Style the app-button component within hero section
   app-button {
-    margin-top: 2rem; // Desktop spacing
+    margin-top: 2rem;
     display: inline-block;
 
     @include respond-to("tablet") {
@@ -145,6 +139,12 @@
 
     @include respond-to("mobile") {
       margin-top: 1rem;
+      
+      // Override button size for mobile
+      ::ng-deep .button-wrapper button {
+        padding: 8px 20px;
+        font-size: $font-size-xs;
+      }
     }
   }
 }
