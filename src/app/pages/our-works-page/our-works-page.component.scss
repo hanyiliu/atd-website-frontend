@@ -10,7 +10,6 @@
 .hero-section {
   padding-top: 50px;
   padding-bottom: 30px;
-  
   @include respond-to('tablet') {
     padding-top: 40px;
     padding-bottom: 25px;
@@ -18,12 +17,11 @@
   
   @include respond-to('mobile') {
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
 }
 
 app-our-works {
-  background-color: purple;
   width: 80%;
 }
 

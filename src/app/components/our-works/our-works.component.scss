@@ -4,16 +4,7 @@
 .our-works-container {
   width: 100%;
   position: relative;
-  overflow: visible; /* Changed from hidden to allow overlapping elements to be visible */
-  min-height: 680px; /* Increased height to provide more space */
-
-  @include respond-to("tablet") {
-    min-height: 580px;
-  }
-
-  @include respond-to("mobile") {
-    min-height: 480px;
-  }
+  overflow: visible;
 }
 
 .text {
@@ -61,7 +52,6 @@
   width: 100%;
   position: relative;
   padding: 15px 15px 15px 30px;
-  
   @include respond-to("tablet") {
     padding: 10px 10px 10px 20px;
   }
