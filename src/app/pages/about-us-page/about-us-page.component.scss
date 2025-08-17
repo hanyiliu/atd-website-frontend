@@ -45,7 +45,8 @@ app-values-section {
   }
 
   @include respond-to('mobile') {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
+    width: 100%;
   }
 }
 
