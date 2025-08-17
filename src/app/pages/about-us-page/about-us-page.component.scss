@@ -37,15 +37,16 @@ app-info-section {
 }
 
 app-values-section {
-  margin-bottom: 150px;
-  width: 100%;
+  margin-bottom: 120px;
+  width: 80%;
 
   @include respond-to('tablet') {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
   }
 
   @include respond-to('mobile') {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
+    width: 100%;
   }
 }
 
