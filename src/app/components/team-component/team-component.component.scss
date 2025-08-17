@@ -33,6 +33,7 @@
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   margin-top: 10px;
+  text-align: center;
 }
 
 .VP, .Creative {
@@ -45,6 +46,7 @@
   font-weight: $font-weight-semibold;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .VP-title {
@@ -57,72 +59,66 @@
   margin-bottom: 30px;
 }
 
-/* VP Board grid - maximum 4 items per row */
+/* VP Board flexbox - maximum 4 items per row */
 .vp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 1080px; /* Allow up to 4 items per row (240px * 4 + gap) */
   gap: 20px;
   margin: 0 auto; /* Center the grid */
-  justify-content: center;
   
-  /* Ensure items are centered when there are fewer than max items */
-  &::before {
-    content: '';
-    grid-column: 1 / -1;
-    height: 0;
-  }
-  
-  &::after {
-    content: '';
-    grid-column: 1 / -1;
-    height: 0;
+  app-member-component {
+    flex: 0 0 240px; /* Fixed width for consistent sizing */
   }
   
   @include respond-to('tablet') {
     gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     max-width: 850px; /* Adjusted for tablet */
+    
+    app-member-component {
+      flex: 0 0 200px; /* Fixed width for tablet */
+    }
   }
   
   @include respond-to('mobile') {
     gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     max-width: 330px; /* Maximum 2 items per row on mobile */
+    
+    app-member-component {
+      flex: 0 0 150px; /* Fixed width for mobile */
+    }
   }
 }
 
-/* Creative Board grid - maximum 3 items per row */
+/* Creative Board flexbox - maximum 3 items per row */
 .creative-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 780px; /* Allow up to 3 items per row (240px * 3 + gap) */
   gap: 20px;
   margin: 0 auto; /* Center the grid */
-  justify-content: center;
   
-  /* Ensure items are centered when there are fewer than max items */
-  &::before {
-    content: '';
-    grid-column: 1 / -1;
-    height: 0;
-  }
-  
-  &::after {
-    content: '';
-    grid-column: 1 / -1;
-    height: 0;
+  app-member-component {
+    flex: 0 0 240px; /* Fixed width for consistent sizing */
   }
   
   @include respond-to('tablet') {
     gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     max-width: 635px; /* Adjusted for tablet */
+    
+    app-member-component {
+      flex: 0 0 200px; /* Fixed width for tablet */
+    }
   }
   
   @include respond-to('mobile') {
     gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     max-width: 330px; /* Maximum 2 items per row on mobile */
+    
+    app-member-component {
+      flex: 0 0 150px; /* Fixed width for mobile */
+    }
   }
 }
