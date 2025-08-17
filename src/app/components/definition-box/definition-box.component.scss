@@ -1,5 +1,3 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
 @use "breakpoints" as *;
@@ -20,7 +18,7 @@
   aspect-ratio: 4; // Desktop aspect ratio
   box-sizing: border-box;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     width: 90%;
     max-width: 600px;
     aspect-ratio: 3.5;
@@ -28,12 +26,13 @@
     border-radius: 16px;
   }
 
-  @include respond-to('mobile') {
-    width: 95%;
-    max-width: 400px;
-    aspect-ratio: 2.5;
-    padding: 6% 5%;
-    border-radius: 12px;
+  @include respond-to("mobile") {
+    width: fit-content;
+    padding: 0; // remove padding from the box
+    border-radius: 0;
+    background-color: transparent; // remove box background
+    border: none; // remove border
+    box-shadow: none; // remove shadow
   }
 }
 
@@ -42,13 +41,13 @@
   justify-content: center;
   gap: 23px; // Desktop gap
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     gap: 18px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     gap: 15px;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }
@@ -59,11 +58,11 @@
     height: auto;
     width: 40px; // Desktop size
 
-    @include respond-to('tablet') {
+    @include respond-to("tablet") {
       width: 35px;
     }
 
-    @include respond-to('mobile') {
+    @include respond-to("mobile") {
       width: 30px;
     }
   }
@@ -77,15 +76,17 @@
   font-size: $font-size-base; // Desktop
   gap: 7px;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     font-size: $font-size-base-sm;
     gap: 6px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     font-size: $font-size-sm;
     gap: 5px;
     justify-content: center;
+    flex-direction: row;
+    align-items: center;
   }
 
   .title {
@@ -106,11 +107,11 @@
   padding-top: 10px; // Desktop spacing
   font-size: 28px;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     padding-top: 8px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     padding-top: 6px;
   }
 
@@ -120,6 +121,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 4px;
+
+    @include respond-to("mobile") {
+      flex-wrap: wrap;
+      width: fit-content;
+      text-align: center;
+    }
   }
 
   .definition {
@@ -127,26 +135,55 @@
     font-family: $font-secondary;
     font-weight: $font-weight-regular;
     font-size: $font-size-sm; // Desktop
+    margin: 0;
 
-    @include respond-to('tablet') {
+    @include respond-to("mobile") {
       font-size: $font-size-xs;
+      line-height: 1;
+    }
+  }
+
+  .after-in {
+    @include respond-to("desktop") {
+      display: block; // desktop: force second line
     }
 
-    @include respond-to('mobile') {
-      font-size: $font-size-xxs;
+    @include respond-to("tablet") {
+      display: inline; // tablet: keep on same line if space allows
+    }
+
+    @include respond-to("mobile") {
+      display: inline; // mobile: line break handled by <br class="mobile-break">
     }
   }
 
   .definition2 {
     text-align: center;
-    margin-top: -20px;
+    margin: 0;
 
-    @include respond-to('tablet') {
-      margin-top: -15px;
+    @include respond-to("mobile") {
+      font-size: $font-size-xs;
+      line-height: 1;
     }
+  }
 
-    @include respond-to('mobile') {
-      margin-top: -10px;
+  // Remove the generic ::after line break; now handled by .after-in in HTML
+}
+
+/* Mobile-only line break after UC Davis */
+.mobile-break {
+  display: none;
+
+  @include respond-to("mobile") {
+    display: inline;
+  }
+}
+
+.uc-davis {
+  @include respond-to("mobile") {
+    &::after {
+      content: "\A"; // newline character
+      white-space: pre; // interpret as line break
     }
   }
 }
