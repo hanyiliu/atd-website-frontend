@@ -1,0 +1,148 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "breakpoints" as *;
+
+.hero-section {
+  /* Flexible height based on content with minimum height */
+  min-height: 450px; /* increased from 350px */
+  width: 100%;
+  height: 80vh; /* increased from 65vh */
+  display: flex;
+  justify-content: flex-start;
+  color: $brand-color-white;
+  background-color: $brand-color-black;
+  position: relative;
+  overflow: hidden; /* Ensure background image doesn't overflow */
+
+  @include respond-to("desktop") {
+    align-items: center;
+  }
+
+  @include respond-to("tablet") {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  @include respond-to("mobile") {
+    width: 100%;
+    height: auto; // allow hero section height to adjust to content
+    min-height: 250px; // ensure it’s not too small
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Aspect-fill: image covers entire container */
+  object-position: top; /* Center the image within the container */
+
+  @include respond-to("mobile") {
+    display: none; // hide original image on mobile
+  }
+}
+
+.hero-image-mobile {
+  display: none; // hidden on desktop/tablet
+
+  @include respond-to("mobile") {
+    display: flex; // already set
+    width: 102%; // reduce zoom by using 100% width instead of 120%
+    height: auto; // maintain aspect ratio
+    position: absolute;
+    bottom: 0; // anchor to bottom
+    left: -2%; // anchor to left
+    transform: translateY(10%); // push image slightly down
+    object-fit: contain; // ensure full image is visible
+    object-position: top;
+    z-index: 1;
+  }
+
+}
+
+.hero-content {
+  text-align: left; /* Align text to the left */
+  padding: 50px 20px 50px 150px; /* Desktop padding */
+  position: relative;
+  z-index: 3; /* Ensure content is above background */
+  font-family: $font-primary;
+
+  @include respond-to("tablet") {
+    padding: 40px 15px 40px 80px; // Reduced padding for tablet
+  }
+
+  @include respond-to("mobile") {
+    padding: 20px; // smaller padding for mobile
+    z-index: 3; // ensure content is above mobile image
+  }
+}
+
+.hero-content {
+
+  p {
+    margin: 0rem 0;
+    font-family: $font-primary;
+    font-size: $font-size-base; // Desktop
+    font-weight: $font-weight-light;
+
+    @include respond-to("tablet") {
+      font-size: $font-size-base-sm;
+    }
+
+    @include respond-to("mobile") {
+      font-size: $font-size-xs;
+      margin: 0.3rem 0;
+    }
+  }
+
+  h1 {
+    font-size: $font-size-header-lg; // Desktop
+
+    @include respond-to("tablet") {
+      font-size: $font-size-header-base;
+    }
+
+    @include respond-to("mobile") {
+      font-size: $font-size-header-xs;
+    }
+  }
+
+  .pre-title {
+    margin-bottom: 0rem; /* Remove spacing between pretitle and title */
+    margin-top: 4rem; /* Push the pretitle farther down */
+    font-size: $font-size-header-sm; // Desktop
+    font-weight: $font-weight-light; /* Remove bold font */
+
+    @include respond-to("tablet") {
+      font-size: $font-size-header-xs;
+      margin-top: 2rem;
+    }
+
+    @include respond-to("mobile") {
+      font-size: $font-size-sm;
+      margin-top: 1rem;
+    }
+  }
+
+  // Style the app-button component within hero section
+  app-button {
+    margin-top: 2rem;
+    display: inline-block;
+
+    @include respond-to("tablet") {
+      margin-top: 1.5rem;
+    }
+
+    @include respond-to("mobile") {
+      margin-top: 1rem;
+      
+      // Override button size for mobile
+      ::ng-deep .button-wrapper button {
+        padding: 8px 16px;
+        font-size: $font-size-xxs;
+      }
+    }
+  }
+}
