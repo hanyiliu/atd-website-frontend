@@ -12,10 +12,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
+
   /* Hide background when viewport is too small for original size (1100px is approximate threshold) */
   @media (max-width: 1400px) {
     background-image: none;
+  }
+
+  /* Mobile-specific background */
+  @include respond-to('mobile') {
+    background-image: url("/backgrounds/about-us-info-background-mobile.svg");
+    background-size: cover;
+    background-position: top;
   }
 }
 
@@ -35,7 +43,17 @@
   @include respond-to('mobile') {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    gap: 2rem;
+    padding: 1rem; /* Equal padding on all sides for mobile only */
+    gap: 1.5rem;
+  }
+  
+  app-info-card {
+    @include respond-to('mobile') {
+      display: flex;
+      justify-content: center;
+      max-width: 90%; /* Center cards within mobile wrapper */
+    }
   }
 }
