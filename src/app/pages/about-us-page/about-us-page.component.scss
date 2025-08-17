@@ -38,7 +38,7 @@ app-info-section {
 
 app-values-section {
   margin-bottom: 150px;
-  width: 100%;
+  width: 80%;
 
   @include respond-to('tablet') {
     margin-bottom: 120px;
