@@ -142,3 +142,15 @@
 .project-image-container:hover .overlay {
   opacity: 1;
 }
+
+// Mobile: Always show overlay (permanent hover state)
+@include respond-to("mobile") {
+  .overlay {
+    opacity: 1;
+    font-size: $font-size-sm;
+  }
+  
+  .project-image {
+    filter: brightness(0.5);
+  }
+}

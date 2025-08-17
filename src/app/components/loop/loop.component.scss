@@ -1,5 +1,6 @@
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
 
 .marquee-container {
   height: 64px;
@@ -12,6 +13,11 @@
   display: flex;
   align-items: center;
   position: relative;
+
+  @include respond-to('mobile') {
+    height: 48px;
+    font-size: $font-size-sm;
+  }
 }
 
 .marquee {
