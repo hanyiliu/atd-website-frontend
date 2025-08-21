@@ -1,5 +1,6 @@
 @use "fonts" as *;
 @use "colors" as *;
+@use "breakpoints" as *;
 
 .container {
   width: fit-content;
@@ -17,6 +18,14 @@
   font-weight: $font-weight-bolder;
   font-size: $font-size-header-sm;
   color: $brand-color-primary;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-base-sm;
+  }
 }
 
 .icon {
@@ -37,6 +46,14 @@
   color: $brand-color-black;
   position: relative;
   width: fit-content;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base-sm;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+  }
 }
 
 .open-role .role-link {
@@ -76,6 +93,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-base-sm;
+  }
 }
 
 .no-roles {
@@ -83,4 +108,12 @@
   font-weight: $font-weight-bold;
   font-size: $font-size-base;
   color: $brand-color-black;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base-sm;
+  }
+
+  @include respond-to('mobile') {
+    font-size: $font-size-sm;
+  }
 }
