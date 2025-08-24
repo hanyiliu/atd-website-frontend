@@ -2,6 +2,7 @@
 
 @use "colors" as *;
 @use "fonts" as *;
+@use "breakpoints" as *;
 
 .faq-container {
   position: relative;
@@ -33,6 +34,10 @@
   max-width: 1200px; 
   padding: 60px 40px;
   box-sizing: border-box;
+
+  @include respond-to('mobile') {
+    width: 100%;
+  }
 }
 
 
