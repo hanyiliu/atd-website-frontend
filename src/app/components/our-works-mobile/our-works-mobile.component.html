@@ -1,0 +1,10 @@
+<div class="our-works-mobile-container">
+  <div class="text">Our Works</div>
+  <div class="gallery" (swipeleft)="nextImage()" (swiperight)="prevImage()">
+    <img
+      [src]="images[currentImageIndex]"
+      alt="Work Image"
+      class="gallery-image"
+    />
+  </div>
+</div>
