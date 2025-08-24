@@ -58,7 +58,7 @@
 .text-content {
   font-family: $font-primary;
   font-weight: $font-weight-bold;
-  font-size: clamp($font-size-header-sm, 20vw, $font-size-header-base); // Responsive font sizing
+  font-size: clamp($font-size-header-sm, 20vw, $font-size-xl); // Responsive font sizing
   padding-left: 80px; // Desktop padding
 
   @include respond-to('tablet') {
