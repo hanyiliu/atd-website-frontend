@@ -20,11 +20,11 @@
   color: $brand-color-primary;
 
   @include respond-to('tablet') {
-    font-size: $font-size-base;
+    font-size: $font-size-header-sm;
   }
 
   @include respond-to('mobile') {
-    font-size: $font-size-base-sm;
+    font-size: $font-size-header-sm;
   }
 }
 
@@ -52,7 +52,7 @@
   }
 
   @include respond-to('mobile') {
-    font-size: $font-size-sm;
+    font-size: $font-size-base-sm;
   }
 }
 

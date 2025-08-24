@@ -33,7 +33,7 @@
     }
     
     @include respond-to('mobile') {
-        font-size: $font-size-xxs;
+        font-size: $font-size-xs;
         text-align: center; /* Center body text on mobile */
     }
 }
