@@ -27,7 +27,6 @@ export class OurWorksMobileComponent implements OnDestroy {
 
   ngOnInit(): void {
     const content = this.dataService.getContent();
-
     this.images = [
       content.frame9,
       content.frame10,
@@ -36,12 +35,11 @@ export class OurWorksMobileComponent implements OnDestroy {
       content.frame13,
       content.frame14,
     ];
-
+    // Use ngZone.runOutsideAngular for safe interval
     this.ngZone.runOutsideAngular(() => {
       this.intervalId = setInterval(() => {
         this.ngZone.run(() => {
-          this.currentImageIndex =
-            (this.currentImageIndex + 1) % this.images.length;
+          this.nextImage();
         });
       }, 4000);
     });
@@ -60,5 +58,24 @@ export class OurWorksMobileComponent implements OnDestroy {
   prevImage(): void {
     this.currentImageIndex =
       (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+  }
+
+  // For sliding peek carousel
+  get prevIndex(): number {
+    return (
+      (this.currentImageIndex - 1 + this.images.length) % this.images.length
+    );
+  }
+  get nextIndex(): number {
+    return (this.currentImageIndex + 1) % this.images.length;
+  }
+  /**
+   * Amount to translate the carousel for the sliding effect.
+   * Returns a number (not a string) representing the percentage shift.
+   * Used directly in the template as a number to be interpolated as "-X%".
+   */
+  get translateX(): number {
+    // Each image is 100% width, so shift by -100% * current index
+    return this.currentImageIndex * 100;
   }
 }
