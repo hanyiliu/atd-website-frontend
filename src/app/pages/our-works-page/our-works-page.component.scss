@@ -12,13 +12,11 @@
   padding-bottom: 30px;
 
   @include respond-to("tablet") {
-    display: none;
     padding-top: 40px;
     padding-bottom: 25px;
   }
 
   @include respond-to("mobile") {
-    display: none;
     padding-top: 30px;
     padding-bottom: 20px;
   }
@@ -26,6 +24,14 @@
 
 app-our-works {
   background-color: purple;
+
+  @include respond-to("tablet") {
+    display: none;
+  }
+
+  @include respond-to("mobile") {
+    display: none;
+  }
 }
 
 app-our-works-mobile {

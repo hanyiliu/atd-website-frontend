@@ -2,6 +2,7 @@
   <div class="text">Our Works</div>
   <div class="gallery" (swipeleft)="nextImage()" (swiperight)="prevImage()">
     <img
+      *ngIf="images.length"
       [src]="images[currentImageIndex]"
       alt="Work Image"
       class="gallery-image"
