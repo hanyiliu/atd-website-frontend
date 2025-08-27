@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-our-works-mobile',
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './our-works-mobile.component.html',
   styleUrl: './our-works-mobile.component.scss',
 })
-export class OurWorksMobileComponent implements OnInit, OnDestroy {
+export class OurWorksMobileComponent implements OnDestroy {
   frame9: string = '';
   frame10: string = '';
   frame11: string = '';
@@ -22,30 +23,28 @@ export class OurWorksMobileComponent implements OnInit, OnDestroy {
   currentImageIndex: number = 0;
   private intervalId: any;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private ngZone: NgZone) {}
 
   ngOnInit(): void {
     const content = this.dataService.getContent();
-    this.frame9 = content.frame9;
-    this.frame10 = content.frame10;
-    this.frame11 = content.frame11;
-    this.frame12 = content.frame12;
-    this.frame13 = content.frame13;
-    this.frame14 = content.frame14;
 
     this.images = [
-      this.frame9,
-      this.frame10,
-      this.frame11,
-      this.frame12,
-      this.frame13,
-      this.frame14,
+      content.frame9,
+      content.frame10,
+      content.frame11,
+      content.frame12,
+      content.frame13,
+      content.frame14,
     ];
 
-    this.intervalId = setInterval(() => {
-      this.currentImageIndex =
-        (this.currentImageIndex + 1) % this.images.length;
-    }, 4000);
+    this.ngZone.runOutsideAngular(() => {
+      this.intervalId = setInterval(() => {
+        this.ngZone.run(() => {
+          this.currentImageIndex =
+            (this.currentImageIndex + 1) % this.images.length;
+        });
+      }, 4000);
+    });
   }
 
   ngOnDestroy(): void {
