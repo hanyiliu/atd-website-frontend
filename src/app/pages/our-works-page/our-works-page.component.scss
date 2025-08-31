@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.herosection {
+.hero-section {
   padding-top: 50px;
   padding-bottom: 30px;
 
@@ -18,13 +18,11 @@
 
   @include respond-to("mobile") {
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
 }
 
 app-our-works {
-  background-color: purple;
-
   @include respond-to("tablet") {
     display: none;
   }
@@ -57,9 +55,6 @@ app-our-works-mobile {
   @include respond-to("mobile") {
     margin-top: 80px;
   }
-}
-app-loop {
-  width: 100%;
 }
 
 .recent {

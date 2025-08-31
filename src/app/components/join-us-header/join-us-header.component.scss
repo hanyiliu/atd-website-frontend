@@ -10,11 +10,13 @@
     
     @include respond-to('tablet') {
         font-size: calc($font-size-xxl + 0.5rem); /* Reduced size for tablets */
+        text-align: center; /* Center body text on mobile */
     }
     
     @include respond-to('mobile') {
-        font-size: $font-size-xxl; /* Smaller size for mobile */
+        font-size: $font-size-xl; /* Smaller size for mobile */
         margin-bottom: 0.75rem;
+        text-align: center; /* Center title text on mobile */
     }
 }
 
@@ -26,11 +28,13 @@
     line-height: 1.5;
     
     @include respond-to('tablet') {
-        font-size: $font-size-xs;
+        font-size: $font-size-base-sm;
+        text-align: center; /* Center body text on mobile */
     }
     
     @include respond-to('mobile') {
-        font-size: $font-size-xxs;
+        font-size: $font-size-xs;
+        text-align: center; /* Center body text on mobile */
     }
 }
 
@@ -39,14 +43,9 @@
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    width: 600px;
     aspect-ratio: 3;
     
-    @include respond-to('tablet') {
-        width: 450px;
-    }
-    
     @include respond-to('mobile') {
-        width: 280px;
+        align-items: center; /* Center container items on mobile */
     }
 }

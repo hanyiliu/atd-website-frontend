@@ -4,10 +4,10 @@ import { ButtonComponent } from '../button/button.component';
 import { NavigationService } from '../../services/navigation/navigation.service';
 
 @Component({
-  selector: 'app-herosection',
+  selector: 'app-hero-section',
   imports: [ButtonComponent],
-  templateUrl: './herosection.component.html',
-  styleUrl: './herosection.component.scss',
+  templateUrl: './hero-section.component.html',
+  styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent {
   constructor(
