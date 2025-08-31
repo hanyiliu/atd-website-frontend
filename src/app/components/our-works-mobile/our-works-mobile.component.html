@@ -1,0 +1,19 @@
+<div class="our-works-mobile-container">
+  <div class="text">Our Works</div>
+  <div class="gallery-container">
+    <div
+      class="gallery-track"
+      [style.transform]="'translateX(-' + translateX + '%)'"
+    >
+      <div
+        class="gallery-item"
+        *ngFor="let img of galleryItems; let i = index"
+        [class.active]="i === currentImageIndex"
+        [class.prev]="i === prevIndex"
+        [class.next]="i === nextIndex"
+      >
+        <img [src]="img.image" [alt]="img.alt || 'Work Image'" />
+      </div>
+    </div>
+  </div>
+</div>

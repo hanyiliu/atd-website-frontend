@@ -15,6 +15,7 @@ import rolesData from '../../../assets/data/roles.json';
 import contentData from '../../../assets/data/content.json';
 import faqData from '../../../assets/data/faq.json';
 import offersData from '../../../assets/data/offers.json';
+import galleryData from '../../../assets/data/gallery.json';
 
 /**
  * DataService provides centralized access to all dynamic content data.
@@ -63,5 +64,10 @@ export class DataService {
   // Get client offers for the what-we-offer component
   getClientOffers(): OfferItem[] {
     return (offersData as any).clientOffers as OfferItem[];
+  }
+
+  // Get gallery items for the our works mobile gallery
+  getGalleryItems(): import('../../models/gallery-item.model').GalleryItem[] {
+    return galleryData as import('../../models/gallery-item.model').GalleryItem[];
   }
 }
