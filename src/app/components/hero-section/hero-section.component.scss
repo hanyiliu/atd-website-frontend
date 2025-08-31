@@ -6,7 +6,7 @@
   /* Flexible height based on content with minimum height */
   min-height: 450px; /* increased from 350px */
   width: 100%;
-  height: 80vh; /* increased from 65vh */
+  height: 90vh; /* increased from 65vh */
   display: flex;
   justify-content: flex-start;
   color: $brand-color-white;
@@ -25,7 +25,7 @@
 
   @include respond-to("mobile") {
     width: 100%;
-    height: auto; // allow hero section height to adjust to content
+    height: 42vh; // allow hero section height to adjust to content
     min-height: 250px; // ensure it’s not too small
     position: relative;
     overflow: hidden;
@@ -83,22 +83,6 @@
 
 .hero-content {
 
-  p {
-    margin: 0rem 0;
-    font-family: $font-primary;
-    font-size: $font-size-base; // Desktop
-    font-weight: $font-weight-light;
-
-    @include respond-to("tablet") {
-      font-size: $font-size-base-sm;
-    }
-
-    @include respond-to("mobile") {
-      font-size: $font-size-xs;
-      margin: 0.3rem 0;
-    }
-  }
-
   h1 {
     font-size: $font-size-header-lg; // Desktop
 
@@ -107,7 +91,7 @@
     }
 
     @include respond-to("mobile") {
-      font-size: $font-size-header-xs;
+      font-size: $font-size-base;
     }
   }
 
@@ -123,8 +107,9 @@
     }
 
     @include respond-to("mobile") {
-      font-size: $font-size-sm;
+      font-size: $font-size-base-sm;
       margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
 

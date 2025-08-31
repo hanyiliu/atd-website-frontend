@@ -6,7 +6,6 @@
   align-items: center;
 }
 
-/* Custom margins for spacing between components */
 app-definition-box {
   margin-top: 100px; // Desktop spacing
   margin-bottom: 150px;
@@ -80,7 +79,7 @@ app-what-we-offer-mobile {
 }
 
 app-contact-box {
-  margin-bottom: 30px; // Desktop spacing
+  margin-bottom: -50px; // Desktop spacing
   width: 80%; // Desktop width
 
   @include respond-to("tablet") {
@@ -95,7 +94,7 @@ app-contact-box {
 }
 
 app-faq-section {
-  margin-bottom: 140px; // Desktop spacing
+  margin-bottom: 50px; // Desktop spacing
   width: 100%;
 
   @include respond-to("tablet") {
