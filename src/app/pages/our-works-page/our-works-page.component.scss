@@ -10,30 +10,49 @@
 .hero-section {
   padding-top: 50px;
   padding-bottom: 30px;
-  @include respond-to('tablet') {
+
+  @include respond-to("tablet") {
     padding-top: 40px;
     padding-bottom: 25px;
   }
-  
-  @include respond-to('mobile') {
+
+  @include respond-to("mobile") {
     padding-top: 30px;
     padding-bottom: 0px;
   }
 }
 
 app-our-works {
-  width: 80%;
+  @include respond-to("tablet") {
+    display: none;
+  }
+
+  @include respond-to("mobile") {
+    display: none;
+  }
+}
+
+app-our-works-mobile {
+  display: none;
+
+  @include respond-to("tablet") {
+    display: block;
+  }
+
+  @include respond-to("mobile") {
+    display: block;
+  }
 }
 
 .loop-wrapper {
   margin-top: 175px;
   width: 100%;
-  
-  @include respond-to('tablet') {
+
+  @include respond-to("tablet") {
     margin-top: 120px;
   }
-  
-  @include respond-to('mobile') {
+
+  @include respond-to("mobile") {
     margin-top: 80px;
   }
 }
@@ -42,16 +61,15 @@ app-our-works {
   margin-top: 120px;
   margin-bottom: 20vh;
   width: 50%;
-  
-  @include respond-to('tablet') {
-    width: 75%;
+
+  @include respond-to("tablet") {
     margin-top: 90px;
     margin-bottom: 15vh;
   }
-  
-  @include respond-to('mobile') {
-    width: 90%;
+
+  @include respond-to("mobile") {
     margin-top: 60px;
     margin-bottom: 10vh;
+    width: 90%;
   }
 }

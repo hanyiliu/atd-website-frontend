@@ -1,11 +1,11 @@
 export interface Content {
   // About Us page content
   videoUrl: string;
-  
-  // Contact 
+
+  // Contact
   contactEmail: string;
   contactSubject: string;
-  
+
   // Social media links
   instagramUrl: string;
   linkedinUrl: string;
