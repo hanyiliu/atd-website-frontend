@@ -35,13 +35,14 @@
     max-width: 243px;
     height: auto;
     object-fit: cover;
+    border-radius: 10px;
 
     @include respond-to('tablet') {
       max-width: 180px;
     }
 
     @include respond-to('mobile') {
-      max-width: 130px;
+      max-width: 300px;
     }
   }
 }
@@ -56,7 +57,7 @@
   }
 
   @include respond-to('mobile') {
-    font-size: $font-size-xxs;
+    font-size: $font-size-xs;
   }
 }
 
@@ -70,6 +71,6 @@
   }
 
   @include respond-to('mobile') {
-    font-size: $font-size-xxs;
+    font-size: $font-size-xs;
   }
 }

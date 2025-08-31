@@ -14,12 +14,10 @@
   box-sizing: border-box;
   
   @include respond-to('tablet') {
-    aspect-ratio: 1000 / 611;
     border-radius: 15px;
   }
   
   @include respond-to('mobile') {
-    aspect-ratio: 611 / 1000;
     border-radius: 10px;
   }
 }
