@@ -59,6 +59,7 @@ app-video-section {
   }
 
   @include respond-to('mobile') {
+    width: 95%;
     margin-top: 60px;
   }
 }
