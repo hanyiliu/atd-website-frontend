@@ -86,33 +86,23 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  aspect-ratio: 10 / 7;
+  aspect-ratio: 15 / 7;
   padding: 2rem;
   text-align: center;
-  background-color: $brand-color-gray-3;
-  border: 2px solid $brand-color-primary;
   border-radius: 12px;
   box-sizing: border-box;
   margin: 0 auto;
 
-  transition: all 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  span {
-    font-family: $font-primary;
-    font-weight: $font-weight-regular;
-    font-size: $font-size-base;
-    color: $brand-color-gray-0;
-  }
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base-sm;
+  color: $brand-color-gray-0;
 
   @include respond-to("tablet") {
     padding: 1.5rem;
     width: 300px;
     aspect-ratio: 4 / 3;
+    font-size: $font-size-sm;
   }
 
   @include respond-to("mobile") {
@@ -120,5 +110,6 @@
     width: 250px;
     max-width: 90vw;
     aspect-ratio: 4 / 3;
+    font-size: $font-size-sm;
   }
 }
