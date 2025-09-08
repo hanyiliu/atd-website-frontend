@@ -52,24 +52,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px; // Add some horizontal padding
+  padding: 0 100px;
+
+  @include respond-to('tablet') {
+    padding: 0 50px;
+  }
+
+  @include respond-to('mobile') {
+    padding: 0 15px;
+  }
 }
 
 .text-content {
   font-family: $font-primary;
   font-weight: $font-weight-bold;
   font-size: clamp($font-size-header-sm, 20vw, $font-size-xl); // Responsive font sizing
-  padding-left: 80px; // Desktop padding
+  
 
   @include respond-to('tablet') {
     font-size: clamp($font-size-base, 20vw, $font-size-xl);
-    padding-left: 50px;
   }
 
   @include respond-to('mobile') {
     font-size: clamp($font-size-xs, 20vw, $font-size-header-xs);
-    padding-left: 0;
-    padding: 0 15px;
   }
 }
 
@@ -118,23 +123,13 @@
   }
 }
 
-.logo {
-  padding-right: 120px; // Desktop padding
-  scale: 100%; // Desktop scale
+.logo {  
   filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
   -webkit-filter: drop-shadow(-2px -2px 8px rgba(0, 0, 0, 0.6));
-  max-width: 30%; // Prevent logo from being too large
+  width: 30%;
+  aspect-ratio: 1;
 
-  @include respond-to('tablet') {
-    padding-right: 80px;
-    scale: 85%;
-    max-width: 28%; // Slightly smaller on tablet
-  }
-
-  @include respond-to('mobile') {
-    padding-right: 0;
-    scale: 60%; // Increased from 50% for better visibility
-    max-width: 35%; // Different proportion on mobile
+  @include respond-to('mobile') { 
     filter: drop-shadow(-1px -1px 4px rgba(0, 0, 0, 0.6));
     -webkit-filter: drop-shadow(-1px -1px 4px rgba(0, 0, 0, 0.6));
   }

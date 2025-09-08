@@ -17,13 +17,23 @@
   background-position: top;
 
   min-height: 100vh; /* Ensure adequate height for content */
+
+  @include respond-to('tablet') {
+      background-image: url('/backgrounds/join-us-main-background-mobile.png');
+      background-size: cover;
+      background-position: center;
+  }
+  @include respond-to('mobile') {
+      background-image: url('/backgrounds/join-us-main-background-mobile.png');
+      background-position: center;
+  }
 }
 
 .roles-section {
   position: relative;
   width: 100%;
   z-index: 1;
-  margin-top: 80vh;
+  margin-top: 80px;
   
   /* Background image properties to ensure full vertical visibility */
   background-image: url('/backgrounds/join-us-roles-background.png');
