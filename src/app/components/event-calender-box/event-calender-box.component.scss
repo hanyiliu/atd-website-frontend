@@ -1,5 +1,3 @@
-
-
 @use "colors" as *;
 @use "fonts" as *;
 @use "breakpoints" as *;
@@ -18,11 +16,11 @@
   width: 100%; // Take full width of the inner container
   text-align: center;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     font-size: $font-size-base-sm;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     font-size: $font-size-header-xs;
     padding-bottom: 0.75rem;
   }
@@ -35,11 +33,11 @@
   align-items: center; // This centers event-calendar-inner
   padding: 3rem 1rem; // Desktop padding
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     padding: 2rem 1rem;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     padding: 1.5rem 0.5rem;
   }
 }
@@ -50,13 +48,13 @@
   flex-direction: column; // Changed to column to stack header and events
   width: 100%;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     padding: 0.75rem;
     width: 100%;
     max-width: 800px;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     padding: 0.5rem;
     width: 100%;
   }
@@ -69,15 +67,49 @@
   width: 100%;
   justify-content: center;
 
-  @include respond-to('tablet') {
+  @include respond-to("tablet") {
     gap: 0.75rem;
     width: 100%;
   }
 
-  @include respond-to('mobile') {
+  @include respond-to("mobile") {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
     width: 100%;
+  }
+}
+
+// Placeholder shown when there are no upcoming events
+.no-events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  aspect-ratio: 15 / 7;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base-sm;
+  color: $brand-color-gray-0;
+
+  @include respond-to("tablet") {
+    padding: 1.5rem;
+    width: 300px;
+    aspect-ratio: 4 / 3;
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to("mobile") {
+    padding: 1rem;
+    width: 250px;
+    max-width: 90vw;
+    aspect-ratio: 4 / 3;
+    font-size: $font-size-sm;
   }
 }

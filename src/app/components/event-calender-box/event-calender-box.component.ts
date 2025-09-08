@@ -9,10 +9,15 @@ import { DataService } from '../../services/data/data.service';
   standalone: true,
   imports: [EventBoxComponent, CommonModule],
   templateUrl: './event-calender-box.component.html',
-  styleUrl: './event-calender-box.component.scss',
+  styleUrls: ['./event-calender-box.component.scss'],
 })
 export class EventCalenderBoxComponent implements OnInit {
   events: Event[] = [];
+
+  // Used by the template to decide whether to show the list or the placeholder
+  get hasUpcoming(): boolean {
+    return Array.isArray(this.events) && this.events.length > 0;
+  }
 
   constructor(private dataService: DataService) {}
 
