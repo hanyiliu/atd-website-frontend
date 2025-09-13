@@ -30,8 +30,8 @@ type Story = StoryObj<ButtonComponent>;
 export const JoinUs: Story = {
   args: {
     label: 'Join Us',
-    backgroundColor: '#FFE3FB',
-    borderColor: '#FF00D9',
-    textColor: '#FF00D9',
+  backgroundColor: '#E0FAF9', // light tint of Tiffany blue
+  borderColor: '#0ABAB5',
+  textColor: '#0ABAB5',
   },
 };
