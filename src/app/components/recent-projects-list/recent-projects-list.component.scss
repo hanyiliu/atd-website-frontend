@@ -78,6 +78,15 @@
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+// Non-clickable project wrapper
+.project-link--disabled .project {
+  cursor: default; // show not clickable
+  // keep transitions so visual consistency remains
+}
+
+// Allow darken + overlay on hover even when not clickable
+// rely on existing generic hover rules; no special hover selectors needed for disabled state
+
 .project:hover {
   transform: scale(1.01); // Pop out effect
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);

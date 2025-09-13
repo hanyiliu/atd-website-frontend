@@ -3,26 +3,35 @@
     <div class="header-title">Recent Projects</div>
   </div>
   <div class="projects-list">
-    <a
-      [href]="project.link"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="project-link"
-      *ngFor="let project of projects"
-    >
-      <div class="project">
-        <div class="project-image-container">
-          <img
-            [src]="project.image"
-            alt="{{ project.alt }}"
-            class="project-image"
-          />
-          <div class="overlay">
-            <span class="project-title">{{ project.alt }}</span>
+    <ng-container *ngFor="let project of projects">
+  <a *ngIf="project.link; else noLinkProject"
+     [href]="project.link"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="project-link"
+     [attr.aria-label]="'View project ' + project.alt">
+        <div class="project">
+          <div class="project-image-container">
+            <img [src]="project.image" alt="{{ project.alt }}" class="project-image" />
+            <div class="overlay">
+              <span class="project-title">{{ project.alt }}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+      <ng-template #noLinkProject>
+  <div class="project-link project-link--disabled" [attr.aria-label]="'Project ' + project.alt + ' (no link)'">
+          <div class="project">
+            <div class="project-image-container">
+              <img [src]="project.image" alt="{{ project.alt }}" class="project-image" />
+              <div class="overlay">
+                <span class="project-title">{{ project.alt }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
     <div class="no-projects" *ngIf="projects.length === 0">
       No Recent Projects
     </div>

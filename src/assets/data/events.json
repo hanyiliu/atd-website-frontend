@@ -1,15 +1,9 @@
 [
   {
-    "day": "15",
+    "day": "12",
+    "endDay": "15",
     "month": "September",
-    "title": "Board Interviews Begins",
-    "time": "TBD",
-    "location": "Virtual"
-  },
-  {
-    "day": "19",
-    "month": "September",
-    "title": "Board Interviews Ends",
+    "title": "Board Interview Period",
     "time": "TBD",
     "location": "Virtual"
   },
