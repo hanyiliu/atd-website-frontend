@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Event } from '../../models/event.model';
 import { Member } from '../../models/member.model';
 import { Project } from '../../models/project.model';
-import { OpenRole } from '../../models/open-role.model';
+import { OpenRole, RolesData, OpenRoleNoLink } from '../../models/open-role.model';
 import { Content } from '../../models/content.model';
 import { FaqItem } from '../../models/faq-item.model';
 import { OfferItem } from '../../models/offer-item.model';
@@ -41,9 +41,19 @@ export class DataService {
     return projectsData as Project[];
   }
 
-  // Get open roles for the join us page
-  getRoles(): OpenRole[] {
-    return rolesData as OpenRole[];
+  // Get grouped open roles (Approach B schema)
+  getRolesGrouped(): RolesData {
+    return rolesData as unknown as RolesData;
+  }
+
+  // Convenience: get roles without links
+  getRolesNoLink(): OpenRoleNoLink[] {
+    return (rolesData as any).noLink as OpenRoleNoLink[];
+  }
+
+  // Convenience: get roles with links
+  getRolesLink(): OpenRole[] {
+    return (rolesData as any).link as OpenRole[];
   }
 
   // Get FAQ items for the main page
