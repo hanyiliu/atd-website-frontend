@@ -56,13 +56,13 @@
       >
     </div>
     <div class="social-icons">
-      <a [href]="instagramUrl" aria-label="Instagram">
+      <a *ngIf="instagramUrl" [href]="instagramUrl" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
         <img src="icons/instagram.svg" alt="Insta" />
       </a>
-      <a [href]="linkedinUrl" aria-label="LinkedIn">
+      <a *ngIf="linkedinUrl" [href]="linkedinUrl" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
         <img src="icons/linkedin.svg" alt="LinkedIn" />
       </a>
-      <a [href]="tiktokUrl" aria-label="TikTok">
+      <a *ngIf="tiktokUrl" [href]="tiktokUrl" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
         <img src="icons/tiktok.svg" alt="Tiktok" />
       </a>
     </div>
