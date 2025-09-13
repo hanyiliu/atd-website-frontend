@@ -7,15 +7,24 @@
             class="icon"
         />
     </div>
-    <div class="open-roles-list">
-        <div class="open-role" *ngFor="let role of openRoles">
+
+    <!-- No-link roles section (plain text, no anchor, no underline hover) -->
+    <div class="open-roles-list no-link">
+        <div class="open-role role-no-link" *ngFor="let role of noLinkRoles">
+            <div class="role-title">{{ role.title }}</div>
+        </div>
+        <div class="no-roles" *ngIf="noLinkRoles.length === 0">
+            No Current Job Openings
+        </div>
+    </div>
+
+    <!-- Link roles section (clickable, underline animation handled via CSS) -->
+    <div class="open-roles-list link">
+        <div class="open-role" *ngFor="let role of linkRoles">
             <a [href]="role.link" target="_blank" rel="noopener noreferrer" class="role-link">
                 <div class="role-title">{{ role.title }}</div>
                 <mat-icon class="role-arrow-icon">chevron_right</mat-icon>
             </a>
-        </div>
-        <div class="no-roles" *ngIf="openRoles.length === 0">
-            No Current Job Openings
         </div>
     </div>
 </div>

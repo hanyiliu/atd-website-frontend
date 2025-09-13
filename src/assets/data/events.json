@@ -1,30 +1,17 @@
 [
   {
-    "day": "22",
-    "month": "April",
-    "title": "Passed Info Night",
-    "time": "1:00PM",
-    "location": "@TBD"
+    "day": "12",
+    "endDay": "15",
+    "month": "September",
+    "title": "Board Interview Period",
+    "time": "TBD",
+    "location": "Virtual"
   },
   {
-    "day": "23",
-    "month": "April",
-    "title": "Passed Design Challenge Workshop",
-    "time": "1:00PM",
-    "location": "@TBD"
-  },
-  {
-    "day": "24",
-    "month": "April",
-    "title": "Passed Meet the Board",
-    "time": "1:00PM",
-    "location": "@Frenzy Coffee"
-  },
-  {
-    "day": "19",
-    "month": "July",
-    "title": "Info Night",
-    "time": "1:00PM",
-    "location": "@TBD"
+    "day": "21",
+    "month": "September",
+    "title": "Technicals Due",
+    "time": "11:59PM",
+    "location": "Virtual"
   }
 ]

@@ -3,8 +3,8 @@
 <line x1="372.393" y1="4.79016" x2="372.393" y2="780.761" stroke="black"/>
 <line x1="-6" y1="34.2271" x2="396" y2="34.2269" stroke="black"/>
 <line x1="-6" y1="749.126" x2="396" y2="749.126" stroke="black"/>
-<rect x="16" y="30.4316" width="8" height="7.6079" rx="1" fill="#FF00D9"/>
-<rect x="368" y="32" width="8" height="8" rx="1" fill="#FF00D9"/>
-<rect x="368" y="745" width="8" height="8" rx="1" fill="#FF00D9"/>
-<rect x="16" y="745" width="8" height="8" rx="1" fill="#FF00D9"/>
+<rect x="16" y="30.4316" width="8" height="7.6079" rx="1" fill="#0abab5"/>
+<rect x="368" y="32" width="8" height="8" rx="1" fill="#0abab5"/>
+<rect x="368" y="745" width="8" height="8" rx="1" fill="#0abab5"/>
+<rect x="16" y="745" width="8" height="8" rx="1" fill="#0abab5"/>
 </svg>
