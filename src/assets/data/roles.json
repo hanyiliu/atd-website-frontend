@@ -1,10 +1,14 @@
-[
-  {
-    "title": "President",
-    "link": "https://forms.google.com/president"
-  },
-  {
-    "title": "VP of Sanju",
-    "link": "https://forms.google.com/vp-of-sanju"
-  }
-]
+{
+  "noLink": [
+    { "title": "VP of Marketing" },
+    { "title": "External Brand Director" },
+    { "title": "Project Manager" },
+    { "title": "Program Coordinator" }
+  ],
+  "link": [
+    {
+      "title": "2025-2026 Board Application",
+      "link": "https://forms.google.com/vp-of-sanju"
+    }
+  ]
+}

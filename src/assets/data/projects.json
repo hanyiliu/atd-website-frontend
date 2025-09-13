@@ -1,7 +1,10 @@
 [
   {
+    "image": "projects/treehouse-vintage.jpg",
+    "alt": "Treehouse Vintage"
+  },
+  {
     "image": "projects/neighborhood-market.png",
-    "alt": "Neighborhood Market",
-    "link": "https://example.com/neighborhood-market"
+    "alt": "Neighborhood Market"
   }
 ]
