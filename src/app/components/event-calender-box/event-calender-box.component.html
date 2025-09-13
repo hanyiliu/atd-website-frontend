@@ -1,7 +1,7 @@
 <div class="container">
   <div class="event-calendar-wrapper">
     <div class="event-calendar-inner">
-      <div class="header">Upcoming Events This Week</div>
+      <div class="header"> Upcoming Deadlines </div>
       <div class="events-container" *ngIf="hasUpcoming; else noEvents">
         <app-event-box
           *ngFor="let event of events; let i = index"
@@ -12,7 +12,7 @@
       </div>
       <ng-template #noEvents>
         <div class="no-events">
-          <span>No Upcoming Events</span>
+          <span>No Upcoming Deadlines</span>
         </div>
       </ng-template>
     </div>
