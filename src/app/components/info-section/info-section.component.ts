@@ -12,16 +12,16 @@ export class InfoSectionComponent {
     title: 'Mission',
     image: '/icons/target.svg',
     details: [
-      'To contribute exceptional pro-bono design to all clients.',
-      'To strengthen the design community at UC Davis by bringing all disciplines together as a unified community.',
-      'To build an exceptional professional network for students to gain client-based design experience.',
+      'To contribute budget-friendly design to all clients.',
+      'To strengthen the design community in Davis by bringing all disciplines together as a unified community.',
+      'To build an exceptional professional network for members to gain client-based design experience.',
     ],
   };
   vision: any = {
     title: 'Vision',
     image: '/icons/vision.svg',
     details: [
-      'Our vision is to build a home where students can grow, flourish and discover anything they put their minds to.',
+      'Our vision is to build a home where members can grow, flourish, and discover anything they put their minds to.',
     ],
   };
 }

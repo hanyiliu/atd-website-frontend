@@ -41,6 +41,7 @@
   font-weight: $font-weight-regular;
   font-size: clamp($font-size-xxs, 1.5vw, $font-size-xs); // Responsive font size
   width: clamp(16rem, 22vw, 22rem); // Responsive width
+  line-height: 1.6;
 
   @include respond-to('tablet') {
     width: clamp(14rem, 20vw, 18rem);

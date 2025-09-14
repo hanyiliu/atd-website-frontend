@@ -10,7 +10,8 @@
 
   border-radius: 32px;
   font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
+  // Allow parent components to override font weight via CSS custom property
+  font-weight: var(--btn-font-weight, $font-weight-semibold); // changed
   font-family: $font-primary;
 
   transition: all 0.3s ease;

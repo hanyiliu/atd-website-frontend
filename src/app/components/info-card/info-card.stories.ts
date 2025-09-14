@@ -15,9 +15,9 @@ export const Primary: Story = {
     title: 'Mission',
     image: '/icons/target.svg',
     details: [
-      'To contribute exceptional pro-bono design to all clients.',
-      'To strengthen the design community at UC Davis by bringing all disciplines together as a unified community.',
-      'To build an exceptional professional network for students to gain client-based design experience.',
+      'To contribute exceptional budget-friendly design to all clients.',
+      'To strengthen the design community in Davis by bringing all disciplines together as a unified community.',
+      'To build an exceptional professional network for members to gain client-based design experience.',
     ],
   },
 };
