@@ -1,7 +1,7 @@
 [
   {
-    "day": "12",
-    "endDay": "15",
+    "day": "15",
+    "endDay": "21",
     "month": "September",
     "title": "Board Interview Period",
     "time": "TBD",
@@ -10,7 +10,7 @@
   {
     "day": "21",
     "month": "September",
-    "title": "Technicals Due",
+    "title": "Technicals for VPM and EBD Due",
     "time": "11:59PM",
     "location": "Virtual"
   }

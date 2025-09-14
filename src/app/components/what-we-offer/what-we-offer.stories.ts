@@ -50,14 +50,14 @@ export const Primary: Story = {
           'ATD offers mentorships, hands-on experience, and learning opportunities to help sharpen your skills and grow professionally. By working alongside diverse team members, you will gain expertise needed to succeed ad build a strong foundation for your future career.',
       },
       {
-        title: 'Student-Client Experience',
+        title: 'Member-Client Experience',
         description:
-          'ATD gives students the opportunity to work with real clients and gain hands-on experience. We offer entry-level positions with no prior experience required. Our goal is to help you build your portfolio, improve communication with clients, and work with a cross-functional team.',
+          'ATD gives members the opportunity to work with real clients and gain hands-on experience. We offer entry-level positions with no prior experience required. Our goal is to help you build your portfolio, improve communication with clients, and work with a cross-functional team.',
       },
       {
         title: 'Networking ',
         description:
-          'As a student, you will have the chance to connect with other members of ATD as well as with clients. Through events, collaborations, and client interactions, we help you build valuable relationships that open doors and lead to new opportunities in your career.',
+          'As a member, you will have the chance to connect with other members of ATD as well as with clients. Through events, collaborations, and client interactions, we help you build valuable relationships that open doors and lead to new opportunities in your career.',
       },
     ],
   },
