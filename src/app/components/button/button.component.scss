@@ -10,8 +10,8 @@
 
   border-radius: 32px;
   font-size: $font-size-sm;
-  // Allow parent components to override font weight via CSS custom property
-  font-weight: var(--btn-font-weight, $font-weight-semibold); // changed
+  // Default (semibold) – semantic overrides handled by host data attribute selectors below
+  font-weight: $font-weight-semibold; // changed
   font-family: $font-primary;
 
   transition: all 0.3s ease;
@@ -27,4 +27,18 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+// Attribute-driven font-weight overrides using design tokens (no hard-coded numbers in TS)
+:host([data-weight='regular']) .button-wrapper button { // added
+  font-weight: $font-weight-regular; // added
+}
+:host([data-weight='semibold']) .button-wrapper button { // added
+  font-weight: $font-weight-semibold; // added
+}
+:host([data-weight='bold']) .button-wrapper button { // added
+  font-weight: $font-weight-bold; // added
+}
+:host([data-weight='bolder']) .button-wrapper button { // added
+  font-weight: $font-weight-bolder; // added
 }

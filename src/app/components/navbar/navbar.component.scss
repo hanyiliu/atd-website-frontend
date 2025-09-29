@@ -201,7 +201,3 @@
   }
 }
 
-.join-us-button { // changed
-  // Provide bold font weight to nested app-button via CSS variable consumed in button.component.scss
-  --btn-font-weight: $font-weight-bold; // changed
-}
