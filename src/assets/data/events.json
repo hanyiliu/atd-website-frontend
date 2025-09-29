@@ -13,5 +13,20 @@
     "title": "Technicals for VPM and EBD Due",
     "time": "11:59PM",
     "location": "Virtual"
+  },
+  {
+    "day": "1",
+    "endDay": "8",
+    "month": "October",
+    "title": "GUM Applications",
+    "time": "11:59PM",
+    "location": "Virtual"
+  },
+  {
+    "day": "6",
+    "month": "October",
+    "title": "Info Night",
+    "time": "TBD",
+    "location": "TBD"
   }
 ]
