@@ -25,7 +25,7 @@ import Lenis from '@studio-freight/lenis';
   animations: [routeTransition],
 })
 export class AppComponent implements OnInit {
-  title = 'atd';
+  title = 'All Things Design';
 
   // Loading overlay state management
   showLoadingOverlay = true;
